@@ -1,1287 +1,1500 @@
 {
-  "_readme": "Pour chaque produit, renseigne l'ASIN Amazon et les URLs directes des fiches produit. Les champs 'TODO' sont à compléter. Les enseignes absentes seront ignorées.",
-
   "hisense-a6n-43": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "https://www.fnac.com/a19047395/TV-LED-Hisense-43A6N",
-    "boulanger":   "https://www.boulanger.com/ref/1230481",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Hisense%2043A6N&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Hisense%2043A6N",
+    "boulanger": "https://www.boulanger.com/recherche/Hisense%2043A6N",
+    "darty": "https://www.darty.com/nav/extra/search?text=Hisense%2043A6N",
+    "cdiscount": "https://www.cdiscount.com/search/10/Hisense%2043A6N.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Hisense%2043A6N",
+    "but": "https://www.but.fr/recherche?q=Hisense%2043A6N",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Hisense%2043A6N",
+    "ubaldi": "https://www.ubaldi.com/recherche/Hisense%2043A6N/"
   },
-
   "tcl-p635-43": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "https://www.fnac.com/a18502047/TV-LED-TCL-43P635",
-    "boulanger":   "https://www.boulanger.com/ref/1206462",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=TCL%2043P635&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=TCL%2043P635",
+    "boulanger": "https://www.boulanger.com/recherche/TCL%2043P635",
+    "darty": "https://www.darty.com/nav/extra/search?text=TCL%2043P635",
+    "cdiscount": "https://www.cdiscount.com/search/10/TCL%2043P635.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=TCL%2043P635",
+    "but": "https://www.but.fr/recherche?q=TCL%2043P635",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=TCL%2043P635",
+    "ubaldi": "https://www.ubaldi.com/recherche/TCL%2043P635/"
   },
-
   "philips-pus7608-43": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "https://www.fnac.com/a18502102/TV-LED-Philips-43PUS7608",
-    "boulanger":   "https://www.boulanger.com/ref/1210983",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%2043PUS7608&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%2043PUS7608",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%2043PUS7608",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%2043PUS7608",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%2043PUS7608.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%2043PUS7608",
+    "but": "https://www.but.fr/recherche?q=Philips%2043PUS7608",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%2043PUS7608",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%2043PUS7608/"
   },
-
   "samsung-cu7105-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "https://www.fnac.com/a18502200/TV-LED-Samsung-UE55CU7105",
-    "boulanger":   "https://www.boulanger.com/ref/1217200",
-    "darty":       "https://www.darty.com/nav/extra/search?text=Samsung+UE55CU7105",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20UE55CU7105&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20UE55CU7105",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20UE55CU7105",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20UE55CU7105",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20UE55CU7105.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20UE55CU7105",
+    "but": "https://www.but.fr/recherche?q=Samsung%20UE55CU7105",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20UE55CU7105",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20UE55CU7105/"
   },
-
   "hisense-a6n-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Hisense%2055A6N&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Hisense%2055A6N",
+    "boulanger": "https://www.boulanger.com/recherche/Hisense%2055A6N",
+    "darty": "https://www.darty.com/nav/extra/search?text=Hisense%2055A6N",
+    "cdiscount": "https://www.cdiscount.com/search/10/Hisense%2055A6N.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Hisense%2055A6N",
+    "but": "https://www.but.fr/recherche?q=Hisense%2055A6N",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Hisense%2055A6N",
+    "ubaldi": "https://www.ubaldi.com/recherche/Hisense%2055A6N/"
   },
-
   "tcl-c635-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=TCL%2055C635&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=TCL%2055C635",
+    "boulanger": "https://www.boulanger.com/recherche/TCL%2055C635",
+    "darty": "https://www.darty.com/nav/extra/search?text=TCL%2055C635",
+    "cdiscount": "https://www.cdiscount.com/search/10/TCL%2055C635.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=TCL%2055C635",
+    "but": "https://www.but.fr/recherche?q=TCL%2055C635",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=TCL%2055C635",
+    "ubaldi": "https://www.ubaldi.com/recherche/TCL%2055C635/"
   },
-
   "philips-pus7608-50": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%2050PUS7608&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%2050PUS7608",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%2050PUS7608",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%2050PUS7608",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%2050PUS7608.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%2050PUS7608",
+    "but": "https://www.but.fr/recherche?q=Philips%2050PUS7608",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%2050PUS7608",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%2050PUS7608/"
   },
-
   "samsung-q80c-50": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20QE50Q80C&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20QE50Q80C",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20QE50Q80C",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20QE50Q80C",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20QE50Q80C.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20QE50Q80C",
+    "but": "https://www.but.fr/recherche?q=Samsung%20QE50Q80C",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20QE50Q80C",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20QE50Q80C/"
   },
-
   "lg-qned81-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=LG%2055QNED81&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=LG%2055QNED81",
+    "boulanger": "https://www.boulanger.com/recherche/LG%2055QNED81",
+    "darty": "https://www.darty.com/nav/extra/search?text=LG%2055QNED81",
+    "cdiscount": "https://www.cdiscount.com/search/10/LG%2055QNED81.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=LG%2055QNED81",
+    "but": "https://www.but.fr/recherche?q=LG%2055QNED81",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=LG%2055QNED81",
+    "ubaldi": "https://www.ubaldi.com/recherche/LG%2055QNED81/"
   },
-
   "sony-x85l-55": {
-    "amazon":      { "asin": "B0BXGVLN6V", "url": "https://www.amazon.fr/dp/B0BXGVLN6V" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Sony%20KD55X85L&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Sony%20KD55X85L",
+    "boulanger": "https://www.boulanger.com/recherche/Sony%20KD55X85L",
+    "darty": "https://www.darty.com/nav/extra/search?text=Sony%20KD55X85L",
+    "cdiscount": "https://www.cdiscount.com/search/10/Sony%20KD55X85L.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Sony%20KD55X85L",
+    "but": "https://www.but.fr/recherche?q=Sony%20KD55X85L",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Sony%20KD55X85L",
+    "ubaldi": "https://www.ubaldi.com/recherche/Sony%20KD55X85L/"
   },
-
   "hisense-u7nq-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Hisense%2055U7NQ&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Hisense%2055U7NQ",
+    "boulanger": "https://www.boulanger.com/recherche/Hisense%2055U7NQ",
+    "darty": "https://www.darty.com/nav/extra/search?text=Hisense%2055U7NQ",
+    "cdiscount": "https://www.cdiscount.com/search/10/Hisense%2055U7NQ.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Hisense%2055U7NQ",
+    "but": "https://www.but.fr/recherche?q=Hisense%2055U7NQ",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Hisense%2055U7NQ",
+    "ubaldi": "https://www.ubaldi.com/recherche/Hisense%2055U7NQ/"
   },
-
   "tcl-c845-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=TCL%2055C845&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=TCL%2055C845",
+    "boulanger": "https://www.boulanger.com/recherche/TCL%2055C845",
+    "darty": "https://www.darty.com/nav/extra/search?text=TCL%2055C845",
+    "cdiscount": "https://www.cdiscount.com/search/10/TCL%2055C845.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=TCL%2055C845",
+    "but": "https://www.but.fr/recherche?q=TCL%2055C845",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=TCL%2055C845",
+    "ubaldi": "https://www.ubaldi.com/recherche/TCL%2055C845/"
   },
-
   "samsung-q80c-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20QE55Q80C&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20QE55Q80C",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20QE55Q80C",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20QE55Q80C",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20QE55Q80C.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20QE55Q80C",
+    "but": "https://www.but.fr/recherche?q=Samsung%20QE55Q80C",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20QE55Q80C",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20QE55Q80C/"
   },
-
   "lg-qned85-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=LG%2055QNED85&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=LG%2055QNED85",
+    "boulanger": "https://www.boulanger.com/recherche/LG%2055QNED85",
+    "darty": "https://www.darty.com/nav/extra/search?text=LG%2055QNED85",
+    "cdiscount": "https://www.cdiscount.com/search/10/LG%2055QNED85.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=LG%2055QNED85",
+    "but": "https://www.but.fr/recherche?q=LG%2055QNED85",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=LG%2055QNED85",
+    "ubaldi": "https://www.ubaldi.com/recherche/LG%2055QNED85/"
   },
-
   "panasonic-mx800-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Panasonic%20TX55MX800&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Panasonic%20TX55MX800",
+    "boulanger": "https://www.boulanger.com/recherche/Panasonic%20TX55MX800",
+    "darty": "https://www.darty.com/nav/extra/search?text=Panasonic%20TX55MX800",
+    "cdiscount": "https://www.cdiscount.com/search/10/Panasonic%20TX55MX800.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Panasonic%20TX55MX800",
+    "but": "https://www.but.fr/recherche?q=Panasonic%20TX55MX800",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Panasonic%20TX55MX800",
+    "ubaldi": "https://www.ubaldi.com/recherche/Panasonic%20TX55MX800/"
   },
-
   "philips-oled707-48": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%2048OLED707&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%2048OLED707",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%2048OLED707",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%2048OLED707",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%2048OLED707.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%2048OLED707",
+    "but": "https://www.but.fr/recherche?q=Philips%2048OLED707",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%2048OLED707",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%2048OLED707/"
   },
-
   "samsung-qn85c-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20QE55QN85C&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20QE55QN85C",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20QE55QN85C",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20QE55QN85C",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20QE55QN85C.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20QE55QN85C",
+    "but": "https://www.but.fr/recherche?q=Samsung%20QE55QN85C",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20QE55QN85C",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20QE55QN85C/"
   },
-
   "tcl-c935-65": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=TCL%2065C935&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=TCL%2065C935",
+    "boulanger": "https://www.boulanger.com/recherche/TCL%2065C935",
+    "darty": "https://www.darty.com/nav/extra/search?text=TCL%2065C935",
+    "cdiscount": "https://www.cdiscount.com/search/10/TCL%2065C935.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=TCL%2065C935",
+    "but": "https://www.but.fr/recherche?q=TCL%2065C935",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=TCL%2065C935",
+    "ubaldi": "https://www.ubaldi.com/recherche/TCL%2065C935/"
   },
-
   "philips-pus8518-65": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%2065PUS8518&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%2065PUS8518",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%2065PUS8518",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%2065PUS8518",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%2065PUS8518.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%2065PUS8518",
+    "but": "https://www.but.fr/recherche?q=Philips%2065PUS8518",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%2065PUS8518",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%2065PUS8518/"
   },
-
   "lg-oled-c4-55": {
-    "amazon":      { "asin": "B0CX4PBNYB", "url": "https://www.amazon.fr/dp/B0CX4PBNYB" },
-    "fnac":        "https://www.fnac.com/a19046200/TV-OLED-LG-OLED55C4",
-    "boulanger":   "https://www.boulanger.com/ref/1243521",
-    "darty":       "https://www.darty.com/nav/extra/search?text=LG+OLED55C4",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=LG%20OLED55C4&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=LG%20OLED55C4",
+    "boulanger": "https://www.boulanger.com/recherche/LG%20OLED55C4",
+    "darty": "https://www.darty.com/nav/extra/search?text=LG%20OLED55C4",
+    "cdiscount": "https://www.cdiscount.com/search/10/LG%20OLED55C4.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=LG%20OLED55C4",
+    "but": "https://www.but.fr/recherche?q=LG%20OLED55C4",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=LG%20OLED55C4",
+    "ubaldi": "https://www.ubaldi.com/recherche/LG%20OLED55C4/"
   },
-
   "sony-a80l-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Sony%20XR55A80L&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Sony%20XR55A80L",
+    "boulanger": "https://www.boulanger.com/recherche/Sony%20XR55A80L",
+    "darty": "https://www.darty.com/nav/extra/search?text=Sony%20XR55A80L",
+    "cdiscount": "https://www.cdiscount.com/search/10/Sony%20XR55A80L.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Sony%20XR55A80L",
+    "but": "https://www.but.fr/recherche?q=Sony%20XR55A80L",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Sony%20XR55A80L",
+    "ubaldi": "https://www.ubaldi.com/recherche/Sony%20XR55A80L/"
   },
-
   "samsung-qn85c-65": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20QE65QN85C&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20QE65QN85C",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20QE65QN85C",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20QE65QN85C",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20QE65QN85C.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20QE65QN85C",
+    "but": "https://www.but.fr/recherche?q=Samsung%20QE65QN85C",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20QE65QN85C",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20QE65QN85C/"
   },
-
   "lg-oled-c4-65": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=LG%20OLED65C4&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=LG%20OLED65C4",
+    "boulanger": "https://www.boulanger.com/recherche/LG%20OLED65C4",
+    "darty": "https://www.darty.com/nav/extra/search?text=LG%20OLED65C4",
+    "cdiscount": "https://www.cdiscount.com/search/10/LG%20OLED65C4.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=LG%20OLED65C4",
+    "but": "https://www.but.fr/recherche?q=LG%20OLED65C4",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=LG%20OLED65C4",
+    "ubaldi": "https://www.ubaldi.com/recherche/LG%20OLED65C4/"
   },
-
   "panasonic-mz1500-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Panasonic%20TX55MZ1500&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Panasonic%20TX55MZ1500",
+    "boulanger": "https://www.boulanger.com/recherche/Panasonic%20TX55MZ1500",
+    "darty": "https://www.darty.com/nav/extra/search?text=Panasonic%20TX55MZ1500",
+    "cdiscount": "https://www.cdiscount.com/search/10/Panasonic%20TX55MZ1500.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Panasonic%20TX55MZ1500",
+    "but": "https://www.but.fr/recherche?q=Panasonic%20TX55MZ1500",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Panasonic%20TX55MZ1500",
+    "ubaldi": "https://www.ubaldi.com/recherche/Panasonic%20TX55MZ1500/"
   },
-
   "philips-oled908-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%2055OLED908&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%2055OLED908",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%2055OLED908",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%2055OLED908",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%2055OLED908.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%2055OLED908",
+    "but": "https://www.but.fr/recherche?q=Philips%2055OLED908",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%2055OLED908",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%2055OLED908/"
   },
-
   "sony-a80l-65": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Sony%20XR65A80L&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Sony%20XR65A80L",
+    "boulanger": "https://www.boulanger.com/recherche/Sony%20XR65A80L",
+    "darty": "https://www.darty.com/nav/extra/search?text=Sony%20XR65A80L",
+    "cdiscount": "https://www.cdiscount.com/search/10/Sony%20XR65A80L.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Sony%20XR65A80L",
+    "but": "https://www.but.fr/recherche?q=Sony%20XR65A80L",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Sony%20XR65A80L",
+    "ubaldi": "https://www.ubaldi.com/recherche/Sony%20XR65A80L/"
   },
-
   "hisense-u8nq-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Hisense%2055U8NQ&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Hisense%2055U8NQ",
+    "boulanger": "https://www.boulanger.com/recherche/Hisense%2055U8NQ",
+    "darty": "https://www.darty.com/nav/extra/search?text=Hisense%2055U8NQ",
+    "cdiscount": "https://www.cdiscount.com/search/10/Hisense%2055U8NQ.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Hisense%2055U8NQ",
+    "but": "https://www.but.fr/recherche?q=Hisense%2055U8NQ",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Hisense%2055U8NQ",
+    "ubaldi": "https://www.ubaldi.com/recherche/Hisense%2055U8NQ/"
   },
-
   "samsung-frame-55": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20QE55LS03B%20Frame&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20QE55LS03B%20Frame",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20QE55LS03B%20Frame",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20QE55LS03B%20Frame",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20QE55LS03B%20Frame.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20QE55LS03B%20Frame",
+    "but": "https://www.but.fr/recherche?q=Samsung%20QE55LS03B%20Frame",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20QE55LS03B%20Frame",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20QE55LS03B%20Frame/"
   },
-
   "tcl-qm891g-65": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=TCL%2065QM891G&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=TCL%2065QM891G",
+    "boulanger": "https://www.boulanger.com/recherche/TCL%2065QM891G",
+    "darty": "https://www.darty.com/nav/extra/search?text=TCL%2065QM891G",
+    "cdiscount": "https://www.cdiscount.com/search/10/TCL%2065QM891G.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=TCL%2065QM891G",
+    "but": "https://www.but.fr/recherche?q=TCL%2065QM891G",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=TCL%2065QM891G",
+    "ubaldi": "https://www.ubaldi.com/recherche/TCL%2065QM891G/"
   },
-
   "lg-oled-c4-77": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=LG%20OLED77C4&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=LG%20OLED77C4",
+    "boulanger": "https://www.boulanger.com/recherche/LG%20OLED77C4",
+    "darty": "https://www.darty.com/nav/extra/search?text=LG%20OLED77C4",
+    "cdiscount": "https://www.cdiscount.com/search/10/LG%20OLED77C4.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=LG%20OLED77C4",
+    "but": "https://www.but.fr/recherche?q=LG%20OLED77C4",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=LG%20OLED77C4",
+    "ubaldi": "https://www.ubaldi.com/recherche/LG%20OLED77C4/"
   },
-
   "sony-a95l-65": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Sony%20XR65A95L&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Sony%20XR65A95L",
+    "boulanger": "https://www.boulanger.com/recherche/Sony%20XR65A95L",
+    "darty": "https://www.darty.com/nav/extra/search?text=Sony%20XR65A95L",
+    "cdiscount": "https://www.cdiscount.com/search/10/Sony%20XR65A95L.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Sony%20XR65A95L",
+    "but": "https://www.but.fr/recherche?q=Sony%20XR65A95L",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Sony%20XR65A95L",
+    "ubaldi": "https://www.ubaldi.com/recherche/Sony%20XR65A95L/"
   },
-
   "samsung-qn900c-65": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20QE65QN900C&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20QE65QN900C",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20QE65QN900C",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20QE65QN900C",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20QE65QN900C.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20QE65QN900C",
+    "but": "https://www.but.fr/recherche?q=Samsung%20QE65QN900C",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20QE65QN900C",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20QE65QN900C/"
   },
-
   "philips-oled1008-65": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%2065OLED1008&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%2065OLED1008",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%2065OLED1008",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%2065OLED1008",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%2065OLED1008.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%2065OLED1008",
+    "but": "https://www.but.fr/recherche?q=Philips%2065OLED1008",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%2065OLED1008",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%2065OLED1008/"
   },
-
   "lg-oled-c4-83": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=LG%20OLED83C4&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=LG%20OLED83C4",
+    "boulanger": "https://www.boulanger.com/recherche/LG%20OLED83C4",
+    "darty": "https://www.darty.com/nav/extra/search?text=LG%20OLED83C4",
+    "cdiscount": "https://www.cdiscount.com/search/10/LG%20OLED83C4.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=LG%20OLED83C4",
+    "but": "https://www.but.fr/recherche?q=LG%20OLED83C4",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=LG%20OLED83C4",
+    "ubaldi": "https://www.ubaldi.com/recherche/LG%20OLED83C4/"
   },
-
   "samsung-qn900c-77": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20QE77QN900C&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20QE77QN900C",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20QE77QN900C",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20QE77QN900C",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20QE77QN900C.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20QE77QN900C",
+    "but": "https://www.but.fr/recherche?q=Samsung%20QE77QN900C",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20QE77QN900C",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20QE77QN900C/"
   },
-
   "beko-wtc8521xw": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Beko%20WTC8521XW&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Beko%20WTC8521XW",
+    "boulanger": "https://www.boulanger.com/recherche/Beko%20WTC8521XW",
+    "darty": "https://www.darty.com/nav/extra/search?text=Beko%20WTC8521XW",
+    "cdiscount": "https://www.cdiscount.com/search/10/Beko%20WTC8521XW.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Beko%20WTC8521XW",
+    "but": "https://www.but.fr/recherche?q=Beko%20WTC8521XW",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Beko%20WTC8521XW",
+    "ubaldi": "https://www.ubaldi.com/recherche/Beko%20WTC8521XW/"
   },
-
   "hotpoint-nm11946wsafr": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Hotpoint%20NM11946WSAFR&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Hotpoint%20NM11946WSAFR",
+    "boulanger": "https://www.boulanger.com/recherche/Hotpoint%20NM11946WSAFR",
+    "darty": "https://www.darty.com/nav/extra/search?text=Hotpoint%20NM11946WSAFR",
+    "cdiscount": "https://www.cdiscount.com/search/10/Hotpoint%20NM11946WSAFR.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Hotpoint%20NM11946WSAFR",
+    "but": "https://www.but.fr/recherche?q=Hotpoint%20NM11946WSAFR",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Hotpoint%20NM11946WSAFR",
+    "ubaldi": "https://www.ubaldi.com/recherche/Hotpoint%20NM11946WSAFR/"
   },
-
   "aeg-l7fec41s": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=AEG%20L7FEC41S&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=AEG%20L7FEC41S",
+    "boulanger": "https://www.boulanger.com/recherche/AEG%20L7FEC41S",
+    "darty": "https://www.darty.com/nav/extra/search?text=AEG%20L7FEC41S",
+    "cdiscount": "https://www.cdiscount.com/search/10/AEG%20L7FEC41S.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=AEG%20L7FEC41S",
+    "but": "https://www.but.fr/recherche?q=AEG%20L7FEC41S",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=AEG%20L7FEC41S",
+    "ubaldi": "https://www.ubaldi.com/recherche/AEG%20L7FEC41S/"
   },
-
   "haier-hw90-b14939s8u1": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Haier%20HW90-B14939S8U1&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Haier%20HW90-B14939S8U1",
+    "boulanger": "https://www.boulanger.com/recherche/Haier%20HW90-B14939S8U1",
+    "darty": "https://www.darty.com/nav/extra/search?text=Haier%20HW90-B14939S8U1",
+    "cdiscount": "https://www.cdiscount.com/search/10/Haier%20HW90-B14939S8U1.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Haier%20HW90-B14939S8U1",
+    "but": "https://www.but.fr/recherche?q=Haier%20HW90-B14939S8U1",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Haier%20HW90-B14939S8U1",
+    "ubaldi": "https://www.ubaldi.com/recherche/Haier%20HW90-B14939S8U1/"
   },
-
   "electrolux-ew7f348sc": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Electrolux%20EW7F348SC&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Electrolux%20EW7F348SC",
+    "boulanger": "https://www.boulanger.com/recherche/Electrolux%20EW7F348SC",
+    "darty": "https://www.darty.com/nav/extra/search?text=Electrolux%20EW7F348SC",
+    "cdiscount": "https://www.cdiscount.com/search/10/Electrolux%20EW7F348SC.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Electrolux%20EW7F348SC",
+    "but": "https://www.but.fr/recherche?q=Electrolux%20EW7F348SC",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Electrolux%20EW7F348SC",
+    "ubaldi": "https://www.ubaldi.com/recherche/Electrolux%20EW7F348SC/"
   },
-
   "samsung-ww90t534daw": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20WW90T534DAW&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20WW90T534DAW",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20WW90T534DAW",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20WW90T534DAW",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20WW90T534DAW.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20WW90T534DAW",
+    "but": "https://www.but.fr/recherche?q=Samsung%20WW90T534DAW",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20WW90T534DAW",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20WW90T534DAW/"
   },
-
   "lg-f4wv709s1e": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=LG%20F4WV709S1E&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=LG%20F4WV709S1E",
+    "boulanger": "https://www.boulanger.com/recherche/LG%20F4WV709S1E",
+    "darty": "https://www.darty.com/nav/extra/search?text=LG%20F4WV709S1E",
+    "cdiscount": "https://www.cdiscount.com/search/10/LG%20F4WV709S1E.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=LG%20F4WV709S1E",
+    "but": "https://www.but.fr/recherche?q=LG%20F4WV709S1E",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=LG%20F4WV709S1E",
+    "ubaldi": "https://www.ubaldi.com/recherche/LG%20F4WV709S1E/"
   },
-
   "whirlpool-w8i49wbfr": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Whirlpool%20W8I49WBFR&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Whirlpool%20W8I49WBFR",
+    "boulanger": "https://www.boulanger.com/recherche/Whirlpool%20W8I49WBFR",
+    "darty": "https://www.darty.com/nav/extra/search?text=Whirlpool%20W8I49WBFR",
+    "cdiscount": "https://www.cdiscount.com/search/10/Whirlpool%20W8I49WBFR.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Whirlpool%20W8I49WBFR",
+    "but": "https://www.but.fr/recherche?q=Whirlpool%20W8I49WBFR",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Whirlpool%20W8I49WBFR",
+    "ubaldi": "https://www.ubaldi.com/recherche/Whirlpool%20W8I49WBFR/"
   },
-
   "bosch-wav28g43ff": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Bosch%20WAV28G43FF&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Bosch%20WAV28G43FF",
+    "boulanger": "https://www.boulanger.com/recherche/Bosch%20WAV28G43FF",
+    "darty": "https://www.darty.com/nav/extra/search?text=Bosch%20WAV28G43FF",
+    "cdiscount": "https://www.cdiscount.com/search/10/Bosch%20WAV28G43FF.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Bosch%20WAV28G43FF",
+    "but": "https://www.but.fr/recherche?q=Bosch%20WAV28G43FF",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Bosch%20WAV28G43FF",
+    "ubaldi": "https://www.ubaldi.com/recherche/Bosch%20WAV28G43FF/"
   },
-
   "lg-f4dv709h2t": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=LG%20F4DV709H2T&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=LG%20F4DV709H2T",
+    "boulanger": "https://www.boulanger.com/recherche/LG%20F4DV709H2T",
+    "darty": "https://www.darty.com/nav/extra/search?text=LG%20F4DV709H2T",
+    "cdiscount": "https://www.cdiscount.com/search/10/LG%20F4DV709H2T.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=LG%20F4DV709H2T",
+    "but": "https://www.but.fr/recherche?q=LG%20F4DV709H2T",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=LG%20F4DV709H2T",
+    "ubaldi": "https://www.ubaldi.com/recherche/LG%20F4DV709H2T/"
   },
-
   "samsung-wd90t654dbh": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20WD90T654DBH&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20WD90T654DBH",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20WD90T654DBH",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20WD90T654DBH",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20WD90T654DBH.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20WD90T654DBH",
+    "but": "https://www.but.fr/recherche?q=Samsung%20WD90T654DBH",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20WD90T654DBH",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20WD90T654DBH/"
   },
-
   "bosch-wna14490ff": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Bosch%20WNA14490FF&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Bosch%20WNA14490FF",
+    "boulanger": "https://www.boulanger.com/recherche/Bosch%20WNA14490FF",
+    "darty": "https://www.darty.com/nav/extra/search?text=Bosch%20WNA14490FF",
+    "cdiscount": "https://www.cdiscount.com/search/10/Bosch%20WNA14490FF.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Bosch%20WNA14490FF",
+    "but": "https://www.but.fr/recherche?q=Bosch%20WNA14490FF",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Bosch%20WNA14490FF",
+    "ubaldi": "https://www.ubaldi.com/recherche/Bosch%20WNA14490FF/"
   },
-
   "aeg-l9wba61bc": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=AEG%20L9WBA61BC&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=AEG%20L9WBA61BC",
+    "boulanger": "https://www.boulanger.com/recherche/AEG%20L9WBA61BC",
+    "darty": "https://www.darty.com/nav/extra/search?text=AEG%20L9WBA61BC",
+    "cdiscount": "https://www.cdiscount.com/search/10/AEG%20L9WBA61BC.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=AEG%20L9WBA61BC",
+    "but": "https://www.but.fr/recherche?q=AEG%20L9WBA61BC",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=AEG%20L9WBA61BC",
+    "ubaldi": "https://www.ubaldi.com/recherche/AEG%20L9WBA61BC/"
   },
-
   "miele-wci870-wps": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Miele%20WCI870%20WPS&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Miele%20WCI870%20WPS",
+    "boulanger": "https://www.boulanger.com/recherche/Miele%20WCI870%20WPS",
+    "darty": "https://www.darty.com/nav/extra/search?text=Miele%20WCI870%20WPS",
+    "cdiscount": "https://www.cdiscount.com/search/10/Miele%20WCI870%20WPS.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Miele%20WCI870%20WPS",
+    "but": "https://www.but.fr/recherche?q=Miele%20WCI870%20WPS",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Miele%20WCI870%20WPS",
+    "ubaldi": "https://www.ubaldi.com/recherche/Miele%20WCI870%20WPS/"
   },
-
   "miele-wt1-wci860": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Miele%20WT1%20WCI860&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Miele%20WT1%20WCI860",
+    "boulanger": "https://www.boulanger.com/recherche/Miele%20WT1%20WCI860",
+    "darty": "https://www.darty.com/nav/extra/search?text=Miele%20WT1%20WCI860",
+    "cdiscount": "https://www.cdiscount.com/search/10/Miele%20WT1%20WCI860.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Miele%20WT1%20WCI860",
+    "but": "https://www.but.fr/recherche?q=Miele%20WT1%20WCI860",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Miele%20WT1%20WCI860",
+    "ubaldi": "https://www.ubaldi.com/recherche/Miele%20WT1%20WCI860/"
   },
-
   "candy-cs1c7lfw": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Candy%20CS1C7LFW&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Candy%20CS1C7LFW",
+    "boulanger": "https://www.boulanger.com/recherche/Candy%20CS1C7LFW",
+    "darty": "https://www.darty.com/nav/extra/search?text=Candy%20CS1C7LFW",
+    "cdiscount": "https://www.cdiscount.com/search/10/Candy%20CS1C7LFW.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Candy%20CS1C7LFW",
+    "but": "https://www.but.fr/recherche?q=Candy%20CS1C7LFW",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Candy%20CS1C7LFW",
+    "ubaldi": "https://www.ubaldi.com/recherche/Candy%20CS1C7LFW/"
   },
-
   "beko-dvn04321w": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Beko%20DVN04321W&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Beko%20DVN04321W",
+    "boulanger": "https://www.boulanger.com/recherche/Beko%20DVN04321W",
+    "darty": "https://www.darty.com/nav/extra/search?text=Beko%20DVN04321W",
+    "cdiscount": "https://www.cdiscount.com/search/10/Beko%20DVN04321W.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Beko%20DVN04321W",
+    "but": "https://www.but.fr/recherche?q=Beko%20DVN04321W",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Beko%20DVN04321W",
+    "ubaldi": "https://www.ubaldi.com/recherche/Beko%20DVN04321W/"
   },
-
   "samsung-dw60a3010bb": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20DW60A3010BB&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20DW60A3010BB",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20DW60A3010BB",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20DW60A3010BB",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20DW60A3010BB.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20DW60A3010BB",
+    "but": "https://www.but.fr/recherche?q=Samsung%20DW60A3010BB",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20DW60A3010BB",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20DW60A3010BB/"
   },
-
   "bosch-serie2-sms2iti14e": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Bosch%20SMS2ITI14E&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Bosch%20SMS2ITI14E",
+    "boulanger": "https://www.boulanger.com/recherche/Bosch%20SMS2ITI14E",
+    "darty": "https://www.darty.com/nav/extra/search?text=Bosch%20SMS2ITI14E",
+    "cdiscount": "https://www.cdiscount.com/search/10/Bosch%20SMS2ITI14E.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Bosch%20SMS2ITI14E",
+    "but": "https://www.but.fr/recherche?q=Bosch%20SMS2ITI14E",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Bosch%20SMS2ITI14E",
+    "ubaldi": "https://www.ubaldi.com/recherche/Bosch%20SMS2ITI14E/"
   },
-
   "whirlpool-wfo3t123p": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Whirlpool%20WFO3T123P&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Whirlpool%20WFO3T123P",
+    "boulanger": "https://www.boulanger.com/recherche/Whirlpool%20WFO3T123P",
+    "darty": "https://www.darty.com/nav/extra/search?text=Whirlpool%20WFO3T123P",
+    "cdiscount": "https://www.cdiscount.com/search/10/Whirlpool%20WFO3T123P.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Whirlpool%20WFO3T123P",
+    "but": "https://www.but.fr/recherche?q=Whirlpool%20WFO3T123P",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Whirlpool%20WFO3T123P",
+    "ubaldi": "https://www.ubaldi.com/recherche/Whirlpool%20WFO3T123P/"
   },
-
   "siemens-iq300-sn53es14ce": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Siemens%20SN53ES14CE&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Siemens%20SN53ES14CE",
+    "boulanger": "https://www.boulanger.com/recherche/Siemens%20SN53ES14CE",
+    "darty": "https://www.darty.com/nav/extra/search?text=Siemens%20SN53ES14CE",
+    "cdiscount": "https://www.cdiscount.com/search/10/Siemens%20SN53ES14CE.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Siemens%20SN53ES14CE",
+    "but": "https://www.but.fr/recherche?q=Siemens%20SN53ES14CE",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Siemens%20SN53ES14CE",
+    "ubaldi": "https://www.ubaldi.com/recherche/Siemens%20SN53ES14CE/"
   },
-
   "aeg-fse72707p": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=AEG%20FSE72707P&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=AEG%20FSE72707P",
+    "boulanger": "https://www.boulanger.com/recherche/AEG%20FSE72707P",
+    "darty": "https://www.darty.com/nav/extra/search?text=AEG%20FSE72707P",
+    "cdiscount": "https://www.cdiscount.com/search/10/AEG%20FSE72707P.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=AEG%20FSE72707P",
+    "but": "https://www.but.fr/recherche?q=AEG%20FSE72707P",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=AEG%20FSE72707P",
+    "ubaldi": "https://www.ubaldi.com/recherche/AEG%20FSE72707P/"
   },
-
   "electrolux-eem43201l": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Electrolux%20EEM43201L&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Electrolux%20EEM43201L",
+    "boulanger": "https://www.boulanger.com/recherche/Electrolux%20EEM43201L",
+    "darty": "https://www.darty.com/nav/extra/search?text=Electrolux%20EEM43201L",
+    "cdiscount": "https://www.cdiscount.com/search/10/Electrolux%20EEM43201L.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Electrolux%20EEM43201L",
+    "but": "https://www.but.fr/recherche?q=Electrolux%20EEM43201L",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Electrolux%20EEM43201L",
+    "ubaldi": "https://www.ubaldi.com/recherche/Electrolux%20EEM43201L/"
   },
-
   "siemens-iq500-sn65zx49ce": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Siemens%20SN65ZX49CE&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Siemens%20SN65ZX49CE",
+    "boulanger": "https://www.boulanger.com/recherche/Siemens%20SN65ZX49CE",
+    "darty": "https://www.darty.com/nav/extra/search?text=Siemens%20SN65ZX49CE",
+    "cdiscount": "https://www.cdiscount.com/search/10/Siemens%20SN65ZX49CE.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Siemens%20SN65ZX49CE",
+    "but": "https://www.but.fr/recherche?q=Siemens%20SN65ZX49CE",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Siemens%20SN65ZX49CE",
+    "ubaldi": "https://www.ubaldi.com/recherche/Siemens%20SN65ZX49CE/"
   },
-
   "bosch-serie8-smv8ycx03e": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Bosch%20SMV8YCX03E&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Bosch%20SMV8YCX03E",
+    "boulanger": "https://www.boulanger.com/recherche/Bosch%20SMV8YCX03E",
+    "darty": "https://www.darty.com/nav/extra/search?text=Bosch%20SMV8YCX03E",
+    "cdiscount": "https://www.cdiscount.com/search/10/Bosch%20SMV8YCX03E.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Bosch%20SMV8YCX03E",
+    "but": "https://www.but.fr/recherche?q=Bosch%20SMV8YCX03E",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Bosch%20SMV8YCX03E",
+    "ubaldi": "https://www.ubaldi.com/recherche/Bosch%20SMV8YCX03E/"
   },
-
   "aeg-fse76738p": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=AEG%20FSE76738P&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=AEG%20FSE76738P",
+    "boulanger": "https://www.boulanger.com/recherche/AEG%20FSE76738P",
+    "darty": "https://www.darty.com/nav/extra/search?text=AEG%20FSE76738P",
+    "cdiscount": "https://www.cdiscount.com/search/10/AEG%20FSE76738P.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=AEG%20FSE76738P",
+    "but": "https://www.but.fr/recherche?q=AEG%20FSE76738P",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=AEG%20FSE76738P",
+    "ubaldi": "https://www.ubaldi.com/recherche/AEG%20FSE76738P/"
   },
-
   "miele-g5222sci": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Miele%20G5222SCi&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Miele%20G5222SCi",
+    "boulanger": "https://www.boulanger.com/recherche/Miele%20G5222SCi",
+    "darty": "https://www.darty.com/nav/extra/search?text=Miele%20G5222SCi",
+    "cdiscount": "https://www.cdiscount.com/search/10/Miele%20G5222SCi.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Miele%20G5222SCi",
+    "but": "https://www.but.fr/recherche?q=Miele%20G5222SCi",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Miele%20G5222SCi",
+    "ubaldi": "https://www.ubaldi.com/recherche/Miele%20G5222SCi/"
   },
-
   "miele-g7310sc": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Miele%20G7310SC&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Miele%20G7310SC",
+    "boulanger": "https://www.boulanger.com/recherche/Miele%20G7310SC",
+    "darty": "https://www.darty.com/nav/extra/search?text=Miele%20G7310SC",
+    "cdiscount": "https://www.cdiscount.com/search/10/Miele%20G7310SC.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Miele%20G7310SC",
+    "but": "https://www.but.fr/recherche?q=Miele%20G7310SC",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Miele%20G7310SC",
+    "ubaldi": "https://www.ubaldi.com/recherche/Miele%20G7310SC/"
   },
-
   "miele-g7775scvi": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Miele%20G7775SCVi&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Miele%20G7775SCVi",
+    "boulanger": "https://www.boulanger.com/recherche/Miele%20G7775SCVi",
+    "darty": "https://www.darty.com/nav/extra/search?text=Miele%20G7775SCVi",
+    "cdiscount": "https://www.cdiscount.com/search/10/Miele%20G7775SCVi.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Miele%20G7775SCVi",
+    "but": "https://www.but.fr/recherche?q=Miele%20G7775SCVi",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Miele%20G7775SCVi",
+    "ubaldi": "https://www.ubaldi.com/recherche/Miele%20G7775SCVi/"
   },
-
   "vzug-adoradish-v6000": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=V-ZUG%20AdoraDish%20V6000&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=V-ZUG%20AdoraDish%20V6000",
+    "boulanger": "https://www.boulanger.com/recherche/V-ZUG%20AdoraDish%20V6000",
+    "darty": "https://www.darty.com/nav/extra/search?text=V-ZUG%20AdoraDish%20V6000",
+    "cdiscount": "https://www.cdiscount.com/search/10/V-ZUG%20AdoraDish%20V6000.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=V-ZUG%20AdoraDish%20V6000",
+    "but": "https://www.but.fr/recherche?q=V-ZUG%20AdoraDish%20V6000",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=V-ZUG%20AdoraDish%20V6000",
+    "ubaldi": "https://www.ubaldi.com/recherche/V-ZUG%20AdoraDish%20V6000/"
   },
-
   "nespresso-vertuo-pop": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Nespresso%20Vertuo%20Pop&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Nespresso%20Vertuo%20Pop",
+    "boulanger": "https://www.boulanger.com/recherche/Nespresso%20Vertuo%20Pop",
+    "darty": "https://www.darty.com/nav/extra/search?text=Nespresso%20Vertuo%20Pop",
+    "cdiscount": "https://www.cdiscount.com/search/10/Nespresso%20Vertuo%20Pop.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Nespresso%20Vertuo%20Pop",
+    "but": "https://www.but.fr/recherche?q=Nespresso%20Vertuo%20Pop",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Nespresso%20Vertuo%20Pop",
+    "ubaldi": "https://www.ubaldi.com/recherche/Nespresso%20Vertuo%20Pop/"
   },
-
   "philips-ep1224": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%20EP1224&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%20EP1224",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%20EP1224",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%20EP1224",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%20EP1224.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%20EP1224",
+    "but": "https://www.but.fr/recherche?q=Philips%20EP1224",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%20EP1224",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%20EP1224/"
   },
-
   "delonghi-magnifica-evo-ecam29061": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=DeLonghi%20ECAM290.61&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=DeLonghi%20ECAM290.61",
+    "boulanger": "https://www.boulanger.com/recherche/DeLonghi%20ECAM290.61",
+    "darty": "https://www.darty.com/nav/extra/search?text=DeLonghi%20ECAM290.61",
+    "cdiscount": "https://www.cdiscount.com/search/10/DeLonghi%20ECAM290.61.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=DeLonghi%20ECAM290.61",
+    "but": "https://www.but.fr/recherche?q=DeLonghi%20ECAM290.61",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=DeLonghi%20ECAM290.61",
+    "ubaldi": "https://www.ubaldi.com/recherche/DeLonghi%20ECAM290.61/"
   },
-
   "delonghi-magnifica-evo-ecam29281": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=DeLonghi%20ECAM292.81&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=DeLonghi%20ECAM292.81",
+    "boulanger": "https://www.boulanger.com/recherche/DeLonghi%20ECAM292.81",
+    "darty": "https://www.darty.com/nav/extra/search?text=DeLonghi%20ECAM292.81",
+    "cdiscount": "https://www.cdiscount.com/search/10/DeLonghi%20ECAM292.81.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=DeLonghi%20ECAM292.81",
+    "but": "https://www.but.fr/recherche?q=DeLonghi%20ECAM292.81",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=DeLonghi%20ECAM292.81",
+    "ubaldi": "https://www.ubaldi.com/recherche/DeLonghi%20ECAM292.81/"
   },
-
   "philips-ep3327": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%20EP3327&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%20EP3327",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%20EP3327",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%20EP3327",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%20EP3327.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%20EP3327",
+    "but": "https://www.but.fr/recherche?q=Philips%20EP3327",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%20EP3327",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%20EP3327/"
   },
-
   "siemens-eq500-tp503r04": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Siemens%20EQ500%20TP503R04&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Siemens%20EQ500%20TP503R04",
+    "boulanger": "https://www.boulanger.com/recherche/Siemens%20EQ500%20TP503R04",
+    "darty": "https://www.darty.com/nav/extra/search?text=Siemens%20EQ500%20TP503R04",
+    "cdiscount": "https://www.cdiscount.com/search/10/Siemens%20EQ500%20TP503R04.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Siemens%20EQ500%20TP503R04",
+    "but": "https://www.but.fr/recherche?q=Siemens%20EQ500%20TP503R04",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Siemens%20EQ500%20TP503R04",
+    "ubaldi": "https://www.ubaldi.com/recherche/Siemens%20EQ500%20TP503R04/"
   },
-
   "nespresso-vertuo-creatista": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Nespresso%20Vertuo%20Creatista&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Nespresso%20Vertuo%20Creatista",
+    "boulanger": "https://www.boulanger.com/recherche/Nespresso%20Vertuo%20Creatista",
+    "darty": "https://www.darty.com/nav/extra/search?text=Nespresso%20Vertuo%20Creatista",
+    "cdiscount": "https://www.cdiscount.com/search/10/Nespresso%20Vertuo%20Creatista.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Nespresso%20Vertuo%20Creatista",
+    "but": "https://www.but.fr/recherche?q=Nespresso%20Vertuo%20Creatista",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Nespresso%20Vertuo%20Creatista",
+    "ubaldi": "https://www.ubaldi.com/recherche/Nespresso%20Vertuo%20Creatista/"
   },
-
   "jura-e6": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Jura%20E6&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Jura%20E6",
+    "boulanger": "https://www.boulanger.com/recherche/Jura%20E6",
+    "darty": "https://www.darty.com/nav/extra/search?text=Jura%20E6",
+    "cdiscount": "https://www.cdiscount.com/search/10/Jura%20E6.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Jura%20E6",
+    "but": "https://www.but.fr/recherche?q=Jura%20E6",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Jura%20E6",
+    "ubaldi": "https://www.ubaldi.com/recherche/Jura%20E6/"
   },
-
   "delonghi-eletta-explore-ecam450": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=DeLonghi%20ECAM450&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=DeLonghi%20ECAM450",
+    "boulanger": "https://www.boulanger.com/recherche/DeLonghi%20ECAM450",
+    "darty": "https://www.darty.com/nav/extra/search?text=DeLonghi%20ECAM450",
+    "cdiscount": "https://www.cdiscount.com/search/10/DeLonghi%20ECAM450.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=DeLonghi%20ECAM450",
+    "but": "https://www.but.fr/recherche?q=DeLonghi%20ECAM450",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=DeLonghi%20ECAM450",
+    "ubaldi": "https://www.ubaldi.com/recherche/DeLonghi%20ECAM450/"
   },
-
   "jura-s8": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Jura%20S8&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Jura%20S8",
+    "boulanger": "https://www.boulanger.com/recherche/Jura%20S8",
+    "darty": "https://www.darty.com/nav/extra/search?text=Jura%20S8",
+    "cdiscount": "https://www.cdiscount.com/search/10/Jura%20S8.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Jura%20S8",
+    "but": "https://www.but.fr/recherche?q=Jura%20S8",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Jura%20S8",
+    "ubaldi": "https://www.ubaldi.com/recherche/Jura%20S8/"
   },
-
   "siemens-eq9-ti923309rw": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Siemens%20EQ9%20TI923309RW&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Siemens%20EQ9%20TI923309RW",
+    "boulanger": "https://www.boulanger.com/recherche/Siemens%20EQ9%20TI923309RW",
+    "darty": "https://www.darty.com/nav/extra/search?text=Siemens%20EQ9%20TI923309RW",
+    "cdiscount": "https://www.cdiscount.com/search/10/Siemens%20EQ9%20TI923309RW.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Siemens%20EQ9%20TI923309RW",
+    "but": "https://www.but.fr/recherche?q=Siemens%20EQ9%20TI923309RW",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Siemens%20EQ9%20TI923309RW",
+    "ubaldi": "https://www.ubaldi.com/recherche/Siemens%20EQ9%20TI923309RW/"
   },
-
   "bosch-verobarista300-ctl636eb6": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Bosch%20CTL636EB6&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Bosch%20CTL636EB6",
+    "boulanger": "https://www.boulanger.com/recherche/Bosch%20CTL636EB6",
+    "darty": "https://www.darty.com/nav/extra/search?text=Bosch%20CTL636EB6",
+    "cdiscount": "https://www.cdiscount.com/search/10/Bosch%20CTL636EB6.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Bosch%20CTL636EB6",
+    "but": "https://www.but.fr/recherche?q=Bosch%20CTL636EB6",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Bosch%20CTL636EB6",
+    "ubaldi": "https://www.ubaldi.com/recherche/Bosch%20CTL636EB6/"
   },
-
   "miele-cm7550": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Miele%20CM7550&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Miele%20CM7550",
+    "boulanger": "https://www.boulanger.com/recherche/Miele%20CM7550",
+    "darty": "https://www.darty.com/nav/extra/search?text=Miele%20CM7550",
+    "cdiscount": "https://www.cdiscount.com/search/10/Miele%20CM7550.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Miele%20CM7550",
+    "but": "https://www.but.fr/recherche?q=Miele%20CM7550",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Miele%20CM7550",
+    "ubaldi": "https://www.ubaldi.com/recherche/Miele%20CM7550/"
   },
-
   "jura-giga10": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Jura%20GIGA%2010&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Jura%20GIGA%2010",
+    "boulanger": "https://www.boulanger.com/recherche/Jura%20GIGA%2010",
+    "darty": "https://www.darty.com/nav/extra/search?text=Jura%20GIGA%2010",
+    "cdiscount": "https://www.cdiscount.com/search/10/Jura%20GIGA%2010.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Jura%20GIGA%2010",
+    "but": "https://www.but.fr/recherche?q=Jura%20GIGA%2010",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Jura%20GIGA%2010",
+    "ubaldi": "https://www.ubaldi.com/recherche/Jura%20GIGA%2010/"
   },
-
   "rowenta-xforce-860-flex": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Rowenta%20X-Force%208.60%20Flex&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Rowenta%20X-Force%208.60%20Flex",
+    "boulanger": "https://www.boulanger.com/recherche/Rowenta%20X-Force%208.60%20Flex",
+    "darty": "https://www.darty.com/nav/extra/search?text=Rowenta%20X-Force%208.60%20Flex",
+    "cdiscount": "https://www.cdiscount.com/search/10/Rowenta%20X-Force%208.60%20Flex.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Rowenta%20X-Force%208.60%20Flex",
+    "but": "https://www.but.fr/recherche?q=Rowenta%20X-Force%208.60%20Flex",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Rowenta%20X-Force%208.60%20Flex",
+    "ubaldi": "https://www.ubaldi.com/recherche/Rowenta%20X-Force%208.60%20Flex/"
   },
-
   "samsung-jet-75e": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Samsung%20Jet%2075E&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Samsung%20Jet%2075E",
+    "boulanger": "https://www.boulanger.com/recherche/Samsung%20Jet%2075E",
+    "darty": "https://www.darty.com/nav/extra/search?text=Samsung%20Jet%2075E",
+    "cdiscount": "https://www.cdiscount.com/search/10/Samsung%20Jet%2075E.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Samsung%20Jet%2075E",
+    "but": "https://www.but.fr/recherche?q=Samsung%20Jet%2075E",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Samsung%20Jet%2075E",
+    "ubaldi": "https://www.ubaldi.com/recherche/Samsung%20Jet%2075E/"
   },
-
   "dyson-v8-origin": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Dyson%20V8%20Origin&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Dyson%20V8%20Origin",
+    "boulanger": "https://www.boulanger.com/recherche/Dyson%20V8%20Origin",
+    "darty": "https://www.darty.com/nav/extra/search?text=Dyson%20V8%20Origin",
+    "cdiscount": "https://www.cdiscount.com/search/10/Dyson%20V8%20Origin.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Dyson%20V8%20Origin",
+    "but": "https://www.but.fr/recherche?q=Dyson%20V8%20Origin",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Dyson%20V8%20Origin",
+    "ubaldi": "https://www.ubaldi.com/recherche/Dyson%20V8%20Origin/"
   },
-
   "dyson-v11-absolute-extra": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Dyson%20V11%20Absolute%20Extra&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Dyson%20V11%20Absolute%20Extra",
+    "boulanger": "https://www.boulanger.com/recherche/Dyson%20V11%20Absolute%20Extra",
+    "darty": "https://www.darty.com/nav/extra/search?text=Dyson%20V11%20Absolute%20Extra",
+    "cdiscount": "https://www.cdiscount.com/search/10/Dyson%20V11%20Absolute%20Extra.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Dyson%20V11%20Absolute%20Extra",
+    "but": "https://www.but.fr/recherche?q=Dyson%20V11%20Absolute%20Extra",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Dyson%20V11%20Absolute%20Extra",
+    "ubaldi": "https://www.ubaldi.com/recherche/Dyson%20V11%20Absolute%20Extra/"
   },
-
   "dyson-v15-detect-absolute": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Dyson%20V15%20Detect%20Absolute&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Dyson%20V15%20Detect%20Absolute",
+    "boulanger": "https://www.boulanger.com/recherche/Dyson%20V15%20Detect%20Absolute",
+    "darty": "https://www.darty.com/nav/extra/search?text=Dyson%20V15%20Detect%20Absolute",
+    "cdiscount": "https://www.cdiscount.com/search/10/Dyson%20V15%20Detect%20Absolute.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Dyson%20V15%20Detect%20Absolute",
+    "but": "https://www.but.fr/recherche?q=Dyson%20V15%20Detect%20Absolute",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Dyson%20V15%20Detect%20Absolute",
+    "ubaldi": "https://www.ubaldi.com/recherche/Dyson%20V15%20Detect%20Absolute/"
   },
-
   "irobot-roomba-694": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=iRobot%20Roomba%20694&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=iRobot%20Roomba%20694",
+    "boulanger": "https://www.boulanger.com/recherche/iRobot%20Roomba%20694",
+    "darty": "https://www.darty.com/nav/extra/search?text=iRobot%20Roomba%20694",
+    "cdiscount": "https://www.cdiscount.com/search/10/iRobot%20Roomba%20694.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=iRobot%20Roomba%20694",
+    "but": "https://www.but.fr/recherche?q=iRobot%20Roomba%20694",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=iRobot%20Roomba%20694",
+    "ubaldi": "https://www.ubaldi.com/recherche/iRobot%20Roomba%20694/"
   },
-
   "roborock-q5-plus": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Roborock%20Q5%2B&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Roborock%20Q5%2B",
+    "boulanger": "https://www.boulanger.com/recherche/Roborock%20Q5%2B",
+    "darty": "https://www.darty.com/nav/extra/search?text=Roborock%20Q5%2B",
+    "cdiscount": "https://www.cdiscount.com/search/10/Roborock%20Q5%2B.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Roborock%20Q5%2B",
+    "but": "https://www.but.fr/recherche?q=Roborock%20Q5%2B",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Roborock%20Q5%2B",
+    "ubaldi": "https://www.ubaldi.com/recherche/Roborock%20Q5%2B/"
   },
-
   "ecovacs-deebot-n8-pro-plus": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Ecovacs%20Deebot%20N8%20Pro%2B&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Ecovacs%20Deebot%20N8%20Pro%2B",
+    "boulanger": "https://www.boulanger.com/recherche/Ecovacs%20Deebot%20N8%20Pro%2B",
+    "darty": "https://www.darty.com/nav/extra/search?text=Ecovacs%20Deebot%20N8%20Pro%2B",
+    "cdiscount": "https://www.cdiscount.com/search/10/Ecovacs%20Deebot%20N8%20Pro%2B.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Ecovacs%20Deebot%20N8%20Pro%2B",
+    "but": "https://www.but.fr/recherche?q=Ecovacs%20Deebot%20N8%20Pro%2B",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Ecovacs%20Deebot%20N8%20Pro%2B",
+    "ubaldi": "https://www.ubaldi.com/recherche/Ecovacs%20Deebot%20N8%20Pro%2B/"
   },
-
   "roborock-s7-maxv-ultra": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Roborock%20S7%20MaxV%20Ultra&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Roborock%20S7%20MaxV%20Ultra",
+    "boulanger": "https://www.boulanger.com/recherche/Roborock%20S7%20MaxV%20Ultra",
+    "darty": "https://www.darty.com/nav/extra/search?text=Roborock%20S7%20MaxV%20Ultra",
+    "cdiscount": "https://www.cdiscount.com/search/10/Roborock%20S7%20MaxV%20Ultra.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Roborock%20S7%20MaxV%20Ultra",
+    "but": "https://www.but.fr/recherche?q=Roborock%20S7%20MaxV%20Ultra",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Roborock%20S7%20MaxV%20Ultra",
+    "ubaldi": "https://www.ubaldi.com/recherche/Roborock%20S7%20MaxV%20Ultra/"
   },
-
   "ecovacs-deebot-t20-omni": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Ecovacs%20Deebot%20T20%20OMNI&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Ecovacs%20Deebot%20T20%20OMNI",
+    "boulanger": "https://www.boulanger.com/recherche/Ecovacs%20Deebot%20T20%20OMNI",
+    "darty": "https://www.darty.com/nav/extra/search?text=Ecovacs%20Deebot%20T20%20OMNI",
+    "cdiscount": "https://www.cdiscount.com/search/10/Ecovacs%20Deebot%20T20%20OMNI.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Ecovacs%20Deebot%20T20%20OMNI",
+    "but": "https://www.but.fr/recherche?q=Ecovacs%20Deebot%20T20%20OMNI",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Ecovacs%20Deebot%20T20%20OMNI",
+    "ubaldi": "https://www.ubaldi.com/recherche/Ecovacs%20Deebot%20T20%20OMNI/"
   },
-
   "rowenta-silence-force-ro8371": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Rowenta%20Silence%20Force%20RO8371&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Rowenta%20Silence%20Force%20RO8371",
+    "boulanger": "https://www.boulanger.com/recherche/Rowenta%20Silence%20Force%20RO8371",
+    "darty": "https://www.darty.com/nav/extra/search?text=Rowenta%20Silence%20Force%20RO8371",
+    "cdiscount": "https://www.cdiscount.com/search/10/Rowenta%20Silence%20Force%20RO8371.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Rowenta%20Silence%20Force%20RO8371",
+    "but": "https://www.but.fr/recherche?q=Rowenta%20Silence%20Force%20RO8371",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Rowenta%20Silence%20Force%20RO8371",
+    "ubaldi": "https://www.ubaldi.com/recherche/Rowenta%20Silence%20Force%20RO8371/"
   },
-
   "bosch-prosilence-bgs5335a": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Bosch%20ProSilence%20BGS5335A&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Bosch%20ProSilence%20BGS5335A",
+    "boulanger": "https://www.boulanger.com/recherche/Bosch%20ProSilence%20BGS5335A",
+    "darty": "https://www.darty.com/nav/extra/search?text=Bosch%20ProSilence%20BGS5335A",
+    "cdiscount": "https://www.cdiscount.com/search/10/Bosch%20ProSilence%20BGS5335A.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Bosch%20ProSilence%20BGS5335A",
+    "but": "https://www.but.fr/recherche?q=Bosch%20ProSilence%20BGS5335A",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Bosch%20ProSilence%20BGS5335A",
+    "ubaldi": "https://www.ubaldi.com/recherche/Bosch%20ProSilence%20BGS5335A/"
   },
-
   "miele-classic-c1": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Miele%20Classic%20C1&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Miele%20Classic%20C1",
+    "boulanger": "https://www.boulanger.com/recherche/Miele%20Classic%20C1",
+    "darty": "https://www.darty.com/nav/extra/search?text=Miele%20Classic%20C1",
+    "cdiscount": "https://www.cdiscount.com/search/10/Miele%20Classic%20C1.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Miele%20Classic%20C1",
+    "but": "https://www.but.fr/recherche?q=Miele%20Classic%20C1",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Miele%20Classic%20C1",
+    "ubaldi": "https://www.ubaldi.com/recherche/Miele%20Classic%20C1/"
   },
-
   "miele-complete-c3-excellence": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Miele%20Complete%20C3%20Excellence&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Miele%20Complete%20C3%20Excellence",
+    "boulanger": "https://www.boulanger.com/recherche/Miele%20Complete%20C3%20Excellence",
+    "darty": "https://www.darty.com/nav/extra/search?text=Miele%20Complete%20C3%20Excellence",
+    "cdiscount": "https://www.cdiscount.com/search/10/Miele%20Complete%20C3%20Excellence.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Miele%20Complete%20C3%20Excellence",
+    "but": "https://www.but.fr/recherche?q=Miele%20Complete%20C3%20Excellence",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Miele%20Complete%20C3%20Excellence",
+    "ubaldi": "https://www.ubaldi.com/recherche/Miele%20Complete%20C3%20Excellence/"
   },
-
   "tefal-fv2660-ultraglide": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Tefal%20FV2660&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Tefal%20FV2660",
+    "boulanger": "https://www.boulanger.com/recherche/Tefal%20FV2660",
+    "darty": "https://www.darty.com/nav/extra/search?text=Tefal%20FV2660",
+    "cdiscount": "https://www.cdiscount.com/search/10/Tefal%20FV2660.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Tefal%20FV2660",
+    "but": "https://www.but.fr/recherche?q=Tefal%20FV2660",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Tefal%20FV2660",
+    "ubaldi": "https://www.ubaldi.com/recherche/Tefal%20FV2660/"
   },
-
   "philips-dst5030-5000": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%20DST5030&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%20DST5030",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%20DST5030",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%20DST5030",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%20DST5030.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%20DST5030",
+    "but": "https://www.but.fr/recherche?q=Philips%20DST5030",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%20DST5030",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%20DST5030/"
   },
-
   "rowenta-dw6010-focus": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Rowenta%20DW6010&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Rowenta%20DW6010",
+    "boulanger": "https://www.boulanger.com/recherche/Rowenta%20DW6010",
+    "darty": "https://www.darty.com/nav/extra/search?text=Rowenta%20DW6010",
+    "cdiscount": "https://www.cdiscount.com/search/10/Rowenta%20DW6010.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Rowenta%20DW6010",
+    "but": "https://www.but.fr/recherche?q=Rowenta%20DW6010",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Rowenta%20DW6010",
+    "ubaldi": "https://www.ubaldi.com/recherche/Rowenta%20DW6010/"
   },
-
   "calor-fv6550-maestro": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Calor%20FV6550&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Calor%20FV6550",
+    "boulanger": "https://www.boulanger.com/recherche/Calor%20FV6550",
+    "darty": "https://www.darty.com/nav/extra/search?text=Calor%20FV6550",
+    "cdiscount": "https://www.cdiscount.com/search/10/Calor%20FV6550.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Calor%20FV6550",
+    "but": "https://www.but.fr/recherche?q=Calor%20FV6550",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Calor%20FV6550",
+    "ubaldi": "https://www.ubaldi.com/recherche/Calor%20FV6550/"
   },
-
   "rowenta-dw9240-pro-master": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Rowenta%20DW9240&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Rowenta%20DW9240",
+    "boulanger": "https://www.boulanger.com/recherche/Rowenta%20DW9240",
+    "darty": "https://www.darty.com/nav/extra/search?text=Rowenta%20DW9240",
+    "cdiscount": "https://www.cdiscount.com/search/10/Rowenta%20DW9240.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Rowenta%20DW9240",
+    "but": "https://www.but.fr/recherche?q=Rowenta%20DW9240",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Rowenta%20DW9240",
+    "ubaldi": "https://www.ubaldi.com/recherche/Rowenta%20DW9240/"
   },
-
   "braun-texstyle9-ts985": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Braun%20TS985&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Braun%20TS985",
+    "boulanger": "https://www.boulanger.com/recherche/Braun%20TS985",
+    "darty": "https://www.darty.com/nav/extra/search?text=Braun%20TS985",
+    "cdiscount": "https://www.cdiscount.com/search/10/Braun%20TS985.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Braun%20TS985",
+    "but": "https://www.but.fr/recherche?q=Braun%20TS985",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Braun%20TS985",
+    "ubaldi": "https://www.ubaldi.com/recherche/Braun%20TS985/"
   },
-
   "rowenta-dw9640-pro-style": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Rowenta%20DW9640&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Rowenta%20DW9640",
+    "boulanger": "https://www.boulanger.com/recherche/Rowenta%20DW9640",
+    "darty": "https://www.darty.com/nav/extra/search?text=Rowenta%20DW9640",
+    "cdiscount": "https://www.cdiscount.com/search/10/Rowenta%20DW9640.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Rowenta%20DW9640",
+    "but": "https://www.but.fr/recherche?q=Rowenta%20DW9640",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Rowenta%20DW9640",
+    "ubaldi": "https://www.ubaldi.com/recherche/Rowenta%20DW9640/"
   },
-
   "tefal-gv8160-express-easy": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Tefal%20GV8160&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Tefal%20GV8160",
+    "boulanger": "https://www.boulanger.com/recherche/Tefal%20GV8160",
+    "darty": "https://www.darty.com/nav/extra/search?text=Tefal%20GV8160",
+    "cdiscount": "https://www.cdiscount.com/search/10/Tefal%20GV8160.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Tefal%20GV8160",
+    "but": "https://www.but.fr/recherche?q=Tefal%20GV8160",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Tefal%20GV8160",
+    "ubaldi": "https://www.ubaldi.com/recherche/Tefal%20GV8160/"
   },
-
   "calor-gv7569-express-steam": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Calor%20GV7569&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Calor%20GV7569",
+    "boulanger": "https://www.boulanger.com/recherche/Calor%20GV7569",
+    "darty": "https://www.darty.com/nav/extra/search?text=Calor%20GV7569",
+    "cdiscount": "https://www.cdiscount.com/search/10/Calor%20GV7569.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Calor%20GV7569",
+    "but": "https://www.but.fr/recherche?q=Calor%20GV7569",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Calor%20GV7569",
+    "ubaldi": "https://www.ubaldi.com/recherche/Calor%20GV7569/"
   },
-
   "rowenta-dg8520-eco": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Rowenta%20DG8520&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Rowenta%20DG8520",
+    "boulanger": "https://www.boulanger.com/recherche/Rowenta%20DG8520",
+    "darty": "https://www.darty.com/nav/extra/search?text=Rowenta%20DG8520",
+    "cdiscount": "https://www.cdiscount.com/search/10/Rowenta%20DG8520.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Rowenta%20DG8520",
+    "but": "https://www.but.fr/recherche?q=Rowenta%20DG8520",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Rowenta%20DG8520",
+    "ubaldi": "https://www.ubaldi.com/recherche/Rowenta%20DG8520/"
   },
-
   "philips-gc8942-perfectcare": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%20GC8942&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%20GC8942",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%20GC8942",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%20GC8942",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%20GC8942.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%20GC8942",
+    "but": "https://www.but.fr/recherche?q=Philips%20GC8942",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%20GC8942",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%20GC8942/"
   },
-
   "calor-gv9569-fasteo": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Calor%20GV9569&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Calor%20GV9569",
+    "boulanger": "https://www.boulanger.com/recherche/Calor%20GV9569",
+    "darty": "https://www.darty.com/nav/extra/search?text=Calor%20GV9569",
+    "cdiscount": "https://www.cdiscount.com/search/10/Calor%20GV9569.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Calor%20GV9569",
+    "but": "https://www.but.fr/recherche?q=Calor%20GV9569",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Calor%20GV9569",
+    "ubaldi": "https://www.ubaldi.com/recherche/Calor%20GV9569/"
   },
-
   "philips-gc9682-perfectcare-elite": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Philips%20GC9682&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Philips%20GC9682",
+    "boulanger": "https://www.boulanger.com/recherche/Philips%20GC9682",
+    "darty": "https://www.darty.com/nav/extra/search?text=Philips%20GC9682",
+    "cdiscount": "https://www.cdiscount.com/search/10/Philips%20GC9682.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Philips%20GC9682",
+    "but": "https://www.but.fr/recherche?q=Philips%20GC9682",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Philips%20GC9682",
+    "ubaldi": "https://www.ubaldi.com/recherche/Philips%20GC9682/"
   },
-
   "polti-vaporella-535-pro": {
-    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
-    "fnac":        "TODO",
-    "boulanger":   "TODO",
-    "darty":       "TODO",
-    "cdiscount":   "TODO",
-    "leclerc":     "TODO",
-    "but":         "TODO",
-    "electrodepot":"TODO",
-    "ubaldi":      "TODO"
+    "amazon": {
+      "asin": "TODO_ASIN",
+      "url": "https://www.amazon.fr/s?k=Polti%20Vaporella%20535%20Pro&tag=comparemax21-21"
+    },
+    "fnac": "https://www.fnac.com/SearchResult/ResultSet.aspx?Search=Polti%20Vaporella%20535%20Pro",
+    "boulanger": "https://www.boulanger.com/recherche/Polti%20Vaporella%20535%20Pro",
+    "darty": "https://www.darty.com/nav/extra/search?text=Polti%20Vaporella%20535%20Pro",
+    "cdiscount": "https://www.cdiscount.com/search/10/Polti%20Vaporella%20535%20Pro.html",
+    "leclerc": "https://www.e.leclerc/recherche?q=Polti%20Vaporella%20535%20Pro",
+    "but": "https://www.but.fr/recherche?q=Polti%20Vaporella%20535%20Pro",
+    "electrodepot": "https://www.electrodepot.fr/recherche?s=Polti%20Vaporella%20535%20Pro",
+    "ubaldi": "https://www.ubaldi.com/recherche/Polti%20Vaporella%20535%20Pro/"
   }
 }
