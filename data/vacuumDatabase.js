@@ -407,7 +407,7 @@ const VACUUM_DATABASE = [
   function searchLinks(q) {
     var e = encodeURIComponent(q);
     return {
-      amazon:       'https://www.amazon.fr/s?k=' + e,
+      amazon:       'https://www.amazon.fr/s?k=' + e + '&tag=comparemax21-21',
       fnac:         'https://www.fnac.com/SearchResult/ResultSet.aspx?Search=' + e,
       boulanger:    'https://www.boulanger.com/recherche/' + e,
       darty:        'https://www.darty.com/nav/extra/search?text=' + e,

@@ -866,3 +866,24 @@ const WASHING_DATABASE = [
   }
 
 ]; // Fin de WASHING_DATABASE
+
+(function () {
+  function searchLinks(q) {
+    var e = encodeURIComponent(q);
+    return {
+      amazon:       'https://www.amazon.fr/s?k=' + e + '&tag=comparemax21-21',
+      fnac:         'https://www.fnac.com/SearchResult/ResultSet.aspx?Search=' + e,
+      boulanger:    'https://www.boulanger.com/recherche/' + e,
+      darty:        'https://www.darty.com/nav/extra/search?text=' + e,
+      cdiscount:    'https://www.cdiscount.com/search/10/' + e + '.html',
+      leclerc:      'https://www.e.leclerc/recherche?q=' + e,
+      but:          'https://www.but.fr/recherche?q=' + e,
+      electrodepot: 'https://www.electrodepot.fr/recherche?s=' + e,
+      ubaldi:       'https://www.ubaldi.com/recherche/' + e + '.php',
+      veepee:       null
+    };
+  }
+  WASHING_DATABASE.forEach(function (m) {
+    m.affiliateLinks = searchLinks(m.brand + ' ' + m.model);
+  });
+})();
