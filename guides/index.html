@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guides & Comparatifs — CompareMax</title>
+  <meta name="description" content="Guides d'achat indépendants pour bien choisir votre électroménager et TV. Comparatifs détaillés, tests et conseils d'experts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+  <style>
+    .guides-hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .guides-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .guides-hero p {
+      color: var(--text-muted);
+      font-size: 18px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+      padding: 60px 0 100px;
+    }
+    .guide-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .guide-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sh-hover);
+    }
+    .guide-card-img {
+      height: 200px;
+      overflow: hidden;
+      background: var(--bg-surface-2);
+    }
+    .guide-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .guide-card-body {
+      padding: 24px;
+    }
+    .guide-card-category {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--purple-light);
+      margin-bottom: 10px;
+    }
+    .guide-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .guide-card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .guide-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .guide-card-cta {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--purple-light);
+    }
+    .section-container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Compare<span>Max</span></a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">Comparateur</a>
+        <a href="index.html" class="nav-link active">Guides</a>
+      </div>
+      <a href="../index.html" class="nav-cta">Comparer maintenant</a>
+    </div>
+  </nav>
+
+  <div class="section-container">
+    <div class="guides-hero">
+      <div class="section-label">Guides d'achat</div>
+      <h1>Bien choisir, c'est notre métier</h1>
+      <p>Des comparatifs indépendants, rédigés sans influence des marques, pour vous aider à faire le meilleur choix.</p>
+    </div>
+
+    <div class="guides-grid">
+
+      <a href="meilleur-lave-linge-2025.html" class="guide-card">
+        <div class="guide-card-img">
+          <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=600&q=80&auto=format&fit=crop" alt="Lave-linge">
+        </div>
+        <div class="guide-card-body">
+          <div class="guide-card-category">Électroménager · Lave-linge</div>
+          <div class="guide-card-title">Meilleur lave-linge 2025 : notre comparatif complet</div>
+          <div class="guide-card-desc">Du 6 kg entrée de gamme au 10 kg connecté, on a analysé 15 modèles pour vous trouver le meilleur rapport qualité/prix.</div>
+          <div class="guide-card-meta">
+            <span>8 min de lecture</span>
+            <span>·</span>
+            <span class="guide-card-cta">Lire le guide →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="meilleure-tv-2025.html" class="guide-card">
+        <div class="guide-card-img">
+          <img src="https://images.unsplash.com/photo-1461151304267-38535e780c79?w=600&q=80&auto=format&fit=crop" alt="Télévision">
+        </div>
+        <div class="guide-card-body">
+          <div class="guide-card-category">TV & Son · Télévision</div>
+          <div class="guide-card-title">Quelle TV choisir en 2025 ? Le guide complet par budget</div>
+          <div class="guide-card-desc">LED, OLED, QLED… les technologies se multiplient. On démystifie tout et on vous donne les meilleures TV à chaque budget.</div>
+          <div class="guide-card-meta">
+            <span>10 min de lecture</span>
+            <span>·</span>
+            <span class="guide-card-cta">Lire le guide →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="meilleur-aspirateur-balai-2025.html" class="guide-card">
+        <div class="guide-card-img">
+          <img src="../assets/aspirateur.webp" alt="Aspirateur balai">
+        </div>
+        <div class="guide-card-body">
+          <div class="guide-card-category">Maison · Aspirateur</div>
+          <div class="guide-card-title">Meilleur aspirateur balai 2025 : top 5 comparé</div>
+          <div class="guide-card-desc">Dyson, Samsung, Rowenta… on compare autonomie, puissance et prix pour vous trouver le meilleur aspirateur balai sans fil.</div>
+          <div class="guide-card-meta">
+            <span>7 min de lecture</span>
+            <span>·</span>
+            <span class="guide-card-cta">Lire le guide →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 CompareMax — Comparateur indépendant</span>
+        <div class="footer-legal">
+          <a href="../mentions-legales.html">Mentions légales</a>
+          <a href="../politique-confidentialite.html">Confidentialité</a>
+          <a href="../cgu.html">CGU</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
