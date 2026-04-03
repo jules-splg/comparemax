@@ -1,0 +1,1287 @@
+{
+  "_readme": "Pour chaque produit, renseigne l'ASIN Amazon et les URLs directes des fiches produit. Les champs 'TODO' sont à compléter. Les enseignes absentes seront ignorées.",
+
+  "hisense-a6n-43": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "https://www.fnac.com/a19047395/TV-LED-Hisense-43A6N",
+    "boulanger":   "https://www.boulanger.com/ref/1230481",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "tcl-p635-43": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "https://www.fnac.com/a18502047/TV-LED-TCL-43P635",
+    "boulanger":   "https://www.boulanger.com/ref/1206462",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-pus7608-43": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "https://www.fnac.com/a18502102/TV-LED-Philips-43PUS7608",
+    "boulanger":   "https://www.boulanger.com/ref/1210983",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-cu7105-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "https://www.fnac.com/a18502200/TV-LED-Samsung-UE55CU7105",
+    "boulanger":   "https://www.boulanger.com/ref/1217200",
+    "darty":       "https://www.darty.com/nav/extra/search?text=Samsung+UE55CU7105",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "hisense-a6n-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "tcl-c635-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-pus7608-50": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-q80c-50": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "lg-qned81-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "sony-x85l-55": {
+    "amazon":      { "asin": "B0BXGVLN6V", "url": "https://www.amazon.fr/dp/B0BXGVLN6V" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "hisense-u7nq-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "tcl-c845-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-q80c-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "lg-qned85-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "panasonic-mx800-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-oled707-48": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-qn85c-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "tcl-c935-65": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-pus8518-65": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "lg-oled-c4-55": {
+    "amazon":      { "asin": "B0CX4PBNYB", "url": "https://www.amazon.fr/dp/B0CX4PBNYB" },
+    "fnac":        "https://www.fnac.com/a19046200/TV-OLED-LG-OLED55C4",
+    "boulanger":   "https://www.boulanger.com/ref/1243521",
+    "darty":       "https://www.darty.com/nav/extra/search?text=LG+OLED55C4",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "sony-a80l-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-qn85c-65": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "lg-oled-c4-65": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "panasonic-mz1500-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-oled908-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "sony-a80l-65": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "hisense-u8nq-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-frame-55": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "tcl-qm891g-65": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "lg-oled-c4-77": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "sony-a95l-65": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-qn900c-65": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-oled1008-65": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "lg-oled-c4-83": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-qn900c-77": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "beko-wtc8521xw": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "hotpoint-nm11946wsafr": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "aeg-l7fec41s": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "haier-hw90-b14939s8u1": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "electrolux-ew7f348sc": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-ww90t534daw": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "lg-f4wv709s1e": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "whirlpool-w8i49wbfr": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "bosch-wav28g43ff": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "lg-f4dv709h2t": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-wd90t654dbh": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "bosch-wna14490ff": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "aeg-l9wba61bc": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "miele-wci870-wps": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "miele-wt1-wci860": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "candy-cs1c7lfw": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "beko-dvn04321w": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-dw60a3010bb": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "bosch-serie2-sms2iti14e": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "whirlpool-wfo3t123p": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "siemens-iq300-sn53es14ce": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "aeg-fse72707p": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "electrolux-eem43201l": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "siemens-iq500-sn65zx49ce": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "bosch-serie8-smv8ycx03e": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "aeg-fse76738p": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "miele-g5222sci": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "miele-g7310sc": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "miele-g7775scvi": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "vzug-adoradish-v6000": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "nespresso-vertuo-pop": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-ep1224": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "delonghi-magnifica-evo-ecam29061": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "delonghi-magnifica-evo-ecam29281": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-ep3327": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "siemens-eq500-tp503r04": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "nespresso-vertuo-creatista": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "jura-e6": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "delonghi-eletta-explore-ecam450": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "jura-s8": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "siemens-eq9-ti923309rw": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "bosch-verobarista300-ctl636eb6": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "miele-cm7550": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "jura-giga10": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "rowenta-xforce-860-flex": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "samsung-jet-75e": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "dyson-v8-origin": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "dyson-v11-absolute-extra": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "dyson-v15-detect-absolute": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "irobot-roomba-694": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "roborock-q5-plus": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "ecovacs-deebot-n8-pro-plus": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "roborock-s7-maxv-ultra": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "ecovacs-deebot-t20-omni": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "rowenta-silence-force-ro8371": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "bosch-prosilence-bgs5335a": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "miele-classic-c1": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "miele-complete-c3-excellence": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "tefal-fv2660-ultraglide": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-dst5030-5000": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "rowenta-dw6010-focus": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "calor-fv6550-maestro": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "rowenta-dw9240-pro-master": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "braun-texstyle9-ts985": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "rowenta-dw9640-pro-style": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "tefal-gv8160-express-easy": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "calor-gv7569-express-steam": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "rowenta-dg8520-eco": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-gc8942-perfectcare": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "calor-gv9569-fasteo": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "philips-gc9682-perfectcare-elite": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  },
+
+  "polti-vaporella-535-pro": {
+    "amazon":      { "asin": "TODO_ASIN", "url": "TODO" },
+    "fnac":        "TODO",
+    "boulanger":   "TODO",
+    "darty":       "TODO",
+    "cdiscount":   "TODO",
+    "leclerc":     "TODO",
+    "but":         "TODO",
+    "electrodepot":"TODO",
+    "ubaldi":      "TODO"
+  }
+}

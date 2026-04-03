@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "ComparTV - Comparateur Intelligent de Télévisions",
+  "short_name": "ComparTV",
+  "version": "1.0.0",
+  "description": "Comparez intelligemment les télévisions sur tous les grands sites français et trouvez la meilleure offre selon votre budget.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ComparTV - Comparer les télévisions"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

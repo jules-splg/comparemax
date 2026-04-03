@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Comparateur intelligent</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <!-- EN-TÊTE -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <span class="logo-icon">🔍</span>
+        <div class="header-text">
+          <h1>Comparateur intelligent</h1>
+          <p>Vous aider à faire le bon choix</p>
+        </div>
+      </div>
+      <p class="header-badge">Gratuit · sans pub</p>
+    </div>
+  </header>
+
+  <!-- SÉLECTEUR DE CATÉGORIES (2 niveaux) -->
+  <section id="categorySelector" class="category-selector">
+    <p class="category-title">Que souhaitez-vous comparer ?</p>
+
+    <!-- Niveau 1 : grandes familles -->
+    <div class="cat-level1" id="catLevel1">
+      <button class="cat1-btn" data-cat="electromenager">
+        <span class="cat1-emoji">🏠</span>
+        <span>Électroménager</span>
+      </button>
+      <button class="cat1-btn" data-cat="maison">
+        <span class="cat1-emoji">🏡</span>
+        <span>Maison</span>
+      </button>
+      <button class="cat1-btn" data-cat="tv-son">
+        <span class="cat1-emoji">📺</span>
+        <span>TV &amp; Son</span>
+      </button>
+    </div>
+
+    <!-- Niveau 2 : produits (peuplé dynamiquement par JS) -->
+    <div class="cat-level2" id="catLevel2"></div>
+  </section>
+
+  <!-- FILTRES TÉLÉVISION -->
+  <section id="filtersTv" class="filters-panel">
+    <h2 class="filters-title">Vos critères de recherche</h2>
+
+    <div class="filter-group">
+      <label class="filter-label">💶 Budget</label>
+      <div class="quick-budgets">
+        <button class="quick-btn" data-min="0" data-max="400">Petit budget<br><small>0 – 400 €</small></button>
+        <button class="quick-btn" data-min="400" data-max="900">Milieu de gamme<br><small>400 – 900 €</small></button>
+        <button class="quick-btn" data-min="900" data-max="2000">Haut de gamme<br><small>900 – 2 000 €</small></button>
+        <button class="quick-btn" data-min="2000" data-max="4000">Premium<br><small>2 000 € et +</small></button>
+      </div>
+      <div class="price-range-display">
+        <span id="priceMinDisplay" class="price-range-value">0 €</span>
+        <span class="price-range-sep">—</span>
+        <span id="priceMaxDisplay" class="price-range-value">1 500 €</span>
+      </div>
+      <div class="dual-range-wrapper">
+        <div id="rangeTrackFill"></div>
+        <input type="range" id="priceMin" class="range-input range-input--min"
+               min="0" max="4000" step="50" value="0">
+        <input type="range" id="priceMax" class="range-input range-input--max"
+               min="0" max="4000" step="50" value="1500">
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">📐 Taille d'écran</label>
+      <p class="filter-hint">55" (139 cm) est la taille la plus vendue en France</p>
+      <div class="size-inputs-row">
+        <div class="size-field">
+          <label for="sizeMin" class="field-label">Minimum</label>
+          <select id="sizeMin"></select>
+        </div>
+        <span class="range-separator-text">à</span>
+        <div class="size-field">
+          <label for="sizeMax" class="field-label">Maximum</label>
+          <select id="sizeMax"></select>
+        </div>
+      </div>
+    </div>
+
+    <button id="compareBtn" class="compare-btn">
+      🔍 &nbsp;Comparer les modèles
+    </button>
+  </section>
+
+  <!-- FILTRES LAVE-LINGE -->
+  <section id="filtersWashing" class="filters-panel" style="display:none;">
+    <h2 class="filters-title">Vos critères de recherche</h2>
+
+    <div class="filter-group">
+      <label class="filter-label">💶 Budget</label>
+      <div class="quick-budgets">
+        <button class="quick-btn washing-quick-btn" data-min="0" data-max="400">Entrée de gamme<br><small>0 – 400 €</small></button>
+        <button class="quick-btn washing-quick-btn" data-min="400" data-max="800">Milieu de gamme<br><small>400 – 800 €</small></button>
+        <button class="quick-btn washing-quick-btn" data-min="800" data-max="1500">Haut de gamme<br><small>800 – 1 500 €</small></button>
+        <button class="quick-btn washing-quick-btn" data-min="1500" data-max="4000">Premium<br><small>1 500 € et +</small></button>
+      </div>
+      <div class="price-range-display">
+        <span id="wPriceMinDisplay" class="price-range-value">0 €</span>
+        <span class="price-range-sep">—</span>
+        <span id="wPriceMaxDisplay" class="price-range-value">800 €</span>
+      </div>
+      <div class="dual-range-wrapper">
+        <div id="wRangeTrackFill"></div>
+        <input type="range" id="wPriceMin" class="range-input range-input--min"
+               min="0" max="4000" step="50" value="0">
+        <input type="range" id="wPriceMax" class="range-input range-input--max"
+               min="0" max="4000" step="50" value="800">
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">🔧 Installation</label>
+      <div class="toggle-group" id="installTypeGroup">
+        <button class="toggle-btn active" data-value="all">Tous</button>
+        <button class="toggle-btn" data-value="freestanding">Pose libre</button>
+        <button class="toggle-btn" data-value="built-in">Encastrable</button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">🫧 Fonction</label>
+      <div class="toggle-group" id="washFunctionGroup">
+        <button class="toggle-btn active" data-value="all">Tous</button>
+        <button class="toggle-btn" data-value="washer">Lavant uniquement</button>
+        <button class="toggle-btn" data-value="washer-dryer">Lavant-séchant</button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">🎨 Couleur</label>
+      <div class="color-group" id="colorGroup">
+        <button class="color-btn active" data-value="all">
+          <span class="color-swatch color-swatch--all"></span>Toutes
+        </button>
+        <button class="color-btn" data-value="blanc">
+          <span class="color-swatch color-swatch--white"></span>Blanc
+        </button>
+        <button class="color-btn" data-value="noir">
+          <span class="color-swatch color-swatch--black"></span>Noir
+        </button>
+        <button class="color-btn" data-value="autre">
+          <span class="color-swatch color-swatch--other"></span>Autre
+        </button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-label">⚖️ Capacité de lavage minimum</label>
+      <div class="capacity-row">
+        <span class="capacity-value" id="capacityDisplay">6 kg minimum</span>
+      </div>
+      <div class="capacity-slider-wrap">
+        <input type="range" id="capacityMin" class="capacity-slider"
+               min="5" max="13" step="1" value="6">
+        <div class="capacity-labels">
+          <span>5 kg</span><span>7 kg</span><span>9 kg</span><span>11 kg</span><span>13 kg</span>
+        </div>
+      </div>
+    </div>
+
+    <button id="compareWashingBtn" class="compare-btn">
+      🫧 &nbsp;Comparer les modèles
+    </button>
+  </section>
+
+  <!-- BANDEAU REVENDEURS (sous le bouton comparer) -->
+  <div class="brand-scroller-section">
+    <div class="scroller-outer">
+
+      <!-- Ligne 1 : gauche → droite -->
+      <div class="scroller-track scroller-track--ltr">
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=amazon.fr&sz=32" alt="">Amazon</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=fnac.com&sz=32" alt="">Fnac</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=boulanger.com&sz=32" alt="">Boulanger</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=darty.com&sz=32" alt="">Darty</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=cdiscount.com&sz=32" alt="">Cdiscount</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=e.leclerc&sz=32" alt="">E.Leclerc</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=ldlc.com&sz=32" alt="">LDLC</span>
+        <!-- Duplicate pour boucle infinie -->
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=amazon.fr&sz=32" alt="">Amazon</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=fnac.com&sz=32" alt="">Fnac</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=boulanger.com&sz=32" alt="">Boulanger</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=darty.com&sz=32" alt="">Darty</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=cdiscount.com&sz=32" alt="">Cdiscount</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=e.leclerc&sz=32" alt="">E.Leclerc</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=ldlc.com&sz=32" alt="">LDLC</span>
+      </div>
+
+      <!-- Ligne 2 : droite → gauche -->
+      <div class="scroller-track scroller-track--rtl">
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=but.fr&sz=32" alt="">But</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=carrefour.fr&sz=32" alt="">Carrefour</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=electrodepot.fr&sz=32" alt="">Electro Dépôt</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=ubaldi.com&sz=32" alt="">Ubaldi</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=veepee.com&sz=32" alt="">Veepee</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=thebradery.com&sz=32" alt="">The Bradery</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=conforama.fr&sz=32" alt="">Conforama</span>
+        <!-- Duplicate -->
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=but.fr&sz=32" alt="">But</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=carrefour.fr&sz=32" alt="">Carrefour</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=electrodepot.fr&sz=32" alt="">Electro Dépôt</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=ubaldi.com&sz=32" alt="">Ubaldi</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=veepee.com&sz=32" alt="">Veepee</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=thebradery.com&sz=32" alt="">The Bradery</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=conforama.fr&sz=32" alt="">Conforama</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CHARGEMENT -->
+  <div id="loadingState" class="loading-state" style="display:none;">
+    <div class="loading-spinner"></div>
+    <p>Analyse en cours…</p>
+    <p class="loading-sub">Calcul des scores et comparaison des offres</p>
+  </div>
+
+  <!-- AUCUN RÉSULTAT -->
+  <div id="noResultsMsg" class="no-results-msg" style="display:none;">
+    <span class="no-results-icon">😕</span>
+    <h3 id="noResultsText">Aucun modèle trouvé</h3>
+    <p>Essayez d'élargir votre fourchette de prix ou de modifier vos critères.</p>
+  </div>
+
+  <!-- RÉSULTATS -->
+  <div id="resultsWrapper">
+
+    <section id="sectionSuggestions" class="results-section suggestions-section" style="display:none;">
+      <div class="section-header suggestions-header">
+        <h2>💡 Suggestions intelligentes</h2>
+        <p class="section-subtitle">Pour quelques euros de plus (moins de 10%), voici des modèles nettement meilleurs :</p>
+      </div>
+      <div id="listSuggestions" class="suggestions-list"></div>
+    </section>
+
+    <section id="sectionPremium" class="results-section premium-section" style="display:none;">
+      <div class="section-header">
+        <div class="section-header-top">
+          <span class="section-medal">🏆</span>
+          <h2>Top 5 Premium</h2>
+        </div>
+        <p id="subtitlePremium" class="section-subtitle">Les meilleurs modèles dans le haut de votre budget</p>
+      </div>
+      <div id="listPremium" class="tv-list"></div>
+    </section>
+
+    <section id="sectionValue" class="results-section value-section" style="display:none;">
+      <div class="section-header">
+        <div class="section-header-top">
+          <span class="section-medal">⭐</span>
+          <h2>Top 5 Meilleur rapport qualité/prix</h2>
+        </div>
+        <p id="subtitleValue" class="section-subtitle">D'excellentes opportunités au milieu de votre budget</p>
+      </div>
+      <div id="listValue" class="tv-list"></div>
+    </section>
+
+    <section id="sectionAbove" class="results-section above-section" style="display:none;">
+      <div class="section-header">
+        <div class="section-header-top">
+          <span class="section-medal">💎</span>
+          <h2>Top 5 Un peu plus cher, mais ça vaut le coup</h2>
+        </div>
+        <p id="subtitleAbove" class="section-subtitle">Des alternatives jusqu'à 20% au-dessus de votre budget maximum</p>
+      </div>
+      <div id="listAbove" class="tv-list"></div>
+    </section>
+
+  </div>
+
+  <!-- AFFILIATION -->
+  <section class="affiliate-section">
+    <details>
+      <summary class="affiliate-summary">
+        ℹ️ Comment fonctionnent les liens partenaires ?
+        <span class="summary-arrow">▼</span>
+      </summary>
+      <div id="affiliateContent" class="affiliate-content"></div>
+    </details>
+  </section>
+
+  <!-- PIED DE PAGE -->
+  <footer class="app-footer">
+    <p>Comparateur intelligent v1.0 · Les prix sont indicatifs, vérifiez sur le site du revendeur.</p>
+    <p>Les liens vers les revendeurs peuvent générer une commission sans surcoût pour vous.</p>
+  </footer>
+
+  <script src="data/tvDatabase.js"></script>
+  <script src="data/washingDatabase.js"></script>
+  <script src="js/comparator.js"></script>
+  <script src="js/affiliate.js"></script>
+  <script src="popup.js"></script>
+
+</body>
+</html>

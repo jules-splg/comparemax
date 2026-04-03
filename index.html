@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CompareMax — Trouvez le meilleur modèle au meilleur prix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-icon">⚡</span>
+        <span class="nav-logo-text">CompareMax</span>
+      </a>
+      <div class="nav-actions">
+        <span class="nav-badge">100% gratuit · Sans pub</span>
+        <div class="nav-auth" id="navAuth">
+          <!-- Peuplé par JS selon l'état de connexion -->
+          <button class="nav-btn-ghost" id="navLoginBtn">Se connecter</button>
+          <button class="nav-btn-primary" id="navSignupBtn">Créer un compte</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-glow hero-glow--top"></div>
+    <div class="hero-glow hero-glow--left"></div>
+    <div class="hero-inner">
+      <div class="hero-pill">✦ Comparateur indépendant · Algorithme de scoring</div>
+      <h1 class="hero-title">
+        Trouvez <span class="gradient-text">le meilleur modèle</span><br>
+        au meilleur prix
+      </h1>
+      <p class="hero-sub">
+        Notre algorithme analyse scores, prix, réparabilité et avis clients<br>
+        pour vous recommander exactement ce dont vous avez besoin.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">14+</span>
+          <span class="hero-stat-label">Revendeurs comparés</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">50+</span>
+          <span class="hero-stat-label">Modèles analysés</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">10</span>
+          <span class="hero-stat-label">Critères de scoring</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       APP SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="app-section" id="app">
+    <div class="app-inner">
+      <div class="app-tool-card">
+
+        <!-- En-tête de l'outil -->
+        <div class="app-tool-header">
+          <span class="app-tool-label">
+            <span class="app-tool-label-dot"></span>
+            Comparateur en ligne
+          </span>
+          <span class="app-tool-tagline">Gratuit · Indépendant · Prix mis à jour 3 fois par jour</span>
+        </div>
+
+        <div class="app-tool-body">
+
+      <!-- SÉLECTEUR DE CATÉGORIES (2 niveaux) -->
+      <div class="category-selector">
+        <p class="category-title">Que souhaitez-vous comparer ?</p>
+        <div class="cat-level1" id="catLevel1">
+          <button class="cat1-btn" data-cat="electromenager">
+            <span class="cat1-emoji">🏠</span><span>Électroménager</span>
+          </button>
+          <button class="cat1-btn" data-cat="maison">
+            <span class="cat1-emoji">🏡</span><span>Maison</span>
+          </button>
+          <button class="cat1-btn" data-cat="tv-son">
+            <span class="cat1-emoji">📺</span><span>TV &amp; Son</span>
+          </button>
+        </div>
+        <div class="cat-level2" id="catLevel2"></div>
+      </div>
+
+      <!-- FILTRES TÉLÉVISION -->
+      <section id="filtersTv" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">Vos critères de recherche</h2>
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
+            <button class="quick-btn" data-min="0" data-max="400">Petit budget<br><small>0 – 400 €</small></button>
+            <button class="quick-btn" data-min="400" data-max="900">Milieu de gamme<br><small>400 – 900 €</small></button>
+            <button class="quick-btn" data-min="900" data-max="2000">Haut de gamme<br><small>900 – 2 000 €</small></button>
+            <button class="quick-btn" data-min="2000" data-max="4000">Premium<br><small>2 000 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="priceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="priceMaxDisplay" class="price-range-value">1 500 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="rangeTrackFill"></div>
+            <input type="range" id="priceMin" class="range-input range-input--min" min="0" max="4000" step="50" value="0">
+            <input type="range" id="priceMax" class="range-input range-input--max" min="0" max="4000" step="50" value="1500">
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">📐 Taille d'écran</label>
+          <p class="filter-hint">55" (139 cm) est la taille la plus vendue en France</p>
+          <div class="size-inputs-row">
+            <div class="size-field">
+              <label for="sizeMin" class="field-label">Minimum</label>
+              <select id="sizeMin"></select>
+            </div>
+            <span class="range-separator-text">à</span>
+            <div class="size-field">
+              <label for="sizeMax" class="field-label">Maximum</label>
+              <select id="sizeMax"></select>
+            </div>
+          </div>
+        </div>
+        <button id="compareBtn" class="compare-btn">🔍 &nbsp;Comparer les modèles</button>
+      </section>
+
+      <!-- FILTRES LAVE-LINGE -->
+      <section id="filtersWashing" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">Vos critères de recherche</h2>
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
+            <button class="quick-btn washing-quick-btn" data-min="0" data-max="400">Entrée de gamme<br><small>0 – 400 €</small></button>
+            <button class="quick-btn washing-quick-btn" data-min="400" data-max="800">Milieu de gamme<br><small>400 – 800 €</small></button>
+            <button class="quick-btn washing-quick-btn" data-min="800" data-max="1500">Haut de gamme<br><small>800 – 1 500 €</small></button>
+            <button class="quick-btn washing-quick-btn" data-min="1500" data-max="4000">Premium<br><small>1 500 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="wPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="wPriceMaxDisplay" class="price-range-value">800 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="wRangeTrackFill"></div>
+            <input type="range" id="wPriceMin" class="range-input range-input--min" min="0" max="4000" step="50" value="0">
+            <input type="range" id="wPriceMax" class="range-input range-input--max" min="0" max="4000" step="50" value="800">
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🔧 Installation</label>
+          <div class="toggle-group" id="installTypeGroup">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="freestanding">Pose libre</button>
+            <button class="toggle-btn" data-value="built-in">Encastrable</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🫧 Fonction</label>
+          <div class="toggle-group" id="washFunctionGroup">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="washer">Lavant uniquement</button>
+            <button class="toggle-btn" data-value="washer-dryer">Lavant-séchant</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🎨 Couleur</label>
+          <div class="color-group" id="colorGroup">
+            <button class="color-btn active" data-value="all"><span class="color-swatch color-swatch--all"></span>Toutes</button>
+            <button class="color-btn" data-value="blanc"><span class="color-swatch color-swatch--white"></span>Blanc</button>
+            <button class="color-btn" data-value="noir"><span class="color-swatch color-swatch--black"></span>Noir</button>
+            <button class="color-btn" data-value="autre"><span class="color-swatch color-swatch--other"></span>Autre</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">⚖️ Capacité de lavage minimum</label>
+          <div class="capacity-row"><span class="capacity-value" id="capacityDisplay">6 kg minimum</span></div>
+          <div class="capacity-slider-wrap">
+            <input type="range" id="capacityMin" class="capacity-slider" min="5" max="13" step="1" value="6">
+            <div class="capacity-labels"><span>5 kg</span><span>7 kg</span><span>9 kg</span><span>11 kg</span><span>13 kg</span></div>
+          </div>
+        </div>
+        <button id="compareWashingBtn" class="compare-btn">🫧 &nbsp;Comparer les modèles</button>
+      </section>
+
+      <!-- FILTRES LAVE-VAISSELLE -->
+      <section id="filtersDishwasher" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">Vos critères de recherche</h2>
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
+            <button class="quick-btn dw-quick-btn" data-min="0" data-max="400">Entrée de gamme<br><small>0 – 400 €</small></button>
+            <button class="quick-btn dw-quick-btn" data-min="400" data-max="800">Milieu de gamme<br><small>400 – 800 €</small></button>
+            <button class="quick-btn dw-quick-btn" data-min="800" data-max="1500">Haut de gamme<br><small>800 – 1 500 €</small></button>
+            <button class="quick-btn dw-quick-btn" data-min="1500" data-max="4000">Premium<br><small>1 500 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="dwPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="dwPriceMaxDisplay" class="price-range-value">800 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="dwRangeTrackFill"></div>
+            <input type="range" id="dwPriceMin" class="range-input range-input--min" min="0" max="4000" step="50" value="0">
+            <input type="range" id="dwPriceMax" class="range-input range-input--max" min="0" max="4000" step="50" value="800">
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🔧 Installation</label>
+          <div class="toggle-group" id="dwInstallTypeGroup">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="freestanding">Pose libre</button>
+            <button class="toggle-btn" data-value="built-in">Encastrable</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🍴 Rangement des couverts</label>
+          <div class="toggle-group" id="dwCutleryGroup">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="basket">Panier à couverts</button>
+            <button class="toggle-btn" data-value="drawer">Tiroir à couverts</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🍽️ Nombre de couverts minimum</label>
+          <div class="capacity-row"><span class="capacity-value" id="dwPlaceSettingsDisplay">7 couverts minimum</span></div>
+          <div class="capacity-slider-wrap">
+            <input type="range" id="dwPlaceSettings" class="capacity-slider" min="7" max="15" step="1" value="7">
+            <div class="capacity-labels"><span>7</span><span>9</span><span>12</span><span>14</span><span>15</span></div>
+          </div>
+        </div>
+        <button id="compareDishwasherBtn" class="compare-btn">🍽️ &nbsp;Comparer les modèles</button>
+      </section>
+
+      <!-- FILTRES MACHINE À CAFÉ -->
+      <section id="filtersCoffee" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">Vos critères de recherche</h2>
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
+            <button class="quick-btn cf-quick-btn" data-min="0" data-max="300">Entrée de gamme<br><small>0 – 300 €</small></button>
+            <button class="quick-btn cf-quick-btn" data-min="300" data-max="800">Milieu de gamme<br><small>300 – 800 €</small></button>
+            <button class="quick-btn cf-quick-btn" data-min="800" data-max="1500">Haut de gamme<br><small>800 – 1 500 €</small></button>
+            <button class="quick-btn cf-quick-btn" data-min="1500" data-max="4000">Premium<br><small>1 500 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="cfPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="cfPriceMaxDisplay" class="price-range-value">800 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="cfRangeTrackFill"></div>
+            <input type="range" id="cfPriceMin" class="range-input range-input--min" min="0" max="4000" step="50" value="0">
+            <input type="range" id="cfPriceMax" class="range-input range-input--max" min="0" max="4000" step="50" value="800">
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">☕ Type de café</label>
+          <div class="toggle-group" id="cfBeanTypeGroup">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="grains">À grains</button>
+            <button class="toggle-btn" data-value="capsules">À capsules</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🔧 Installation</label>
+          <div class="toggle-group" id="cfInstallTypeGroup">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="freestanding">Pose libre</button>
+            <button class="toggle-btn" data-value="built-in">Encastrable</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🥛 Système boissons lactées</label>
+          <div class="toggle-group" id="cfMilkGroup">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Avec système lait</button>
+            <button class="toggle-btn" data-value="no">Sans système lait</button>
+          </div>
+        </div>
+        <button id="compareCoffeeBtn" class="compare-btn">☕ &nbsp;Comparer les modèles</button>
+      </section>
+
+      <!-- FILTRES ASPIRATEUR -->
+      <section id="filtersVacuum" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">Vos critères de recherche</h2>
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
+            <button class="quick-btn vac-quick-btn" data-min="0" data-max="250">Entrée de gamme<br><small>0 – 250 €</small></button>
+            <button class="quick-btn vac-quick-btn" data-min="250" data-max="600">Milieu de gamme<br><small>250 – 600 €</small></button>
+            <button class="quick-btn vac-quick-btn" data-min="600" data-max="1000">Haut de gamme<br><small>600 – 1 000 €</small></button>
+            <button class="quick-btn vac-quick-btn" data-min="1000" data-max="4000">Premium<br><small>1 000 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="vacPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="vacPriceMaxDisplay" class="price-range-value">600 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="vacRangeTrackFill"></div>
+            <input type="range" id="vacPriceMin" class="range-input range-input--min" min="0" max="4000" step="50" value="0">
+            <input type="range" id="vacPriceMax" class="range-input range-input--max" min="0" max="4000" step="50" value="600">
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🌪️ Type d'aspirateur</label>
+          <div class="toggle-group" id="vacTypeGroup">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="balai">Balai</button>
+            <button class="toggle-btn" data-value="traineau">Traineau</button>
+          </div>
+        </div>
+        <div class="filter-group" id="vacBagGroup">
+          <label class="filter-label">🛍️ Avec ou sans sac</label>
+          <div class="toggle-group" id="vacWithBagGroup">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="no">Sans sac</button>
+            <button class="toggle-btn" data-value="yes">Avec sac</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🐾 Adapté aux animaux de compagnie</label>
+          <div class="toggle-group" id="vacPetGroup">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Oui (brosse spéciale)</button>
+          </div>
+        </div>
+        <button id="compareVacuumBtn" class="compare-btn">🌪️ &nbsp;Comparer les modèles</button>
+      </section>
+
+      <!-- FILTRES FER À REPASSER -->
+      <section id="filtersIron" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">Vos critères de recherche</h2>
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
+            <button class="quick-btn iron-quick-btn" data-min="0" data-max="80">Entrée de gamme<br><small>0 – 80 €</small></button>
+            <button class="quick-btn iron-quick-btn" data-min="80" data-max="200">Milieu de gamme<br><small>80 – 200 €</small></button>
+            <button class="quick-btn iron-quick-btn" data-min="200" data-max="400">Haut de gamme<br><small>200 – 400 €</small></button>
+            <button class="quick-btn iron-quick-btn" data-min="400" data-max="4000">Premium<br><small>400 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="ironPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="ironPriceMaxDisplay" class="price-range-value">200 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="ironRangeTrackFill"></div>
+            <input type="range" id="ironPriceMin" class="range-input range-input--min" min="0" max="4000" step="10" value="0">
+            <input type="range" id="ironPriceMax" class="range-input range-input--max" min="0" max="4000" step="10" value="200">
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">♨️ Type</label>
+          <div class="toggle-group" id="ironTypeGroup">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="iron">Fer à repasser</button>
+            <button class="toggle-btn" data-value="steam-station">Centrale vapeur</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">🧪 Système anti-calcaire</label>
+          <div class="toggle-group" id="ironAntiCalcGroup">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Avec</button>
+            <button class="toggle-btn" data-value="no">Sans</button>
+          </div>
+        </div>
+        <button id="compareIronBtn" class="compare-btn">♨️ &nbsp;Comparer les modèles</button>
+      </section>
+
+      <!-- CHARGEMENT -->
+      <div id="loadingState" class="loading-state" style="display:none;">
+        <div class="loading-spinner"></div>
+        <p>Analyse en cours…</p>
+        <p class="loading-sub">Calcul des scores et comparaison des offres</p>
+      </div>
+
+      <!-- AUCUN RÉSULTAT -->
+      <div id="noResultsMsg" class="no-results-msg" style="display:none;">
+        <span class="no-results-icon">😕</span>
+        <h3 id="noResultsText">Aucun modèle trouvé</h3>
+        <p>Essayez d'élargir votre fourchette de prix ou de modifier vos critères.</p>
+      </div>
+
+      <!-- RÉSULTATS -->
+      <div id="resultsWrapper">
+        <section id="sectionSuggestions" class="results-section suggestions-section" style="display:none;">
+          <div class="section-header suggestions-header">
+            <h2>💡 Suggestions intelligentes</h2>
+            <p class="section-subtitle">Pour quelques euros de plus (moins de 10%), voici des modèles nettement meilleurs :</p>
+          </div>
+          <div id="listSuggestions" class="suggestions-list"></div>
+        </section>
+        <section id="sectionPremium" class="results-section premium-section" style="display:none;">
+          <div class="section-header">
+            <div class="section-header-top"><span class="section-medal">🏆</span><h2>Top 5 Premium</h2></div>
+            <p id="subtitlePremium" class="section-subtitle">Les meilleurs modèles dans le haut de votre budget</p>
+          </div>
+          <div id="listPremium" class="tv-list"></div>
+        </section>
+        <section id="sectionValue" class="results-section value-section" style="display:none;">
+          <div class="section-header">
+            <div class="section-header-top"><span class="section-medal">⭐</span><h2>Top 5 Meilleur rapport qualité/prix</h2></div>
+            <p id="subtitleValue" class="section-subtitle">D'excellentes opportunités au milieu de votre budget</p>
+          </div>
+          <div id="listValue" class="tv-list"></div>
+        </section>
+        <section id="sectionAbove" class="results-section above-section" style="display:none;">
+          <div class="section-header">
+            <div class="section-header-top"><span class="section-medal">💎</span><h2>Top 5 Un peu plus cher, mais ça vaut le coup</h2></div>
+            <p id="subtitleAbove" class="section-subtitle">Des alternatives jusqu'à 20% au-dessus de votre budget maximum</p>
+          </div>
+          <div id="listAbove" class="tv-list"></div>
+        </section>
+      </div>
+
+        </div><!-- /.app-tool-body -->
+      </div><!-- /.app-tool-card -->
+    </div><!-- /.app-inner -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ACCÈS RAPIDES PAR PRODUIT
+  ═══════════════════════════════════════════ -->
+  <section class="quick-access-section">
+    <div class="section-container">
+      <div class="section-label">Accès rapide</div>
+      <h2 class="section-heading">Comparez par catégorie</h2>
+      <p class="section-sub">Cliquez sur une catégorie pour lancer la comparaison directement.</p>
+      <div class="qa-grid">
+        <a href="#app" class="qa-card qa-card--tv" onclick="openCategory('tv-son','tv')">
+          <div class="qa-card-img"><img src="https://images.unsplash.com/photo-1461151304267-38535e780c79?w=400&q=80&auto=format&fit=crop" alt="Télévision"></div>
+          <div class="qa-card-body">
+            <span class="qa-card-emoji">📺</span>
+            <h3>Télévisions</h3>
+            <p>OLED, QLED, MiniLED… trouvez la meilleure TV pour votre budget et votre salon.</p>
+            <span class="qa-card-cta">Comparer maintenant →</span>
+          </div>
+        </a>
+        <a href="#app" class="qa-card qa-card--washing" onclick="openCategory('electromenager','washing')">
+          <div class="qa-card-img"><img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&q=80&auto=format" alt="Lave-linge"></div>
+          <div class="qa-card-body">
+            <span class="qa-card-emoji">🫧</span>
+            <h3>Lave-linge</h3>
+            <p>Pose libre ou encastrable, lavant ou lavant-séchant — notre algorithme vous guide.</p>
+            <span class="qa-card-cta">Comparer maintenant →</span>
+          </div>
+        </a>
+        <a href="#app" class="qa-card qa-card--vacuum" onclick="openCategory('maison','vacuum')">
+          <div class="qa-card-img"><img src="assets/aspirateur.webp" alt="Aspirateur"></div>
+          <div class="qa-card-body">
+            <span class="qa-card-emoji">🌪️</span>
+            <h3>Aspirateurs</h3>
+            <p>Robots, balais ou traîneaux — trouvez le modèle adapté à votre intérieur.</p>
+            <span class="qa-card-cta">Bientôt disponible</span>
+          </div>
+        </a>
+        <a href="#app" class="qa-card qa-card--coffee" onclick="openCategory('electromenager','coffee')">
+          <div class="qa-card-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80&auto=format" alt="Machine à café"></div>
+          <div class="qa-card-body">
+            <span class="qa-card-emoji">☕</span>
+            <h3>Machines à café</h3>
+            <p>Expresso, capsules, grains… comparez les meilleures machines sans vous perdre.</p>
+            <span class="qa-card-cta">Bientôt disponible</span>
+          </div>
+        </a>
+        <a href="#app" class="qa-card qa-card--fridge" onclick="openCategory('electromenager','fridge')">
+          <div class="qa-card-img"><img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&q=80&auto=format" alt="Réfrigérateur"></div>
+          <div class="qa-card-body">
+            <span class="qa-card-emoji">🧊</span>
+            <h3>Réfrigérateurs</h3>
+            <p>Multi-portes, combinés ou encastrables — le bon frigo pour votre cuisine.</p>
+            <span class="qa-card-cta">Bientôt disponible</span>
+          </div>
+        </a>
+        <a href="#app" class="qa-card qa-card--speaker" onclick="openCategory('tv-son','speaker')">
+          <div class="qa-card-img"><img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&q=80&auto=format" alt="Enceinte"></div>
+          <div class="qa-card-body">
+            <span class="qa-card-emoji">🔊</span>
+            <h3>Enceintes</h3>
+            <p>Bluetooth, Wi-Fi, soundbar — la meilleure enceinte pour votre usage.</p>
+            <span class="qa-card-cta">Bientôt disponible</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BANDEAU REVENDEURS (entre accès rapides et méthodologie)
+  ═══════════════════════════════════════════ -->
+  <div class="brand-scroller-section">
+    <div class="scroller-outer">
+      <div class="scroller-track scroller-track--ltr">
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=amazon.fr&sz=32" alt="">Amazon</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=fnac.com&sz=32" alt="">Fnac</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=boulanger.com&sz=32" alt="">Boulanger</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=darty.com&sz=32" alt="">Darty</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=cdiscount.com&sz=32" alt="">Cdiscount</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=e.leclerc&sz=32" alt="">E.Leclerc</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=ldlc.com&sz=32" alt="">LDLC</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=amazon.fr&sz=32" alt="">Amazon</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=fnac.com&sz=32" alt="">Fnac</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=boulanger.com&sz=32" alt="">Boulanger</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=darty.com&sz=32" alt="">Darty</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=cdiscount.com&sz=32" alt="">Cdiscount</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=e.leclerc&sz=32" alt="">E.Leclerc</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=ldlc.com&sz=32" alt="">LDLC</span>
+      </div>
+      <div class="scroller-track scroller-track--rtl">
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=but.fr&sz=32" alt="">But</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=carrefour.fr&sz=32" alt="">Carrefour</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=electrodepot.fr&sz=32" alt="">Electro Dépôt</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=ubaldi.com&sz=32" alt="">Ubaldi</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=veepee.com&sz=32" alt="">Veepee</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=thebradery.com&sz=32" alt="">The Bradery</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=conforama.fr&sz=32" alt="">Conforama</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=but.fr&sz=32" alt="">But</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=carrefour.fr&sz=32" alt="">Carrefour</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=electrodepot.fr&sz=32" alt="">Electro Dépôt</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=ubaldi.com&sz=32" alt="">Ubaldi</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=veepee.com&sz=32" alt="">Veepee</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=thebradery.com&sz=32" alt="">The Bradery</span>
+        <span class="scroller-item"><img class="scroller-logo" src="https://www.google.com/s2/favicons?domain=conforama.fr&sz=32" alt="">Conforama</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       COMMENT ÇA MARCHE
+  ═══════════════════════════════════════════ -->
+  <section class="how-section">
+    <div class="section-container">
+      <div class="section-label">Méthodologie</div>
+      <h2 class="section-heading">Comment fonctionne CompareMax ?</h2>
+      <p class="section-sub">Un algorithme indépendant, pas une liste sponsorisée.</p>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div class="how-step-body">
+            <h4>Vous définissez vos critères</h4>
+            <p>Budget, taille, fonctionnalités — vous choisissez ce qui compte pour vous.</p>
+          </div>
+        </div>
+        <div class="how-connector"></div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div class="how-step-body">
+            <h4>Notre algorithme calcule les scores</h4>
+            <p>10 critères pondérés : image, son, réparabilité, avis clients, garantie, rapport Q/P…</p>
+          </div>
+        </div>
+        <div class="how-connector"></div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div class="how-step-body">
+            <h4>On compare les prix sur 14+ sites</h4>
+            <p>Amazon, Fnac, Boulanger, Darty, Cdiscount — on trouve le meilleur prix pour vous.</p>
+          </div>
+        </div>
+        <div class="how-connector"></div>
+        <div class="how-step">
+          <div class="how-step-num">4</div>
+          <div class="how-step-body">
+            <h4>Vous achetez au meilleur rapport qualité/prix</h4>
+            <p>3 classements : Premium, Meilleur rapport Q/P, et "Un peu plus cher mais ça vaut le coup".</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BANDEAU CONFIANCE
+  ═══════════════════════════════════════════ -->
+  <section class="trust-section">
+    <div class="section-container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <span class="trust-icon">🔒</span>
+          <div><strong>100% indépendant</strong><p>Nos recommandations ne sont pas influencées par les marques ou les revendeurs.</p></div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-icon">💸</span>
+          <div><strong>Gratuit, sans pub</strong><p>Aucune publicité. Nous vivons uniquement des commissions d'affiliation sans surcoût pour vous.</p></div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-icon">🔄</span>
+          <div><strong>Mis à jour 3 fois par jour</strong><p>Prix actualisés automatiquement 3 fois par jour. Dernière mise à jour affichée en haut de la page.</p></div>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <span class="trust-icon">🧮</span>
+          <div><strong>Algorithme transparent</strong><p>Chaque score est expliqué. Vous savez exactement pourquoi un modèle est recommandé.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════════ -->
+  <section class="faq-section">
+    <div class="section-container faq-inner">
+      <div class="section-label">Questions fréquentes</div>
+      <h2 class="section-heading">Tout ce que vous devez savoir</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">Les prix affichés sont-ils en temps réel ?<span class="faq-arrow">↓</span></summary>
+          <div class="faq-answer">Les prix sont indicatifs et basés sur notre dernière mise à jour hebdomadaire. Vérifiez toujours le prix final sur le site du revendeur avant d'acheter.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Comment est calculé le score global ?<span class="faq-arrow">↓</span></summary>
+          <div class="faq-answer">Le score résulte de 10 critères pondérés : qualité image, son, rapport qualité/prix, réparabilité (indice officiel), avis clients (pondérés par le nombre), garantie constructeur, et des critères spécifiques au produit (ex: essorage et niveau sonore pour les lave-linge).</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Puis-je faire confiance aux avis clients ?<span class="faq-arrow">↓</span></summary>
+          <div class="faq-answer">Nous ne prenons en compte que les modèles avec un minimum d'avis vérifiés (50+) et pondérons le score selon le volume d'avis. Un modèle avec 10 avis à 9.5/10 est moins fiable qu'un modèle avec 2 000 avis à 8.5/10.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Gagnez-vous de l'argent si j'achète via vos liens ?<span class="faq-arrow">↓</span></summary>
+          <div class="faq-answer">Oui, nous percevons une petite commission d'affiliation (généralement 1 à 4%) sans aucun surcoût pour vous. Cette commission ne biaise pas nos recommandations — nous classons objectivement par score, pas par commission.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Quand les nouvelles catégories seront-elles disponibles ?<span class="faq-arrow">↓</span></summary>
+          <div class="faq-answer">Nous ajoutons de nouvelles catégories régulièrement. Aspirateurs, réfrigérateurs, fours et machines à café sont en cours de développement. Revenez dans les prochaines semaines !</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       AFFILIATION (après FAQ)
+  ═══════════════════════════════════════════ -->
+  <section class="affiliate-section-full">
+    <div class="section-container faq-inner">
+      <details class="faq-item">
+        <summary class="faq-question">ℹ️ Comment fonctionnent les liens partenaires ?<span class="faq-arrow">↓</span></summary>
+        <div class="faq-answer" id="affiliateContent"></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><span>⚡</span><span>CompareMax</span></div>
+        <p class="footer-tagline">Le comparateur intelligent,<br>indépendant et gratuit.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Navigation</p>
+        <a href="#app">Comparer</a>
+        <a href="#" onclick="openCategory('tv-son','tv'); return false;">Télévisions</a>
+        <a href="#" onclick="openCategory('electromenager','washing'); return false;">Lave-linge</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">À propos</p>
+        <a href="#" onclick="document.querySelector('.faq-section').scrollIntoView({behavior:'smooth'}); return false;">FAQ</a>
+        <a href="#" id="footerContactLink">Nous contacter</a>
+        <a href="#" id="footerLoginLink">Mon compte</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Légal</p>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-confidentialite.html">Politique de confidentialité</a>
+        <a href="cgu.html">CGU</a>
+        <a href="#" id="manageCookiesLink">Gérer les cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 CompareMax · Comparateur indépendant · Les prix sont indicatifs, vérifiez sur le site du revendeur.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL AUTH (connexion / inscription / vérification)
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="modalAuth">
+    <div class="modal-box" id="modalAuthBox">
+      <button class="modal-close" id="modalAuthClose">✕</button>
+
+      <!-- Étape 1 : Choix login / signup -->
+      <div class="auth-step" id="authStepChoice">
+        <div class="auth-logo">⚡</div>
+        <h2 class="auth-title">Bienvenue sur CompareMax</h2>
+        <p class="auth-sub">Créez un compte pour sauvegarder vos favoris et retrouver vos recherches.</p>
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Se connecter</button>
+          <button class="auth-tab" data-tab="signup">Créer un compte</button>
+        </div>
+
+        <!-- Formulaire connexion -->
+        <form class="auth-form" id="formLogin">
+          <div class="form-field">
+            <label>Adresse e-mail</label>
+            <input type="email" id="loginEmail" placeholder="vous@exemple.com" autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label>Mot de passe</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
+          </div>
+          <p class="auth-error" id="loginError"></p>
+          <button type="submit" class="auth-submit">Se connecter</button>
+        </form>
+
+        <!-- Formulaire inscription -->
+        <form class="auth-form" id="formSignup" style="display:none;">
+          <div class="form-field">
+            <label>Prénom</label>
+            <input type="text" id="signupName" placeholder="Votre prénom" autocomplete="given-name">
+          </div>
+          <div class="form-field">
+            <label>Adresse e-mail</label>
+            <input type="email" id="signupEmail" placeholder="vous@exemple.com" autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label>Mot de passe <span class="field-hint">(8 caractères minimum)</span></label>
+            <input type="password" id="signupPassword" placeholder="••••••••" autocomplete="new-password">
+          </div>
+          <p class="auth-error" id="signupError"></p>
+          <button type="submit" class="auth-submit">Créer mon compte</button>
+        </form>
+      </div>
+
+      <!-- Étape 2 : Vérification e-mail -->
+      <div class="auth-step" id="authStepVerify" style="display:none;">
+        <div class="verify-icon">📬</div>
+        <h2 class="auth-title">Vérifiez votre e-mail</h2>
+        <p class="auth-sub" id="verifySubText">Un code de vérification a été envoyé à <strong id="verifyEmailDisplay"></strong>.</p>
+        <div class="verify-code-demo" id="verifyCodeDemo"></div>
+        <form class="auth-form" id="formVerify">
+          <div class="form-field">
+            <label>Code de vérification (6 chiffres)</label>
+            <input type="text" id="verifyCode" placeholder="000000" maxlength="6" inputmode="numeric" autocomplete="one-time-code">
+          </div>
+          <p class="auth-error" id="verifyError"></p>
+          <button type="submit" class="auth-submit">Vérifier mon adresse</button>
+        </form>
+        <button class="auth-link" id="resendCode">Renvoyer le code</button>
+      </div>
+
+      <!-- Étape 3 : Succès -->
+      <div class="auth-step" id="authStepSuccess" style="display:none;">
+        <div class="success-icon">✅</div>
+        <h2 class="auth-title" id="successTitle">Compte créé !</h2>
+        <p class="auth-sub" id="successSub">Vous êtes maintenant connecté. Retrouvez vos favoris et recherches dans votre espace personnel.</p>
+        <button class="auth-submit" id="successClose">Continuer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL CONTACT
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="modalContact">
+    <div class="modal-box">
+      <button class="modal-close" id="modalContactClose">✕</button>
+      <h2 class="auth-title">Nous contacter</h2>
+      <p class="auth-sub">Une question, un bug à signaler ou une suggestion ? On vous répond sous 48h.</p>
+      <form class="auth-form" id="formContact">
+        <div class="form-field">
+          <label>Votre nom</label>
+          <input type="text" id="contactName" placeholder="Prénom Nom">
+        </div>
+        <div class="form-field">
+          <label>Adresse e-mail</label>
+          <input type="email" id="contactEmail" placeholder="vous@exemple.com">
+        </div>
+        <div class="form-field">
+          <label>Sujet</label>
+          <select id="contactSubject">
+            <option value="">-- Choisissez un sujet --</option>
+            <option value="bug">Signaler un bug</option>
+            <option value="suggestion">Suggestion / amélioration</option>
+            <option value="prix">Prix incorrect</option>
+            <option value="partenariat">Partenariat</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea id="contactMessage" placeholder="Décrivez votre demande..." rows="5"></textarea>
+        </div>
+        <p class="auth-error" id="contactError"></p>
+        <button type="submit" class="auth-submit">Envoyer le message</button>
+      </form>
+      <div class="contact-success" id="contactSuccess" style="display:none;">
+        <div class="success-icon">✅</div>
+        <h3>Message envoyé !</h3>
+        <p>Merci pour votre message. Nous vous répondrons dans les 48 heures.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       DROPDOWN COMPTE (affiché quand connecté)
+  ═══════════════════════════════════════════ -->
+  <div class="account-dropdown" id="accountDropdown" style="display:none;">
+    <div class="account-dropdown-header">
+      <span class="account-avatar" id="accountAvatar">J</span>
+      <div>
+        <p class="account-name" id="accountName">Jules</p>
+        <p class="account-email" id="accountEmail">jules@exemple.com</p>
+      </div>
+    </div>
+    <div class="account-dropdown-divider"></div>
+    <button class="account-dropdown-item" id="btnFavorites">❤️ Mes favoris <span class="account-badge" id="favCount">0</span></button>
+    <button class="account-dropdown-item" id="btnHistory">🕐 Recherches récentes <span class="account-badge" id="histCount">0</span></button>
+    <div class="account-dropdown-divider"></div>
+    <button class="account-dropdown-item account-dropdown-item--danger" id="btnLogout">↩ Se déconnecter</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       BANDEAU COOKIES
+  ═══════════════════════════════════════════ -->
+  <div class="cookie-banner" id="cookieBanner" style="display:none;">
+    <div class="cookie-banner-inner">
+      <div class="cookie-banner-text">
+        <p class="cookie-banner-title">Vos préférences en matière de cookies</p>
+        <p class="cookie-banner-sub">Nous utilisons des cookies analytiques (Google Analytics) pour améliorer le site. Les cookies fonctionnels sont toujours actifs. Consultez notre <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>
+      </div>
+      <div class="cookie-banner-actions">
+        <button class="cookie-btn-refuse" id="cookieRefuse">Refuser</button>
+        <button class="cookie-btn-accept" id="cookieAccept">Accepter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL GESTION COOKIES -->
+  <div class="modal-overlay" id="modalCookies">
+    <div class="modal-box" style="max-width:500px;">
+      <button class="modal-close" id="modalCookiesClose">✕</button>
+      <h2 class="auth-title">Gestion des cookies</h2>
+      <p class="auth-sub">Choisissez les cookies que vous acceptez. Votre choix est sauvegardé pendant 13 mois.</p>
+
+      <div class="cookie-pref-row">
+        <div class="cookie-pref-info">
+          <p class="cookie-pref-name">Cookies fonctionnels</p>
+          <p class="cookie-pref-desc">Session, préférences, compte. Indispensables au fonctionnement du site.</p>
+        </div>
+        <div class="cookie-toggle cookie-toggle--forced">
+          <span>Toujours actifs</span>
+        </div>
+      </div>
+
+      <div class="cookie-pref-row">
+        <div class="cookie-pref-info">
+          <p class="cookie-pref-name">Cookies analytiques</p>
+          <p class="cookie-pref-desc">Google Analytics — mesure d'audience anonymisée pour améliorer le site.</p>
+        </div>
+        <label class="cookie-toggle-switch">
+          <input type="checkbox" id="cookieAnalyticsToggle">
+          <span class="cookie-toggle-track"></span>
+        </label>
+      </div>
+
+      <div style="margin-top:28px; display:flex; gap:12px;">
+        <button class="cookie-btn-refuse" id="cookiePrefRefuse" style="flex:1;">Tout refuser</button>
+        <button class="cookie-btn-accept" id="cookiePrefAccept" style="flex:1;">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/priceOverlay.js"></script>
+  <script src="data/tvDatabase.js"></script>
+  <script src="data/washingDatabase.js"></script>
+  <script src="data/dishwasherDatabase.js"></script>
+  <script src="data/coffeeDatabase.js"></script>
+  <script src="data/vacuumDatabase.js"></script>
+  <script src="data/ironDatabase.js"></script>
+  <script src="js/comparator.js"></script>
+  <script src="js/affiliate.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
