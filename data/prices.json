@@ -1,4 +1,326 @@
 {
-  "lastUpdated": null,
-  "products": {}
+  "lastUpdated": "2026-04-03T12:34:51.239Z",
+  "products": {
+    "hisense-a6n-43": {
+      "pricesByRetailer": {}
+    },
+    "tcl-p635-43": {
+      "pricesByRetailer": {}
+    },
+    "philips-pus7608-43": {
+      "pricesByRetailer": {}
+    },
+    "samsung-cu7105-55": {
+      "pricesByRetailer": {}
+    },
+    "hisense-a6n-55": {
+      "pricesByRetailer": {}
+    },
+    "tcl-c635-55": {
+      "pricesByRetailer": {}
+    },
+    "philips-pus7608-50": {
+      "pricesByRetailer": {}
+    },
+    "samsung-q80c-50": {
+      "pricesByRetailer": {}
+    },
+    "lg-qned81-55": {
+      "pricesByRetailer": {}
+    },
+    "sony-x85l-55": {
+      "pricesByRetailer": {}
+    },
+    "hisense-u7nq-55": {
+      "pricesByRetailer": {}
+    },
+    "tcl-c845-55": {
+      "pricesByRetailer": {}
+    },
+    "samsung-q80c-55": {
+      "pricesByRetailer": {}
+    },
+    "lg-qned85-55": {
+      "pricesByRetailer": {}
+    },
+    "panasonic-mx800-55": {
+      "pricesByRetailer": {}
+    },
+    "philips-oled707-48": {
+      "pricesByRetailer": {}
+    },
+    "samsung-qn85c-55": {
+      "pricesByRetailer": {}
+    },
+    "tcl-c935-65": {
+      "pricesByRetailer": {}
+    },
+    "philips-pus8518-65": {
+      "pricesByRetailer": {}
+    },
+    "lg-oled-c4-55": {
+      "pricesByRetailer": {}
+    },
+    "sony-a80l-55": {
+      "pricesByRetailer": {}
+    },
+    "samsung-qn85c-65": {
+      "pricesByRetailer": {}
+    },
+    "lg-oled-c4-65": {
+      "pricesByRetailer": {}
+    },
+    "panasonic-mz1500-55": {
+      "pricesByRetailer": {}
+    },
+    "philips-oled908-55": {
+      "pricesByRetailer": {}
+    },
+    "sony-a80l-65": {
+      "pricesByRetailer": {}
+    },
+    "hisense-u8nq-55": {
+      "pricesByRetailer": {}
+    },
+    "samsung-frame-55": {
+      "pricesByRetailer": {}
+    },
+    "tcl-qm891g-65": {
+      "pricesByRetailer": {}
+    },
+    "lg-oled-c4-77": {
+      "pricesByRetailer": {}
+    },
+    "sony-a95l-65": {
+      "pricesByRetailer": {}
+    },
+    "samsung-qn900c-65": {
+      "pricesByRetailer": {}
+    },
+    "philips-oled1008-65": {
+      "pricesByRetailer": {}
+    },
+    "lg-oled-c4-83": {
+      "pricesByRetailer": {}
+    },
+    "samsung-qn900c-77": {
+      "pricesByRetailer": {}
+    },
+    "beko-wtc8521xw": {
+      "pricesByRetailer": {}
+    },
+    "hotpoint-nm11946wsafr": {
+      "pricesByRetailer": {}
+    },
+    "aeg-l7fec41s": {
+      "pricesByRetailer": {}
+    },
+    "haier-hw90-b14939s8u1": {
+      "pricesByRetailer": {}
+    },
+    "electrolux-ew7f348sc": {
+      "pricesByRetailer": {}
+    },
+    "samsung-ww90t534daw": {
+      "pricesByRetailer": {}
+    },
+    "lg-f4wv709s1e": {
+      "pricesByRetailer": {}
+    },
+    "whirlpool-w8i49wbfr": {
+      "pricesByRetailer": {}
+    },
+    "bosch-wav28g43ff": {
+      "pricesByRetailer": {}
+    },
+    "lg-f4dv709h2t": {
+      "pricesByRetailer": {}
+    },
+    "samsung-wd90t654dbh": {
+      "pricesByRetailer": {}
+    },
+    "bosch-wna14490ff": {
+      "pricesByRetailer": {}
+    },
+    "aeg-l9wba61bc": {
+      "pricesByRetailer": {}
+    },
+    "miele-wci870-wps": {
+      "pricesByRetailer": {}
+    },
+    "miele-wt1-wci860": {
+      "pricesByRetailer": {}
+    },
+    "candy-cs1c7lfw": {
+      "pricesByRetailer": {}
+    },
+    "beko-dvn04321w": {
+      "pricesByRetailer": {}
+    },
+    "samsung-dw60a3010bb": {
+      "pricesByRetailer": {}
+    },
+    "bosch-serie2-sms2iti14e": {
+      "pricesByRetailer": {}
+    },
+    "whirlpool-wfo3t123p": {
+      "pricesByRetailer": {}
+    },
+    "siemens-iq300-sn53es14ce": {
+      "pricesByRetailer": {}
+    },
+    "aeg-fse72707p": {
+      "pricesByRetailer": {}
+    },
+    "electrolux-eem43201l": {
+      "pricesByRetailer": {}
+    },
+    "siemens-iq500-sn65zx49ce": {
+      "pricesByRetailer": {}
+    },
+    "bosch-serie8-smv8ycx03e": {
+      "pricesByRetailer": {}
+    },
+    "aeg-fse76738p": {
+      "pricesByRetailer": {}
+    },
+    "miele-g5222sci": {
+      "pricesByRetailer": {}
+    },
+    "miele-g7310sc": {
+      "pricesByRetailer": {}
+    },
+    "miele-g7775scvi": {
+      "pricesByRetailer": {}
+    },
+    "vzug-adoradish-v6000": {
+      "pricesByRetailer": {}
+    },
+    "nespresso-vertuo-pop": {
+      "pricesByRetailer": {}
+    },
+    "philips-ep1224": {
+      "pricesByRetailer": {}
+    },
+    "delonghi-magnifica-evo-ecam29061": {
+      "pricesByRetailer": {}
+    },
+    "delonghi-magnifica-evo-ecam29281": {
+      "pricesByRetailer": {}
+    },
+    "philips-ep3327": {
+      "pricesByRetailer": {}
+    },
+    "siemens-eq500-tp503r04": {
+      "pricesByRetailer": {}
+    },
+    "nespresso-vertuo-creatista": {
+      "pricesByRetailer": {}
+    },
+    "jura-e6": {
+      "pricesByRetailer": {}
+    },
+    "delonghi-eletta-explore-ecam450": {
+      "pricesByRetailer": {}
+    },
+    "jura-s8": {
+      "pricesByRetailer": {}
+    },
+    "siemens-eq9-ti923309rw": {
+      "pricesByRetailer": {}
+    },
+    "bosch-verobarista300-ctl636eb6": {
+      "pricesByRetailer": {}
+    },
+    "miele-cm7550": {
+      "pricesByRetailer": {}
+    },
+    "jura-giga10": {
+      "pricesByRetailer": {}
+    },
+    "rowenta-xforce-860-flex": {
+      "pricesByRetailer": {}
+    },
+    "samsung-jet-75e": {
+      "pricesByRetailer": {}
+    },
+    "dyson-v8-origin": {
+      "pricesByRetailer": {}
+    },
+    "dyson-v11-absolute-extra": {
+      "pricesByRetailer": {}
+    },
+    "dyson-v15-detect-absolute": {
+      "pricesByRetailer": {}
+    },
+    "irobot-roomba-694": {
+      "pricesByRetailer": {}
+    },
+    "roborock-q5-plus": {
+      "pricesByRetailer": {}
+    },
+    "ecovacs-deebot-n8-pro-plus": {
+      "pricesByRetailer": {}
+    },
+    "roborock-s7-maxv-ultra": {
+      "pricesByRetailer": {}
+    },
+    "ecovacs-deebot-t20-omni": {
+      "pricesByRetailer": {}
+    },
+    "rowenta-silence-force-ro8371": {
+      "pricesByRetailer": {}
+    },
+    "bosch-prosilence-bgs5335a": {
+      "pricesByRetailer": {}
+    },
+    "miele-classic-c1": {
+      "pricesByRetailer": {}
+    },
+    "miele-complete-c3-excellence": {
+      "pricesByRetailer": {}
+    },
+    "tefal-fv2660-ultraglide": {
+      "pricesByRetailer": {}
+    },
+    "philips-dst5030-5000": {
+      "pricesByRetailer": {}
+    },
+    "rowenta-dw6010-focus": {
+      "pricesByRetailer": {}
+    },
+    "calor-fv6550-maestro": {
+      "pricesByRetailer": {}
+    },
+    "rowenta-dw9240-pro-master": {
+      "pricesByRetailer": {}
+    },
+    "braun-texstyle9-ts985": {
+      "pricesByRetailer": {}
+    },
+    "rowenta-dw9640-pro-style": {
+      "pricesByRetailer": {}
+    },
+    "tefal-gv8160-express-easy": {
+      "pricesByRetailer": {}
+    },
+    "calor-gv7569-express-steam": {
+      "pricesByRetailer": {}
+    },
+    "rowenta-dg8520-eco": {
+      "pricesByRetailer": {}
+    },
+    "philips-gc8942-perfectcare": {
+      "pricesByRetailer": {}
+    },
+    "calor-gv9569-fasteo": {
+      "pricesByRetailer": {}
+    },
+    "philips-gc9682-perfectcare-elite": {
+      "pricesByRetailer": {}
+    },
+    "polti-vaporella-535-pro": {
+      "pricesByRetailer": {}
+    }
+  }
 }
