@@ -13,8 +13,10 @@
 
 const fs        = require('fs');
 const path      = require('path');
-const { getAmazonPrices }   = require('./scrapers/amazon');
-const { getRetailerPrice }  = require('./scrapers/retailers');
+const { getAmazonPrices }              = require('./scrapers/amazon');
+const { getRetailerPrice }             = require('./scrapers/retailers');
+const { validateAndRepairUrls,
+        buildAffiliateLinks }          = require('./validate-urls');
 
 const DRY_RUN      = process.argv.includes('--dry-run');
 const PRICES_FILE  = path.join(__dirname, '..', 'data', 'prices.json');
@@ -146,6 +148,20 @@ async function main() {
   const productIds = Object.keys(productUrls);
   console.log(`\n${productIds.length} produits configurés.\n`);
 
+  // ── Étape 0 : Validation et auto-correction des URLs ────────
+  console.log('\n── Validation des URLs ───────────────────────────────────');
+  const { validated: validatedUrls, totalFixed } = await validateAndRepairUrls(productUrls, { silent: false });
+  if (totalFixed > 0 && !DRY_RUN) {
+    fs.writeFileSync(URLS_FILE, JSON.stringify(validatedUrls, null, 2) + '\n', 'utf8');
+    console.log(`  → ${totalFixed} URL(s) corrigée(s) et sauvegardées dans product-urls.json.`);
+    productUrls = validatedUrls;
+  } else if (totalFixed > 0 && DRY_RUN) {
+    console.log(`  [DRY-RUN] ${totalFixed} URL(s) seraient corrigées (non écrites).`);
+    productUrls = validatedUrls;
+  } else {
+    console.log('  → Toutes les URLs sont valides.');
+  }
+
   // Charger les prix existants (pour conserver les anciens en cas d'échec)
   const existing = loadCurrentPrices();
   const output   = {
@@ -177,6 +193,9 @@ async function main() {
       output.products[productId].price      = Math.min(...allPrices);
       output.products[productId].updatedAt  = new Date().toISOString();
     }
+
+    // Liens affiliate validés (injectés dans prices.json pour le frontend)
+    output.products[productId].affiliateLinks = buildAffiliateLinks(productUrls[productId]);
   }
 
   // ── Étape 3 : Écriture ──────────────────────────────────────

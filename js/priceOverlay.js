@@ -93,6 +93,17 @@
           product.price = Math.min.apply(null, allPrices);
         }
       }
+
+      // Mettre à jour les liens affiliate validés (slugs auto-corrigés côté serveur)
+      if (live.affiliateLinks && typeof live.affiliateLinks === 'object') {
+        if (!product.affiliateLinks) product.affiliateLinks = {};
+        Object.keys(live.affiliateLinks).forEach(function (retailer) {
+          var url = live.affiliateLinks[retailer];
+          if (url && typeof url === 'string') {
+            product.affiliateLinks[retailer] = url;
+          }
+        });
+      }
     });
   }
 
