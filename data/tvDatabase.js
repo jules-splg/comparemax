@@ -49,7 +49,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "VIDAA U7",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX1234AB?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX1234AB?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Hisense-43A6N/...",
       boulanger:    "https://www.boulanger.com/ref/Hisense-43A6N",
       darty:        null,
@@ -94,7 +94,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Google TV",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX5678CD?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX5678CD?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-TCL-43P635/...",
       boulanger:    "https://www.boulanger.com/ref/TCL-43P635",
       darty:        "https://www.darty.com/TCL-43P635",
@@ -139,7 +139,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Titan OS",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX9012EF?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX9012EF?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Philips-43PUS7608/...",
       boulanger:    "https://www.boulanger.com/ref/Philips-43PUS7608",
       darty:        "https://www.darty.com/Philips-43PUS7608",
@@ -183,7 +183,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Tizen",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX3456GH?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX3456GH?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Samsung-55CU7105/...",
       boulanger:    "https://www.boulanger.com/ref/Samsung-55CU7105",
       darty:        "https://www.darty.com/Samsung-55CU7105",
@@ -229,7 +229,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "VIDAA U7",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX7890IJ?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX7890IJ?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Hisense-55A6N/...",
       boulanger:    "https://www.boulanger.com/ref/Hisense-55A6N",
       darty:        null,
@@ -274,7 +274,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Google TV",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX1122KL?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX1122KL?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-TCL-55C635/...",
       boulanger:    "https://www.boulanger.com/ref/TCL-55C635",
       darty:        "https://www.darty.com/TCL-55C635",
@@ -319,7 +319,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Titan OS",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX3344MN?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX3344MN?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Philips-50PUS7608/...",
       boulanger:    "https://www.boulanger.com/ref/Philips-50PUS7608",
       darty:        "https://www.darty.com/Philips-50PUS7608",
@@ -367,7 +367,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Tizen",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX5566OP?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX5566OP?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Samsung-50Q80C/...",
       boulanger:    "https://www.boulanger.com/ref/Samsung-50Q80C",
       darty:        "https://www.darty.com/Samsung-50Q80C",
@@ -412,7 +412,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "webOS 24",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX7788QR?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX7788QR?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-LG-55QNED81/...",
       boulanger:    "https://www.boulanger.com/ref/LG-55QNED81",
       darty:        "https://www.darty.com/LG-55QNED81",
@@ -457,7 +457,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Google TV",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX9900ST?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX9900ST?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Sony-55X85L/...",
       boulanger:    "https://www.boulanger.com/ref/Sony-55X85L",
       darty:        "https://www.darty.com/Sony-55X85L",
@@ -502,7 +502,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "VIDAA U7",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX1122UV?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX1122UV?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Hisense-55U7NQ/...",
       boulanger:    "https://www.boulanger.com/ref/Hisense-55U7NQ",
       darty:        null,
@@ -547,7 +547,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Google TV",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX3344WX?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX3344WX?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-TCL-55C845/...",
       boulanger:    "https://www.boulanger.com/ref/TCL-55C845",
       darty:        "https://www.darty.com/TCL-55C845",
@@ -592,7 +592,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Tizen",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX5566YZ?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX5566YZ?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Samsung-55Q80C/...",
       boulanger:    "https://www.boulanger.com/ref/Samsung-55Q80C",
       darty:        "https://www.darty.com/Samsung-55Q80C",
@@ -637,7 +637,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "webOS 24",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX7788AB?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX7788AB?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-LG-55QNED85/...",
       boulanger:    "https://www.boulanger.com/ref/LG-55QNED85",
       darty:        "https://www.darty.com/LG-55QNED85",
@@ -682,7 +682,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "My Home Screen 8",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX9900CD?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX9900CD?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Panasonic-55MX800/...",
       boulanger:    "https://www.boulanger.com/ref/Panasonic-55MX800",
       darty:        "https://www.darty.com/Panasonic-55MX800",
@@ -726,7 +726,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Titan OS",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX1122EF?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX1122EF?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Philips-48OLED707/...",
       boulanger:    "https://www.boulanger.com/ref/Philips-48OLED707",
       darty:        "https://www.darty.com/Philips-48OLED707",
@@ -771,7 +771,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Tizen",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX3344GH?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX3344GH?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Samsung-55QN85C/...",
       boulanger:    "https://www.boulanger.com/ref/Samsung-55QN85C",
       darty:        "https://www.darty.com/Samsung-55QN85C",
@@ -816,7 +816,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Google TV",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX5566IJ?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX5566IJ?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-TCL-65C935/...",
       boulanger:    "https://www.boulanger.com/ref/TCL-65C935",
       darty:        "https://www.darty.com/TCL-65C935",
@@ -861,7 +861,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Titan OS",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX7788KL?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX7788KL?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Philips-65PUS8518/...",
       boulanger:    "https://www.boulanger.com/ref/Philips-65PUS8518",
       darty:        "https://www.darty.com/Philips-65PUS8518",
@@ -909,7 +909,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "webOS 24",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX9900MN?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX9900MN?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-LG-OLED55C4/...",
       boulanger:    "https://www.boulanger.com/ref/LG-OLED55C4",
       darty:        "https://www.darty.com/LG-OLED55C4",
@@ -954,7 +954,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Google TV",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX1122OP?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX1122OP?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Sony-55A80L/...",
       boulanger:    "https://www.boulanger.com/ref/Sony-55A80L",
       darty:        "https://www.darty.com/Sony-55A80L",
@@ -999,7 +999,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Tizen",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX3344QR?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX3344QR?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Samsung-65QN85C/...",
       boulanger:    "https://www.boulanger.com/ref/Samsung-65QN85C",
       darty:        "https://www.darty.com/Samsung-65QN85C",
@@ -1044,7 +1044,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "webOS 24",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX5566ST?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX5566ST?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-LG-OLED65C4/...",
       boulanger:    "https://www.boulanger.com/ref/LG-OLED65C4",
       darty:        "https://www.darty.com/LG-OLED65C4",
@@ -1089,7 +1089,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "My Home Screen 8",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX7788UV?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX7788UV?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Panasonic-55MZ1500/...",
       boulanger:    "https://www.boulanger.com/ref/Panasonic-55MZ1500",
       darty:        "https://www.darty.com/Panasonic-55MZ1500",
@@ -1133,7 +1133,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Titan OS",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX9900WX?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX9900WX?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Philips-55OLED908/...",
       boulanger:    "https://www.boulanger.com/ref/Philips-55OLED908",
       darty:        "https://www.darty.com/Philips-55OLED908",
@@ -1178,7 +1178,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Google TV",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX1122YZ?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX1122YZ?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Sony-65A80L/...",
       boulanger:    "https://www.boulanger.com/ref/Sony-65A80L",
       darty:        "https://www.darty.com/Sony-65A80L",
@@ -1223,7 +1223,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "VIDAA U7",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX3344AB?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX3344AB?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Hisense-55U8NQ/...",
       boulanger:    "https://www.boulanger.com/ref/Hisense-55U8NQ",
       darty:        null,
@@ -1268,7 +1268,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Tizen",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX5566CD?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX5566CD?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Samsung-55LS03B/...",
       boulanger:    "https://www.boulanger.com/ref/Samsung-55LS03B",
       darty:        "https://www.darty.com/Samsung-55LS03B",
@@ -1312,7 +1312,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Google TV",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX7788EF?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX7788EF?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-TCL-65QM891G/...",
       boulanger:    "https://www.boulanger.com/ref/TCL-65QM891G",
       darty:        "https://www.darty.com/TCL-65QM891G",
@@ -1361,7 +1361,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "webOS 24",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX9900GH?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX9900GH?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-LG-OLED77C4/...",
       boulanger:    "https://www.boulanger.com/ref/LG-OLED77C4",
       darty:        "https://www.darty.com/LG-OLED77C4",
@@ -1406,7 +1406,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Google TV",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX1122IJ?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX1122IJ?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Sony-65A95L/...",
       boulanger:    "https://www.boulanger.com/ref/Sony-65A95L",
       darty:        "https://www.darty.com/Sony-65A95L",
@@ -1451,7 +1451,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Tizen",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX3344KL?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX3344KL?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Samsung-65QN900C/...",
       boulanger:    "https://www.boulanger.com/ref/Samsung-65QN900C",
       darty:        "https://www.darty.com/Samsung-65QN900C",
@@ -1495,7 +1495,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Titan OS",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX5566MN?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX5566MN?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Philips-65OLED1008/...",
       boulanger:    "https://www.boulanger.com/ref/Philips-65OLED1008",
       darty:        "https://www.darty.com/Philips-65OLED1008",
@@ -1540,7 +1540,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "webOS 24",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX7788OP?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX7788OP?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-LG-OLED83C4/...",
       boulanger:    "https://www.boulanger.com/ref/LG-OLED83C4",
       darty:        "https://www.darty.com/LG-OLED83C4",
@@ -1585,7 +1585,7 @@ const TV_DATABASE = [
     year: 2024,
     os: "Tizen",
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/B0CX9900QR?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/B0CX9900QR?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/TV-Samsung-77QN900C/...",
       boulanger:    "https://www.boulanger.com/ref/Samsung-77QN900C",
       darty:        "https://www.darty.com/Samsung-77QN900C",

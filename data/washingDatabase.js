@@ -49,7 +49,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Beko-WTC8521XW",
       boulanger:    "https://www.boulanger.com/ref/Beko-WTC8521XW",
       darty:        "https://www.darty.com/Beko-WTC8521XW",
@@ -105,7 +105,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Hotpoint-NM11946",
       boulanger:    "https://www.boulanger.com/ref/Hotpoint-NM11946",
       darty:        "https://www.darty.com/Hotpoint-NM11946",
@@ -165,7 +165,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/AEG-L7FEC41S",
       boulanger:    "https://www.boulanger.com/ref/AEG-L7FEC41S",
       darty:        "https://www.darty.com/AEG-L7FEC41S",
@@ -220,7 +220,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Haier-HW90-B14939",
       boulanger:    "https://www.boulanger.com/ref/Haier-HW90-B14939",
       darty:        "https://www.darty.com/Haier-HW90-B14939",
@@ -276,7 +276,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Electrolux-EW7F348SC",
       boulanger:    "https://www.boulanger.com/ref/Electrolux-EW7F348SC",
       darty:        "https://www.darty.com/Electrolux-EW7F348SC",
@@ -332,7 +332,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Samsung-WW90T534DAW",
       boulanger:    "https://www.boulanger.com/ref/Samsung-WW90T534DAW",
       darty:        "https://www.darty.com/Samsung-WW90T534DAW",
@@ -389,7 +389,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/LG-F4WV709S1E",
       boulanger:    "https://www.boulanger.com/ref/LG-F4WV709S1E",
       darty:        "https://www.darty.com/LG-F4WV709S1E",
@@ -445,7 +445,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Whirlpool-W8I49WBFR",
       boulanger:    "https://www.boulanger.com/ref/Whirlpool-W8I49WBFR",
       darty:        "https://www.darty.com/Whirlpool-W8I49WBFR",
@@ -502,7 +502,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Bosch-WAV28G43FF",
       boulanger:    "https://www.boulanger.com/ref/Bosch-WAV28G43FF",
       darty:        "https://www.darty.com/Bosch-WAV28G43FF",
@@ -562,7 +562,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/LG-F4DV709H2T",
       boulanger:    "https://www.boulanger.com/ref/LG-F4DV709H2T",
       darty:        "https://www.darty.com/LG-F4DV709H2T",
@@ -618,7 +618,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Samsung-WD90T654DBH",
       boulanger:    "https://www.boulanger.com/ref/Samsung-WD90T654DBH",
       darty:        "https://www.darty.com/Samsung-WD90T654DBH",
@@ -675,7 +675,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Bosch-WNA14490FF",
       boulanger:    "https://www.boulanger.com/ref/Bosch-WNA14490FF",
       darty:        "https://www.darty.com/Bosch-WNA14490FF",
@@ -731,7 +731,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/AEG-L9WBA61BC",
       boulanger:    "https://www.boulanger.com/ref/AEG-L9WBA61BC",
       darty:        "https://www.darty.com/AEG-L9WBA61BC",
@@ -791,7 +791,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Miele-WCI870",
       boulanger:    "https://www.boulanger.com/ref/Miele-WCI870",
       darty:        "https://www.darty.com/Miele-WCI870",
@@ -848,7 +848,7 @@ const WASHING_DATABASE = [
       ]
     },
     affiliateLinks: {
-      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=VOTRE_TAG-21",
+      amazon:       "https://www.amazon.fr/dp/PLACEHOLDER?tag=comparemax21-21",
       fnac:         "https://www.fnac.com/Miele-WT1-WCI860",
       boulanger:    "https://www.boulanger.com/ref/Miele-WT1-WCI860",
       darty:        "https://www.darty.com/Miele-WT1-WCI860",
