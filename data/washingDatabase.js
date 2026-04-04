@@ -884,6 +884,6 @@ const WASHING_DATABASE = [
     };
   }
   WASHING_DATABASE.forEach(function (m) {
-    m.affiliateLinks = searchLinks(m.brand + ' ' + m.model);
+    m.affiliateLinks = searchLinks(m.displayName);
   });
 })();

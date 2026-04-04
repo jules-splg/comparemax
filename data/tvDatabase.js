@@ -1622,6 +1622,6 @@ const TV_DATABASE = [
     };
   }
   TV_DATABASE.forEach(function (tv) {
-    tv.affiliateLinks = searchLinks(tv.brand + ' ' + tv.model);
+    tv.affiliateLinks = searchLinks(tv.displayName);
   });
 })();

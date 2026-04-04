@@ -420,6 +420,6 @@ const VACUUM_DATABASE = [
     };
   }
   VACUUM_DATABASE.forEach(function (v) {
-    v.affiliateLinks = searchLinks(v.brand + ' ' + v.model);
+    v.affiliateLinks = searchLinks(v.displayName);
   });
 })();

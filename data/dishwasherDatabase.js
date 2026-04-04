@@ -692,6 +692,6 @@ const DISHWASHER_DATABASE = [
     };
   }
   DISHWASHER_DATABASE.forEach(function (d) {
-    d.affiliateLinks = searchLinks(d.brand + ' ' + d.model);
+    d.affiliateLinks = searchLinks(d.displayName);
   });
 })();

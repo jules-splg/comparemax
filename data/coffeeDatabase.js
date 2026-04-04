@@ -630,6 +630,6 @@ const COFFEE_DATABASE = [
     };
   }
   COFFEE_DATABASE.forEach(function (c) {
-    c.affiliateLinks = searchLinks(c.brand + ' ' + c.model);
+    c.affiliateLinks = searchLinks(c.displayName);
   });
 })();
