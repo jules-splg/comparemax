@@ -1873,7 +1873,7 @@ details[open] .summary-arrow { transform: rotate(180deg); }
 .cookie-banner-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
 .cookie-banner-sub { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 .cookie-banner-sub a { color: var(--purple-light); border-bottom: 1px solid rgba(159,122,255,0.3); }
-.cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-banner-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
 
 .cookie-btn-refuse {
   padding: 10px 20px;

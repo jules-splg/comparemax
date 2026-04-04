@@ -1,58 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Pages principales -->
   <url>
     <loc>https://comparateur-prix.fr/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://comparateur-prix.fr/a-propos.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-04-04</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
   </url>
 
+  <url>
+    <loc>https://comparateur-prix.fr/a-propos.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-04-02</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comparateur-prix.fr/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <!-- Guides — TV & Son -->
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleure-tv-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
   </url>
 
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleur-casque-audio-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleure-enceinte-bluetooth-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <!-- Guides — Gros électroménager -->
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleur-lave-linge-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
   </url>
 
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleur-lave-vaisselle-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleur-frigo-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <!-- Guides — Petit électroménager cuisine -->
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleure-cafetiere-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleur-micro-ondes-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleur-four-encastrable-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleure-hotte-aspirante-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <!-- Guides — Entretien maison -->
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleur-aspirateur-balai-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2026-04-04</lastmod>
   </url>
 
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleur-aspirateur-robot-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleur-fer-a-repasser-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-04</lastmod>
+  </url>
+
+  <!-- Pages légales -->
   <url>
     <loc>https://comparateur-prix.fr/mentions-legales.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <lastmod>2026-04-02</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/politique-confidentialite.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <lastmod>2026-04-02</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/cgu.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <lastmod>2026-04-02</lastmod>
   </url>
 
 </urlset>
