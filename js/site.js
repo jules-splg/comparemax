@@ -739,18 +739,27 @@ function buildTVCard(tv, rank, type, bestPremium, bestValue) {
       '</div>';
   }
 
+  // Meilleur prix revendeur (calculé avant le bloc prix pour l'afficher)
+  const bestRetailer = findBestRetailer(tv);
+  const displayPrice = bestRetailer ? bestRetailer.price : tv.price;
+  const showStrike   = bestRetailer && bestRetailer.price < tv.price;
+
   // Prix
   const priceBlock = `
     <div class="card-price-block">
-      ${tv.hasPromotion && tv.originalPrice
+      ${(tv.hasPromotion && tv.originalPrice)
         ? `<span class="card-price-original">${tv.originalPrice} €</span>`
-        : ''}
-      <span class="card-price-main">${tv.price} <span class="card-price-suffix">€</span></span>
+        : showStrike
+          ? `<span class="card-price-original">${tv.price} €</span>`
+          : ''}
+      <span class="card-price-main">${displayPrice} <span class="card-price-suffix">€</span></span>
       ${tv.hasPromotion && tv.promotionEndDate
         ? `<span class="card-promo-end">🏷️ ${tv.promotionLabel} — jusqu'au ${formatDate(tv.promotionEndDate)}</span>`
         : tv.hasPromotion
           ? `<span class="card-promo-end">🏷️ ${tv.promotionLabel}</span>`
-          : ''}
+          : showStrike
+            ? `<span class="card-promo-end">💰 Prix constaté chez ${bestRetailer.name}</span>`
+            : ''}
     </div>
   `;
 
@@ -796,8 +805,7 @@ function buildTVCard(tv, rank, type, bestPremium, bestValue) {
       </li>`;
   }).join('');
 
-  // Meilleur prix parmi les revendeurs disponibles
-  const bestRetailer = findBestRetailer(tv);
+  // CTA revendeur
   const ctaLabel = bestRetailer
     ? `Meilleur prix : ${bestRetailer.price} € sur ${bestRetailer.name}`
     : `Voir les offres — ${tv.price} €`;
