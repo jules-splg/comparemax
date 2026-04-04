@@ -1138,7 +1138,48 @@ details[open] .summary-arrow { transform: rotate(180deg); }
 }
 .toast--visible { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* ---- 18. FOOTER ---- */
+/* ---- 18. VOIR AUSSI (cocon sémantique) ---- */
+.voir-aussi {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 28px;
+  margin: 40px 0 0;
+}
+.voir-aussi-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.voir-aussi-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.voir-aussi-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple-light);
+  text-decoration: none;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: border-color .2s, background .2s;
+}
+.voir-aussi-link:hover {
+  border-color: var(--purple-border);
+  background: var(--purple-dim);
+  color: #fff;
+}
+.voir-aussi-link span:first-child { font-size: 18px; flex-shrink: 0; }
+
+/* ---- 19. FOOTER ---- */
 .site-footer {
   background: rgba(255,255,255,0.02);
   border-top: 1px solid var(--border);
