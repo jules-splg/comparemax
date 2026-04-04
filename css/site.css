@@ -1905,24 +1905,24 @@ details[open] .summary-arrow { transform: rotate(180deg); }
   left: 0;
   width: 100%;
   z-index: 9000;
-  background: rgba(13,6,32,0.96);
-  border: 1px solid var(--purple-border);
-  border-radius: 18px;
+  background: rgba(13,6,32,0.97);
+  border-top: 1px solid var(--purple-border);
   backdrop-filter: blur(20px);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(113,61,255,0.15);
-  animation: modalIn .35s cubic-bezier(.22,.68,0,1.2) forwards;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
 }
 .cookie-banner-inner {
   display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 20px 24px;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 32px;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.cookie-banner-text { flex: 1; }
+.cookie-banner-text { width: 100%; }
 .cookie-banner-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
 .cookie-banner-sub { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 .cookie-banner-sub a { color: var(--purple-light); border-bottom: 1px solid rgba(159,122,255,0.3); }
-.cookie-banner-actions { display: flex; flex-direction: row; gap: 10px; flex-shrink: 0; }
+.cookie-banner-actions { display: flex; flex-direction: row; gap: 10px; }
 
 .cookie-btn-refuse {
   padding: 10px 20px;
