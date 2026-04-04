@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5GFHNQDS');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — CompareMax</title>
+  <meta name="description" content="CompareMax est un comparateur d'électroménager et TV 100% indépendant. Découvrez qui nous sommes, notre méthode et nos engagements.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <style>
+    .about-page { max-width: 860px; margin: 0 auto; padding: 120px 24px 100px; }
+
+    .about-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--purple-light); font-size: 14px; margin-bottom: 56px;
+      text-decoration: none; transition: opacity .2s;
+    }
+    .about-back:hover { opacity: .7; }
+
+    /* ── Hero ── */
+    .about-hero { text-align: center; margin-bottom: 80px; }
+    .about-badge {
+      display: inline-block; background: var(--purple-dim);
+      border: 1px solid rgba(113,61,255,0.3); color: var(--purple-light);
+      font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: var(--r-full); margin-bottom: 24px;
+    }
+    .about-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 800;
+      line-height: 1.15; margin-bottom: 20px;
+    }
+    .about-hero h1 span { color: var(--purple-light); }
+    .about-hero p {
+      color: var(--text-muted); font-size: 18px; line-height: 1.7;
+      max-width: 620px; margin: 0 auto;
+    }
+
+    /* ── Manifesto ── */
+    .about-manifesto {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--purple);
+      border-radius: var(--r-xl);
+      padding: 40px 48px;
+      margin-bottom: 80px;
+    }
+    .about-manifesto p {
+      font-size: 17px; line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .about-manifesto p:last-child { margin-bottom: 0; }
+    .about-manifesto strong { color: var(--text); }
+
+    /* ── Valeurs ── */
+    .about-values { margin-bottom: 80px; }
+    .about-section-title {
+      font-size: 13px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--purple-light);
+      margin-bottom: 32px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .value-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 28px;
+      transition: border-color .2s, transform .2s;
+    }
+    .value-card:hover {
+      border-color: var(--purple-border);
+      transform: translateY(-3px);
+    }
+    .value-icon {
+      font-size: 28px; margin-bottom: 16px;
+      display: block;
+    }
+    .value-title {
+      font-size: 16px; font-weight: 700; margin-bottom: 8px;
+    }
+    .value-desc {
+      font-size: 14px; color: var(--text-muted); line-height: 1.6;
+    }
+
+    /* ── Méthode ── */
+    .about-method { margin-bottom: 80px; }
+    .method-steps { display: flex; flex-direction: column; gap: 0; }
+    .method-step {
+      display: flex; gap: 24px;
+      position: relative; padding-bottom: 36px;
+    }
+    .method-step:last-child { padding-bottom: 0; }
+    .method-step-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; }
+    .method-step-num {
+      width: 40px; height: 40px;
+      background: var(--purple-dim); border: 1px solid rgba(113,61,255,0.4);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700; color: var(--purple-light);
+      flex-shrink: 0;
+    }
+    .method-step-line {
+      width: 1px; flex: 1; background: var(--border); margin-top: 8px;
+    }
+    .method-step:last-child .method-step-line { display: none; }
+    .method-step-body { padding-top: 6px; }
+    .method-step-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .method-step-body p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── Transparence affiliation ── */
+    .about-affiliation {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 40px 48px;
+      margin-bottom: 80px;
+    }
+    .about-affiliation h2 {
+      font-size: 20px; font-weight: 700; margin-bottom: 16px;
+    }
+    .about-affiliation p {
+      font-size: 15px; color: var(--text-muted); line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .about-affiliation p:last-child { margin-bottom: 0; }
+    .affil-highlight {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+      color: #4ade80; border-radius: var(--r-md);
+      font-size: 13px; font-weight: 600; padding: 6px 14px;
+      margin-top: 8px;
+    }
+
+    /* ── FAQ ── */
+    .about-faq { margin-bottom: 80px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      font-size: 16px; font-weight: 600; margin-bottom: 10px;
+    }
+    .faq-a {
+      font-size: 14px; color: var(--text-muted); line-height: 1.7;
+    }
+
+    /* ── CTA ── */
+    .about-cta {
+      text-align: center; padding: 60px 32px;
+      background: var(--purple-dim);
+      border: 1px solid rgba(113,61,255,0.25);
+      border-radius: var(--r-xl);
+    }
+    .about-cta h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+    .about-cta p { color: var(--text-muted); margin-bottom: 28px; font-size: 16px; }
+    .about-cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple) 0%, #9f3fff 100%);
+      color: #fff; font-size: 16px; font-weight: 700;
+      padding: 14px 36px; border-radius: var(--r-full);
+      text-decoration: none;
+      box-shadow: var(--sh-glow);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .about-cta-btn:hover { transform: translateY(-2px); box-shadow: var(--sh-glow-h); }
+
+    @media (max-width: 640px) {
+      .about-manifesto, .about-affiliation { padding: 28px 24px; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GFHNQDS"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">⚡</span>
+        <span class="nav-logo-text">CompareMax</span>
+      </a>
+      <div class="nav-links" style="display:flex;gap:8px;align-items:center;">
+        <a href="index.html" class="nav-link">Comparateur</a>
+        <a href="guides/index.html" class="nav-link">Guides</a>
+        <a href="a-propos.html" class="nav-link active">À propos</a>
+      </div>
+      <a href="index.html" class="nav-cta">Comparer maintenant</a>
+    </div>
+  </nav>
+
+  <div class="about-page">
+
+    <a href="index.html" class="about-back">← Retour au comparateur</a>
+
+    <!-- ── Hero ── -->
+    <div class="about-hero">
+      <div class="about-badge">Notre histoire</div>
+      <h1>Un comparateur fait par des <span>consommateurs</span>, pour des consommateurs</h1>
+      <p>CompareMax est né d'une frustration simple : trouver une TV ou un lave-linge au meilleur prix prend trop de temps, et trop de comparateurs sont en réalité des vitrines commerciales déguisées.</p>
+    </div>
+
+    <!-- ── Manifeste ── -->
+    <div class="about-manifesto">
+      <p>On a tous vécu ça : vous cherchez un lave-linge, vous tombez sur un "comparatif" qui met en avant les modèles les plus chers, avec des notes incompréhensibles et des liens qui pointent toujours vers le même site.</p>
+      <p><strong>CompareMax fonctionne différemment.</strong> On compare les prix en temps réel sur 8 enseignes, on affiche les critères qui comptent vraiment (capacité, classe énergie, bruit…), et on ne touche une commission que si vous achetez — ce qui nous pousse à vous montrer les vraies bonnes affaires, pas les marges les plus élevées.</p>
+      <p>L'objectif est simple : <strong>vous faire économiser du temps et de l'argent</strong>, sans vous noyer dans le jargon marketing.</p>
+    </div>
+
+    <!-- ── Valeurs ── -->
+    <div class="about-values">
+      <div class="about-section-title">Nos engagements</div>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-icon">🔍</span>
+          <div class="value-title">Indépendance éditoriale</div>
+          <div class="value-desc">Aucune marque ne finance nos guides. Nos recommandations sont basées sur les données, pas sur les budgets publicitaires.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">⚡</span>
+          <div class="value-title">Prix en temps réel</div>
+          <div class="value-desc">Les prix sont actualisés 3 fois par jour automatiquement. Vous voyez toujours le prix du jour, pas celui d'il y a 3 mois.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🆓</span>
+          <div class="value-title">100% gratuit</div>
+          <div class="value-desc">Le comparateur est entièrement gratuit. Pas d'inscription, pas d'abonnement, pas de pub. Juste un outil utile.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🎯</span>
+          <div class="value-title">Critères concrets</div>
+          <div class="value-desc">On filtre sur ce qui change vraiment votre quotidien : taille, bruit, consommation, connectivité. Pas sur des specs marketing.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🛒</span>
+          <div class="value-title">Multi-enseignes</div>
+          <div class="value-desc">Amazon, Fnac, Boulanger, Darty, Cdiscount, Leclerc, But, Electrodepôt, Ubaldi. On compare là où vous achetez.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🔒</span>
+          <div class="value-title">Respect de la vie privée</div>
+          <div class="value-desc">Pas de tracking intrusif, pas de revente de données. On utilise une analytics minimaliste pour améliorer l'outil, c'est tout.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Méthode ── -->
+    <div class="about-method">
+      <div class="about-section-title">Comment ça marche</div>
+      <div class="method-steps">
+        <div class="method-step">
+          <div class="method-step-left">
+            <div class="method-step-num">1</div>
+            <div class="method-step-line"></div>
+          </div>
+          <div class="method-step-body">
+            <h3>Constitution de la base produits</h3>
+            <p>Chaque modèle est ajouté manuellement avec ses caractéristiques techniques vérifiées depuis les fiches constructeur et les fiches produit officielles des enseignes. Aucune donnée générée automatiquement sans vérification.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-left">
+            <div class="method-step-num">2</div>
+            <div class="method-step-line"></div>
+          </div>
+          <div class="method-step-body">
+            <h3>Actualisation des prix 3x/jour</h3>
+            <p>À 8h, 14h et 20h, un script automatique interroge chaque enseigne et met à jour les prix dans notre base. Le prix affiché est toujours le prix du jour.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-left">
+            <div class="method-step-num">3</div>
+            <div class="method-step-line"></div>
+          </div>
+          <div class="method-step-body">
+            <h3>Validation automatique des liens</h3>
+            <p>À chaque mise à jour, tous les liens produit sont testés. Si une enseigne change l'URL d'une fiche, le lien est automatiquement remplacé par une recherche du produit pour que vous ne tombiez jamais sur une page introuvable.</p>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-left">
+            <div class="method-step-num">4</div>
+            <div class="method-step-line"></div>
+          </div>
+          <div class="method-step-body">
+            <h3>Classement par rapport qualité/prix</h3>
+            <p>Le tri par défaut classe les produits selon un score combinant prix, caractéristiques et avis utilisateurs. Vous voyez les meilleures affaires en premier, pas les plus chers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Transparence affiliation ── -->
+    <div class="about-affiliation">
+      <h2>Transparence sur l'affiliation</h2>
+      <p>CompareMax utilise des liens d'affiliation. Concrètement : si vous cliquez sur un lien et achetez le produit, on perçoit une petite commission de la part de l'enseigne (généralement entre 1 % et 5 % du prix). <strong>Le prix que vous payez ne change pas.</strong></p>
+      <p>C'est notre seule source de revenus. Elle nous permet de maintenir le service gratuit et d'améliorer l'outil en continu.</p>
+      <p>Cette commission ne joue aucun rôle dans notre classement ou nos recommandations. Un produit Darty au meilleur prix sera mis en avant même si Amazon nous rapporte plus.</p>
+      <span class="affil-highlight">✓ Le prix que vous voyez est le prix que vous payez</span>
+    </div>
+
+    <!-- ── FAQ ── -->
+    <div class="about-faq">
+      <div class="about-section-title">Questions fréquentes</div>
+      <div class="faq-item">
+        <div class="faq-q">Les prix sont-ils vraiment mis à jour en temps réel ?</div>
+        <div class="faq-a">Trois fois par jour (8h, 14h, 20h). Les prix affichés peuvent donc avoir au maximum quelques heures de décalage. Pour les promotions flash, on recommande de vérifier directement sur le site de l'enseigne au moment de l'achat.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Pourquoi certains produits n'ont pas de prix sur certaines enseignes ?</div>
+        <div class="faq-a">Tous les produits ne sont pas disponibles partout. Si un prix est manquant, c'est que le produit n'est pas référencé sur cette enseigne ou n'est plus en stock.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Comment sont choisies les catégories et les modèles comparés ?</div>
+        <div class="faq-a">On se concentre sur les produits les plus recherchés en France : TV, lave-linge, lave-vaisselle, aspirateurs, cafetières et fers à repasser. Les modèles sont sélectionnés parmi les plus vendus et les mieux notés de chaque segment de prix.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Je trouve une erreur dans une fiche produit, comment vous contacter ?</div>
+        <div class="faq-a">Envoyez-nous un message à <a href="mailto:contact@comparemax.fr" style="color:var(--purple-light)">contact@comparemax.fr</a>. On corrige généralement dans les 24h.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">CompareMax est-il affilié à des marques ou des enseignes ?</div>
+        <div class="faq-a">Non. On utilise des programmes d'affiliation publics ouverts à tous (Amazon, Awin, Affilae). Aucun accord commercial exclusif avec une marque ou une enseigne ne conditionne nos recommandations.</div>
+      </div>
+    </div>
+
+    <!-- ── CTA ── -->
+    <div class="about-cta">
+      <h2>Prêt à trouver la meilleure affaire ?</h2>
+      <p>Utilisez le comparateur gratuitement — en 30 secondes vous savez où acheter au meilleur prix.</p>
+      <a href="index.html" class="about-cta-btn">Lancer le comparateur</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 CompareMax — Comparateur indépendant</span>
+        <div class="footer-legal">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Confidentialité</a>
+          <a href="cgu.html">CGU</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
