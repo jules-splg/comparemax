@@ -2451,3 +2451,56 @@ document.addEventListener('DOMContentLoaded', function() {
     showToast('Tous les cookies optionnels ont été refusés.');
   });
 });
+
+// ------------------------------------------------------------
+// Réinitialise les filtres de la catégorie courante et relance
+// ------------------------------------------------------------
+function resetFilters() {
+  var cat = AppState.currentCategory;
+
+  if (cat === 'tv') {
+    AppState.filters.priceMin = 0;
+    AppState.filters.priceMax = 1500;
+    AppState.filters.noLimit  = false;
+    AppState.filters.sizeMin  = 43;
+    AppState.filters.sizeMax  = 65;
+    var minEl = document.getElementById('priceMin');
+    var maxEl = document.getElementById('priceMax');
+    if (minEl) minEl.value = 0;
+    if (maxEl) maxEl.value = 1500;
+    onCompare();
+
+  } else if (cat === 'washing') {
+    AppState.washingFilters.priceMin = 0;
+    AppState.washingFilters.priceMax = 800;
+    AppState.washingFilters.noLimit  = false;
+    onCompareWashing();
+
+  } else if (cat === 'dishwasher') {
+    AppState.dishwasherFilters.priceMin = 0;
+    AppState.dishwasherFilters.priceMax = 800;
+    AppState.dishwasherFilters.noLimit  = false;
+    onCompareDishwasher();
+
+  } else if (cat === 'coffee') {
+    AppState.coffeeFilters.priceMin = 0;
+    AppState.coffeeFilters.priceMax = 800;
+    AppState.coffeeFilters.noLimit  = false;
+    onCompareCoffee();
+
+  } else if (cat === 'vacuum') {
+    AppState.vacuumFilters.priceMin = 0;
+    AppState.vacuumFilters.priceMax = 600;
+    AppState.vacuumFilters.noLimit  = false;
+    onCompareVacuum();
+
+  } else if (cat === 'iron') {
+    AppState.ironFilters.priceMin = 0;
+    AppState.ironFilters.priceMax = 200;
+    AppState.ironFilters.noLimit  = false;
+    onCompareIron();
+  }
+
+  document.getElementById('noResultsMsg').style.display = 'none';
+  document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+}
