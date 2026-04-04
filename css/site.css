@@ -1883,6 +1883,7 @@ details[open] .summary-arrow { transform: rotate(180deg); }
   color: var(--text-muted);
   font-size: 13px;
   font-weight: 600;
+  cursor: pointer;
   transition: all .2s;
   white-space: nowrap;
 }
@@ -1891,10 +1892,12 @@ details[open] .summary-arrow { transform: rotate(180deg); }
 .cookie-btn-accept {
   padding: 10px 20px;
   border-radius: var(--r-full);
+  border: none;
   background: var(--purple);
   color: #fff;
   font-size: 13px;
   font-weight: 700;
+  cursor: pointer;
   box-shadow: 0 0 20px rgba(113,61,255,0.4);
   transition: all .2s;
   white-space: nowrap;
