@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5GFHNQDS');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — CompareMax</title>
+  <meta name="description" content="Contactez l'équipe CompareMax pour toute question, signalement d'erreur de prix ou demande de partenariat.">
+  <link rel="canonical" href="https://comparateur-prix.fr/contact.html">
+  <meta property="og:url" content="https://comparateur-prix.fr/contact.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <style>
+    .contact-page { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+    .contact-back { display: inline-flex; align-items: center; gap: 8px; color: var(--purple-light); font-size: 14px; margin-bottom: 48px; transition: opacity .2s; text-decoration: none; }
+    .contact-back:hover { opacity: .7; }
+    .contact-badge { display: inline-block; background: var(--purple-dim); border: 1px solid rgba(113,61,255,0.3); color: var(--purple-light); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 5px 14px; border-radius: var(--r-full); margin-bottom: 24px; }
+    .contact-title { font-size: clamp(28px,5vw,42px); font-weight: 800; margin-bottom: 12px; }
+    .contact-sub { color: var(--text-muted); font-size: 15px; line-height: 1.7; margin-bottom: 56px; max-width: 520px; }
+
+    /* Raisons de contact */
+    .contact-reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 48px; }
+    .contact-reason { background: rgba(113,61,255,0.06); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; }
+    .contact-reason-icon { font-size: 20px; flex-shrink: 0; }
+    .contact-reason-text strong { display: block; font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+    .contact-reason-text span { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+    /* Formulaire */
+    .contact-form-wrap { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 36px; }
+    .form-row { margin-bottom: 22px; }
+    .form-row label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+    .form-row label span { color: var(--text-muted); font-weight: 400; }
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      padding: 12px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--text);
+      transition: border-color .2s, box-shadow .2s;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .form-row input::placeholder,
+    .form-row textarea::placeholder { color: var(--text-muted); opacity: .6; }
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(113,61,255,0.15); }
+    .form-row select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239f7aff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; cursor: pointer; }
+    .form-row select option { background: #1a0a3a; }
+    .form-row textarea { resize: vertical; min-height: 130px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 540px) { .form-grid { grid-template-columns: 1fr; } }
+
+    .form-submit { width: 100%; background: var(--purple); color: #fff; border: none; border-radius: var(--r-md); padding: 14px 28px; font-size: 15px; font-weight: 700; cursor: pointer; transition: opacity .2s, transform .1s; margin-top: 8px; }
+    .form-submit:hover { opacity: .88; }
+    .form-submit:active { transform: scale(.98); }
+    .form-note { font-size: 12px; color: var(--text-muted); margin-top: 16px; text-align: center; line-height: 1.6; }
+    .form-note a { color: var(--purple-light); }
+
+    /* Succès */
+    .contact-success { display: none; text-align: center; padding: 56px 24px; }
+    .contact-success-icon { font-size: 48px; display: block; margin-bottom: 16px; }
+    .contact-success h2 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .contact-success p { color: var(--text-muted); font-size: 14px; line-height: 1.7; max-width: 380px; margin: 0 auto; }
+    .contact-success-back { display: inline-block; margin-top: 28px; color: var(--purple-light); font-size: 14px; font-weight: 600; text-decoration: none; }
+    .contact-success-back:hover { opacity: .7; }
+
+    /* Infos latérales */
+    .contact-layout { display: grid; grid-template-columns: 1fr 280px; gap: 32px; align-items: start; }
+    @media (max-width: 700px) { .contact-layout { grid-template-columns: 1fr; } }
+    .contact-aside { display: flex; flex-direction: column; gap: 16px; }
+    .contact-info-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 20px; }
+    .contact-info-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 10px; color: var(--purple-light); text-transform: uppercase; letter-spacing: .06em; }
+    .contact-info-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+    .contact-info-card a { color: var(--purple-light); }
+    .contact-info-card strong { color: var(--text); }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GFHNQDS"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">⚡</span>
+        <span class="nav-logo-text">CompareMax</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="contact-page">
+    <a href="index.html" class="contact-back">← Retour à l'accueil</a>
+
+    <span class="contact-badge">Support</span>
+    <h1 class="contact-title">Contactez-nous</h1>
+    <p class="contact-sub">Une question, une erreur de prix à signaler ou une idée d'amélioration ? On vous répond sous 48h.</p>
+
+    <!-- Raisons de contact -->
+    <div class="contact-reasons">
+      <div class="contact-reason">
+        <span class="contact-reason-icon">🐛</span>
+        <div class="contact-reason-text">
+          <strong>Erreur de prix</strong>
+          <span>Un prix affiché semble incorrect ou obsolète</span>
+        </div>
+      </div>
+      <div class="contact-reason">
+        <span class="contact-reason-icon">💡</span>
+        <div class="contact-reason-text">
+          <strong>Suggestion</strong>
+          <span>Ajouter un produit, une catégorie ou une fonctionnalité</span>
+        </div>
+      </div>
+      <div class="contact-reason">
+        <span class="contact-reason-icon">🤝</span>
+        <div class="contact-reason-text">
+          <strong>Partenariat</strong>
+          <span>Collaboration, affiliation ou presse</span>
+        </div>
+      </div>
+      <div class="contact-reason">
+        <span class="contact-reason-icon">⚖️</span>
+        <div class="contact-reason-text">
+          <strong>Légal / RGPD</strong>
+          <span>Exercice de vos droits sur vos données</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Formulaire -->
+      <div>
+        <div id="contactFormWrap" class="contact-form-wrap">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none;"><label>Ne pas remplir : <input name="bot-field"></label></p>
+
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="name">Prénom <span>(obligatoire)</span></label>
+                <input type="text" id="name" name="name" placeholder="Jules" required autocomplete="given-name">
+              </div>
+              <div class="form-row">
+                <label for="email">E-mail <span>(obligatoire)</span></label>
+                <input type="email" id="email" name="email" placeholder="jules@exemple.fr" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="subject">Objet</label>
+              <select id="subject" name="subject">
+                <option value="">— Choisissez un sujet —</option>
+                <option value="erreur-prix">Erreur de prix à signaler</option>
+                <option value="produit-manquant">Produit ou catégorie manquant</option>
+                <option value="suggestion">Suggestion d'amélioration</option>
+                <option value="partenariat">Partenariat / Presse</option>
+                <option value="rgpd">Demande RGPD</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="message">Message <span>(obligatoire)</span></label>
+              <textarea id="message" name="message" placeholder="Décrivez votre demande en quelques lignes…" required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Envoyer le message</button>
+            <p class="form-note">
+              En envoyant ce formulaire, vous acceptez que vos données soient utilisées pour répondre à votre demande.<br>
+              Consulter notre <a href="politique-confidentialite.html">politique de confidentialité</a>.
+            </p>
+          </form>
+        </div>
+
+        <!-- Message de succès (affiché après envoi) -->
+        <div class="contact-success" id="contactSuccess">
+          <span class="contact-success-icon">✅</span>
+          <h2>Message envoyé !</h2>
+          <p>Merci pour votre message. Nous vous répondrons à l'adresse indiquée sous 48h ouvrées.</p>
+          <a href="index.html" class="contact-success-back">← Retour à l'accueil</a>
+        </div>
+      </div>
+
+      <!-- Infos latérales -->
+      <aside class="contact-aside">
+        <div class="contact-info-card">
+          <h3>Délai de réponse</h3>
+          <p>Nous répondons sous <strong>48h ouvrées</strong>. Pour les erreurs de prix urgentes, précisez-le dans votre message.</p>
+        </div>
+        <div class="contact-info-card">
+          <h3>E-mail direct</h3>
+          <p><a href="mailto:contact@comparemax.fr">contact@comparemax.fr</a></p>
+        </div>
+        <div class="contact-info-card">
+          <h3>Vos droits RGPD</h3>
+          <p>Pour exercer vos droits (accès, rectification, suppression), consultez notre <a href="politique-confidentialite.html">politique de confidentialité</a>.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="site-footer" style="margin-top:0;">
+    <div class="footer-bottom">
+      <p>© 2026 CompareMax · <a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgu.html">CGU</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      var data = new FormData(form);
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      })
+      .then(function() {
+        document.getElementById('contactFormWrap').style.display = 'none';
+        document.getElementById('contactSuccess').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(function() {
+        alert('Une erreur est survenue. Merci de nous écrire directement à contact@comparemax.fr');
+      });
+    });
+  </script>
+
+</body>
+</html>
