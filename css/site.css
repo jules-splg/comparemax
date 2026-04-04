@@ -1850,11 +1850,9 @@ details[open] .summary-arrow { transform: rotate(180deg); }
 /* ---- COOKIE BANNER ---- */
 .cookie-banner {
   position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 48px);
-  max-width: 860px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 9000;
   background: rgba(13,6,32,0.96);
   border: 1px solid var(--purple-border);
@@ -1873,7 +1871,7 @@ details[open] .summary-arrow { transform: rotate(180deg); }
 .cookie-banner-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
 .cookie-banner-sub { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 .cookie-banner-sub a { color: var(--purple-light); border-bottom: 1px solid rgba(159,122,255,0.3); }
-.cookie-banner-actions { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; min-width: 130px; }
+.cookie-banner-actions { display: flex; flex-direction: row; gap: 10px; flex-shrink: 0; }
 
 .cookie-btn-refuse {
   padding: 10px 20px;
