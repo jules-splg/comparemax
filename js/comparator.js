@@ -927,3 +927,130 @@ function findAboveBudgetIron(database, filters) {
     .sort((a, b) => b.score - a.score)
     .slice(0, 5);
 }
+
+// ============================================================
+// ENCEINTE — Comparaison intelligente
+// ============================================================
+
+function runSpeakerComparison(database, filters) {
+  const filtered = filterSpeakers(database, filters);
+  const scored = filtered.map(s => ({
+    ...s,
+    score: calculateSpeakerScore(s, filters)
+  })).sort((a, b) => b.score - a.score);
+
+  const grouped = groupByBudgetTiers(scored, filters.priceMax, filters.noLimit);
+  const aboveBudget = filters.noLimit ? [] : findAboveBudgetSpeaker(database, filters);
+
+  return {
+    premium:     grouped.premium,
+    value:       grouped.value,
+    aboveBudget: aboveBudget.slice(0, 5),
+    totalFound:  filtered.length
+  };
+}
+
+function filterSpeakers(database, filters) {
+  return database.filter(s => {
+    // Prix
+    if (!filters.noLimit && s.price > filters.priceMax) return false;
+    if (s.price < filters.priceMin) return false;
+
+    // Type : bluetooth ou hifi
+    if (filters.speakerType && filters.speakerType !== 'all') {
+      if (s.type !== filters.speakerType) return false;
+    }
+
+    // Alimentation (bluetooth uniquement)
+    if (filters.powerSource && filters.powerSource !== 'all' && s.type === 'bluetooth') {
+      if (filters.powerSource === 'battery' && s.powerSource !== 'battery') return false;
+      if (filters.powerSource === 'mains' && s.powerSource === 'battery') return false;
+    }
+
+    // Stéréo possible
+    if (filters.stereoMode === true && !s.stereoMode) return false;
+
+    // Autonomie minimale (si batterie sélectionnée)
+    if (filters.powerSource === 'battery' && filters.minBattery > 0) {
+      if (!s.batteryLife_h || s.batteryLife_h < filters.minBattery) return false;
+    }
+
+    // Étanchéité
+    if (filters.waterproof === true && !s.waterproofing) return false;
+
+    return true;
+  });
+}
+
+// Score enceinte (0–10)
+// Bluetooth batterie :  Son 35% | Autonomie 20% | Build 15% | Q/P 15% | Avis 10% | Répa 5%
+// Bluetooth secteur  :  Son 40% | Build 20%     | Q/P 15%  | Avis 15% | Répa 10%
+// HiFi               :  Son 45% | Build 15%     | Q/P 15%  | Avis 15% | Répa 10%
+function calculateSpeakerScore(s, filters) {
+  // Son
+  const soundScore = s.soundScore;
+
+  // Autonomie (batterie uniquement)
+  let batteryScore = 5;
+  if (s.powerSource === 'battery' && s.batteryLife_h) {
+    batteryScore = s.batteryLife_h >= 24 ? 10
+      : s.batteryLife_h >= 18 ? 8
+      : s.batteryLife_h >= 12 ? 6
+      : s.batteryLife_h >= 8  ? 4 : 2;
+  }
+
+  // Build
+  const buildScore = s.buildScore;
+
+  // Rapport Q/P
+  const priceRef   = filters.noLimit ? 1500 : filters.priceMax;
+  const pricePos   = 1 - Math.min((s.price - filters.priceMin) / Math.max(priceRef - filters.priceMin, 1), 1);
+  const valueScore = Math.min(10, soundScore * 0.5 + pricePos * 10 * 0.5);
+
+  // Avis
+  let reviewScore = s.reviewScore;
+  if (s.reviewCount < 100) reviewScore *= 0.7;
+  else if (s.reviewCount < 500) reviewScore *= 0.9;
+
+  // Réparabilité
+  const repairScore = s.repairabilityScore;
+
+  // Stéréo bonus
+  const stereoBonus = s.stereoMode ? 0.3 : 0;
+
+  // Multipoint bonus (bluetooth)
+  const multipointBonus = s.multipoint ? 0.2 : 0;
+
+  let total;
+  if (s.type === 'bluetooth' && s.powerSource === 'battery') {
+    total = soundScore  * 0.35 +
+            batteryScore * 0.20 +
+            buildScore  * 0.15 +
+            valueScore  * 0.15 +
+            reviewScore * 0.10 +
+            repairScore * 0.05;
+  } else if (s.type === 'bluetooth') {
+    total = soundScore  * 0.40 +
+            buildScore  * 0.20 +
+            valueScore  * 0.15 +
+            reviewScore * 0.15 +
+            repairScore * 0.10;
+  } else {
+    // HiFi
+    total = soundScore  * 0.45 +
+            buildScore  * 0.15 +
+            valueScore  * 0.15 +
+            reviewScore * 0.15 +
+            repairScore * 0.10;
+  }
+
+  return Math.round(Math.min(10, total + stereoBonus + multipointBonus) * 10) / 10;
+}
+
+function findAboveBudgetSpeaker(database, filters) {
+  const aboveMax = filters.priceMax * 1.20;
+  return filterSpeakers(database, { ...filters, noLimit: false, priceMin: filters.priceMax, priceMax: aboveMax })
+    .map(s => ({ ...s, score: calculateSpeakerScore(s, { ...filters, noLimit: false, priceMax: aboveMax }) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5);
+}

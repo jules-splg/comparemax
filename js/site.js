@@ -32,7 +32,7 @@ const CATEGORIES = {
     label: 'TV & Son', emoji: '📺',
     products: [
       { key: 'tv',        label: 'Télévision',      emoji: '📺', available: true  },
-      { key: 'speaker',   label: 'Enceinte',         emoji: '🔊', available: false },
+      { key: 'speaker',   label: 'Enceinte',         emoji: '🔊', available: true  },
       { key: 'earphones', label: 'Écouteurs',        emoji: '🎧', available: false },
       { key: 'projector', label: 'Vidéoprojecteur',  emoji: '📽️', available: false },
     ]
@@ -105,6 +105,16 @@ const AppState = {
     noLimit: false,
     type: 'all',
     antiCalcSystem: 'all'
+  },
+  speakerFilters: {
+    priceMin: 0,
+    priceMax: 500,
+    noLimit: false,
+    speakerType: 'all',
+    powerSource: 'all',
+    stereoMode: false,
+    minBattery: 0,
+    waterproof: false
   },
   currentCategory: 'tv',
   results: null
@@ -466,6 +476,67 @@ function bindEvents() {
 
   document.getElementById('compareIronBtn').addEventListener('click', onCompareIron);
   updateIronRangeTrack(); updateIronPriceDisplay();
+
+  // ---- Filtres enceinte ----
+  document.getElementById('spkPriceMin').addEventListener('input', function () { onSpkRangeChange('min'); });
+  document.getElementById('spkPriceMax').addEventListener('input', function () { onSpkRangeChange('max'); });
+
+  document.querySelectorAll('.spk-quick-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var min = parseInt(this.dataset.min), max = parseInt(this.dataset.max);
+      document.getElementById('spkPriceMin').value = min;
+      document.getElementById('spkPriceMax').value = max;
+      AppState.speakerFilters.priceMin = min;
+      AppState.speakerFilters.priceMax = max;
+      AppState.speakerFilters.noLimit  = max >= 4000;
+      updateSpkPriceDisplay(); updateSpkRangeTrack();
+      document.querySelectorAll('.spk-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('#spkTypeGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#spkTypeGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.speakerFilters.speakerType = this.dataset.value;
+      onSpkTypeChange(this.dataset.value);
+    });
+  });
+
+  document.querySelectorAll('#spkPowerSourceGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#spkPowerSourceGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.speakerFilters.powerSource = this.dataset.value;
+      onSpkPowerSourceChange(this.dataset.value);
+    });
+  });
+
+  document.querySelectorAll('#spkStereoGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#spkStereoGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.speakerFilters.stereoMode = this.dataset.value === 'yes';
+    });
+  });
+
+  document.querySelectorAll('#spkWaterproofGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#spkWaterproofGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.speakerFilters.waterproof = this.dataset.value === 'yes';
+    });
+  });
+
+  document.getElementById('spkMinBattery').addEventListener('input', function () {
+    AppState.speakerFilters.minBattery = parseInt(this.value);
+    document.getElementById('spkBatteryDisplay').textContent = this.value + 'h minimum';
+  });
+
+  document.getElementById('compareSpeakerBtn').addEventListener('click', onCompareSpeaker);
+  updateSpkRangeTrack(); updateSpkPriceDisplay();
+  onSpkTypeChange('all');
 }
 
 // ------------------------------------------------------------
@@ -1915,12 +1986,14 @@ function onProductClick(btn) {
   var isCoffee      = product === 'coffee';
   var isVacuum      = product === 'vacuum';
   var isIron        = product === 'iron';
+  var isSpeaker     = product === 'speaker';
   document.getElementById('filtersTv').style.display          = isTv         ? '' : 'none';
   document.getElementById('filtersWashing').style.display     = isWashing    ? '' : 'none';
   document.getElementById('filtersDishwasher').style.display  = isDishwasher ? '' : 'none';
   document.getElementById('filtersCoffee').style.display      = isCoffee     ? '' : 'none';
   document.getElementById('filtersVacuum').style.display      = isVacuum     ? '' : 'none';
   document.getElementById('filtersIron').style.display        = isIron       ? '' : 'none';
+  document.getElementById('filtersSpeaker').style.display     = isSpeaker    ? '' : 'none';
 
   hideResults();
   var noRes = document.getElementById('noResultsMsg');
@@ -2507,8 +2580,185 @@ function resetFilters() {
     AppState.ironFilters.priceMax = 200;
     AppState.ironFilters.noLimit  = false;
     onCompareIron();
+  } else if (cat === 'speaker') {
+    AppState.speakerFilters.priceMin = 0;
+    AppState.speakerFilters.priceMax = 500;
+    AppState.speakerFilters.noLimit  = false;
+    onCompareSpeaker();
   }
 
   document.getElementById('noResultsMsg').style.display = 'none';
   document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ============================================================
+// ENCEINTE — Range, affichage, type, comparaison, rendu
+// ============================================================
+
+function onSpkRangeChange(which) {
+  var minVal = parseInt(document.getElementById('spkPriceMin').value);
+  var maxVal = parseInt(document.getElementById('spkPriceMax').value);
+  if (which === 'min' && minVal > maxVal) { minVal = maxVal; document.getElementById('spkPriceMin').value = minVal; }
+  if (which === 'max' && maxVal < minVal) { maxVal = minVal; document.getElementById('spkPriceMax').value = maxVal; }
+  AppState.speakerFilters.priceMin = minVal;
+  AppState.speakerFilters.priceMax = maxVal;
+  AppState.speakerFilters.noLimit  = maxVal >= 4000;
+  updateSpkPriceDisplay();
+  updateSpkRangeTrack();
+  document.querySelectorAll('.spk-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+}
+
+function updateSpkRangeTrack() {
+  var track = document.getElementById('spkRangeTrackFill');
+  if (!track) return;
+  var leftPct  = (AppState.speakerFilters.priceMin / 2000) * 100;
+  var rightPct = (Math.min(AppState.speakerFilters.priceMax, 2000) / 2000) * 100;
+  track.style.left  = leftPct + '%';
+  track.style.width = (rightPct - leftPct) + '%';
+}
+
+function updateSpkPriceDisplay() {
+  var min = AppState.speakerFilters.priceMin;
+  var max = AppState.speakerFilters.priceMax;
+  var minEl = document.getElementById('spkPriceMinDisplay');
+  var maxEl = document.getElementById('spkPriceMaxDisplay');
+  if (minEl) minEl.textContent = min.toLocaleString('fr-FR') + ' €';
+  if (maxEl) maxEl.textContent = max >= 2000 ? '2 000 € +' : max.toLocaleString('fr-FR') + ' €';
+}
+
+function onSpkTypeChange(type) {
+  var btOptions = document.getElementById('spkBtOptions');
+  if (btOptions) btOptions.style.display = (type === 'bluetooth' || type === 'all') ? '' : 'none';
+}
+
+function onSpkPowerSourceChange(src) {
+  var batteryRow = document.getElementById('spkBatteryRow');
+  if (batteryRow) batteryRow.style.display = (src === 'battery') ? '' : 'none';
+}
+
+function onCompareSpeaker() {
+  AppState.speakerFilters.priceMin = parseInt(document.getElementById('spkPriceMin').value) || 0;
+  AppState.speakerFilters.priceMax = parseInt(document.getElementById('spkPriceMax').value) || 500;
+  AppState.speakerFilters.noLimit  = AppState.speakerFilters.priceMax >= 2000;
+  showLoading(true);
+  hideResults();
+  setTimeout(function () {
+    var results = runSpeakerComparison(SPEAKER_DATABASE, AppState.speakerFilters);
+    AppState.results = results;
+    showLoading(false);
+    renderSpeakerResults(results);
+  }, 100);
+}
+
+function renderSpeakerResults(results) {
+  if (results.totalFound === 0) {
+    var noRes = document.getElementById('noResultsMsg');
+    var txt   = document.getElementById('noResultsText');
+    if (txt) txt.textContent = 'Aucune enceinte trouvée avec ces critères';
+    noRes.style.display = 'block';
+    return;
+  }
+  updateSectionTitles();
+  renderTopSectionSpeaker('listPremium', results.premium, 'sectionPremium', 'premium');
+  renderTopSectionSpeaker('listValue',   results.value,   'sectionValue',   'value');
+  if (!AppState.speakerFilters.noLimit) {
+    var bestP = results.premium && results.premium[0] ? results.premium[0] : null;
+    var bestV = results.value   && results.value[0]   ? results.value[0]   : null;
+    renderTopSectionSpeaker('listAbove', results.aboveBudget, 'sectionAbove', 'above', bestP, bestV);
+  }
+  document.getElementById('resultsWrapper').scrollIntoView({ behavior: 'smooth' });
+  requestAnimationFrame(function () { setTimeout(equalizeCardHeights, 50); });
+}
+
+function renderTopSectionSpeaker(listId, items, sectionId, type, bestPremium, bestValue) {
+  var section = document.getElementById(sectionId);
+  var list    = document.getElementById(listId);
+  if (!items || items.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = items.map(function (s, i) { return buildSpeakerCard(s, i + 1, type, bestPremium, bestValue); }).join('');
+  requestAnimationFrame(function () {
+    list.querySelectorAll('.card-score-fill').forEach(function (el) { el.style.width = el.dataset.width; });
+  });
+}
+
+function buildSpeakerCard(s, rank, type, bestPremium, bestValue) {
+  var medals = { 1: '🥇', 2: '🥈', 3: '🥉' };
+  var medal  = medals[rank] || '#' + rank;
+  var isTop1 = rank === 1;
+  var scoreWidth = Math.round(s.score * 10);
+
+  var comparisonBlock = '';
+  if (type === 'above' && (bestPremium || bestValue)) {
+    var compRows = [];
+    if (bestPremium) {
+      var pDiff = s.price - bestPremium.price;
+      var sDiff = parseFloat((s.score - bestPremium.score).toFixed(1));
+      var sCls  = sDiff > 0 ? 'comp-better' : sDiff < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">🏆 <strong>' + bestPremium.displayName + '</strong><em> · n°1 premium</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff + ' €</span><span class="comp-extra-score ' + sCls + '">' + (sDiff > 0 ? '+' : '') + sDiff + ' pt</span></span></div>');
+    }
+    if (bestValue) {
+      var pDiff2 = s.price - bestValue.price;
+      var sDiff2 = parseFloat((s.score - bestValue.score).toFixed(1));
+      var sCls2  = sDiff2 > 0 ? 'comp-better' : sDiff2 < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">⭐ <strong>' + bestValue.displayName + '</strong><em> · n°1 rapport Q/P</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff2 + ' €</span><span class="comp-extra-score ' + sCls2 + '">' + (sDiff2 > 0 ? '+' : '') + sDiff2 + ' pt</span></span></div>');
+    }
+    comparisonBlock = '<div class="card-comparison"><div class="comp-header">Comparé aux meilleures options dans votre budget :</div>' + compRows.join('') + '</div>';
+  }
+
+  var promoTag = s.hasPromotion ? '<span class="card-promo-tag">' + s.promotionLabel + '</span>' : '';
+  var typeLabel = s.type === 'hifi' ? '🎵 HiFi' : '📡 Bluetooth';
+  var powerLabel = s.type === 'bluetooth'
+    ? (s.powerSource === 'battery' ? '🔋 Batterie' : s.powerSource === 'both' ? '🔋/🔌 Batterie + Secteur' : '🔌 Secteur')
+    : '🔌 Secteur';
+  var stereoLabel = s.stereoMode ? '🔊 Stéréo possible' : '';
+
+  var bestRetailer = findBestRetailer(s);
+  var displayPrice = bestRetailer ? bestRetailer.price : s.price;
+  var showStrike   = bestRetailer && bestRetailer.price < s.price;
+  var ctaLabel = bestRetailer ? 'Meilleur prix : ' + displayPrice + ' € sur ' + bestRetailer.name : 'Voir les offres — ' + s.price + ' €';
+  var ctaHref  = bestRetailer ? bestRetailer.url : '#';
+  var otherOffers = buildOtherOffers(s, bestRetailer);
+
+  var links = Object.entries(s.affiliateLinks || {})
+    .filter(function (e) { return e[1]; })
+    .slice(0, 5)
+    .map(function (e) { return '<a href="' + e[1] + '" target="_blank" rel="noopener" class="retailer-link">' + e[0].charAt(0).toUpperCase() + e[0].slice(1) + '</a>'; })
+    .join('');
+
+  return (
+    '<div class="tv-card' + (isTop1 ? ' tv-card--top1' : '') + '">' +
+      '<div class="card-header">' +
+        '<span class="card-rank">' + medal + '</span>' +
+        '<div class="card-title-block">' +
+          '<h3 class="card-title">' + s.displayName + '</h3>' +
+          '<div class="card-badges">' +
+            '<span class="card-badge">' + typeLabel + '</span>' +
+            '<span class="card-badge">' + powerLabel + '</span>' +
+            (stereoLabel ? '<span class="card-badge">' + stereoLabel + '</span>' : '') +
+            (s.waterproofing ? '<span class="card-badge">💧 ' + s.waterproofing + '</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="card-price-block">' +
+          promoTag +
+          (showStrike ? '<span class="card-original-price">' + s.price.toLocaleString('fr-FR') + ' €</span>' : '') +
+          '<span class="card-price">' + displayPrice.toLocaleString('fr-FR') + ' €</span>' +
+        '</div>' +
+      '</div>' +
+      comparisonBlock +
+      '<div class="card-score-block">' +
+        '<div class="card-score-label"><span>Score global</span><strong>' + s.score + '/10 · ' + scoreToLabel(s.score) + '</strong></div>' +
+        '<div class="card-score-track"><div class="card-score-fill" data-width="' + scoreWidth + '%" style="width:0%"></div></div>' +
+      '</div>' +
+      '<div class="card-specs">' +
+        '<div class="spec-item"><span class="spec-label">Puissance</span><span class="spec-value">' + (s.power_w ? s.power_w + ' W' : 'N/A') + '</span></div>' +
+        (s.powerSource === 'battery' && s.batteryLife_h ? '<div class="spec-item"><span class="spec-label">Autonomie</span><span class="spec-value">' + s.batteryLife_h + 'h</span></div>' : '') +
+        (s.bluetoothVersion ? '<div class="spec-item"><span class="spec-label">Bluetooth</span><span class="spec-value">' + s.bluetoothVersion + '</span></div>' : '') +
+        (s.stereoMode ? '<div class="spec-item"><span class="spec-label">Stéréo</span><span class="spec-value">' + (s.stereoTech || 'Oui') + '</span></div>' : '') +
+        '<div class="spec-item"><span class="spec-label">Réparabilité</span><span class="spec-value">' + s.repairabilityScore + '/10</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Garantie</span><span class="spec-value">' + s.warrantyYears + ' an' + (s.warrantyYears > 1 ? 's' : '') + '</span></div>' +
+      '</div>' +
+      '<a href="' + ctaHref + '" target="_blank" rel="noopener" class="card-cta">' + ctaLabel + ' →</a>' +
+      (otherOffers.count > 0 ? '<details class="card-other-offers"><summary>Voir ' + otherOffers.count + ' autre' + (otherOffers.count > 1 ? 's' : '') + ' offre' + (otherOffers.count > 1 ? 's' : '') + '</summary><div class="other-offers-list">' + otherOffers.html + '</div></details>' : '') +
+    '</div>'
+  );
 }

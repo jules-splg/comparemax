@@ -405,6 +405,74 @@
         <button id="compareIronBtn" class="compare-btn">♨️ &nbsp;Comparer les modèles</button>
       </section>
 
+      <!-- FILTRES ENCEINTE -->
+      <section id="filtersSpeaker" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">Vos critères de recherche</h2>
+
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
+            <button class="quick-btn spk-quick-btn" data-min="0" data-max="100">Entrée de gamme<br><small>0 – 100 €</small></button>
+            <button class="quick-btn spk-quick-btn" data-min="100" data-max="300">Milieu de gamme<br><small>100 – 300 €</small></button>
+            <button class="quick-btn spk-quick-btn" data-min="300" data-max="600">Haut de gamme<br><small>300 – 600 €</small></button>
+            <button class="quick-btn spk-quick-btn" data-min="600" data-max="2000">Premium<br><small>600 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="spkPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="spkPriceMaxDisplay" class="price-range-value">500 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="spkRangeTrackFill"></div>
+            <input type="range" id="spkPriceMin" class="range-input range-input--min" min="0" max="2000" step="10" value="0">
+            <input type="range" id="spkPriceMax" class="range-input range-input--max" min="0" max="2000" step="10" value="500">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">🔊 Type d'enceinte</label>
+          <div class="toggle-group" id="spkTypeGroup">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="bluetooth">Bluetooth</button>
+            <button class="toggle-btn" data-value="hifi">HiFi</button>
+          </div>
+        </div>
+
+        <div id="spkBtOptions">
+          <div class="filter-group">
+            <label class="filter-label">🔌 Alimentation</label>
+            <div class="toggle-group" id="spkPowerSourceGroup">
+              <button class="toggle-btn active" data-value="all">Tous</button>
+              <button class="toggle-btn" data-value="battery">Batterie</button>
+              <button class="toggle-btn" data-value="mains">Secteur</button>
+            </div>
+          </div>
+
+          <div class="filter-group" id="spkBatteryRow" style="display:none;">
+            <label class="filter-label">🔋 Autonomie minimale : <span id="spkBatteryDisplay">0h minimum</span></label>
+            <input type="range" id="spkMinBattery" class="range-input" min="0" max="30" step="2" value="0" style="width:100%;">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">🔊🔊 Mode stéréo possible</label>
+          <div class="toggle-group" id="spkStereoGroup">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Oui, obligatoire</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">💧 Étanchéité (IP)</label>
+          <div class="toggle-group" id="spkWaterproofGroup">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Résistante à l'eau</button>
+          </div>
+        </div>
+
+        <button id="compareSpeakerBtn" class="compare-btn">🔊 &nbsp;Comparer les enceintes</button>
+      </section>
+
       <!-- CHARGEMENT -->
       <div id="loadingState" class="loading-state" style="display:none;">
         <div class="loading-spinner"></div>
@@ -933,6 +1001,7 @@
   <script src="data/coffeeDatabase.js"></script>
   <script src="data/vacuumDatabase.js"></script>
   <script src="data/ironDatabase.js"></script>
+  <script src="data/speakerDatabase.js"></script>
   <script src="js/comparator.js"></script>
   <script src="js/affiliate.js"></script>
   <script src="js/site.js"></script>
