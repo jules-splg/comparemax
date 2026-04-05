@@ -677,19 +677,20 @@ const DISHWASHER_DATABASE = [
 // Remplace tous les affiliateLinks par des liens de recherche réels
 (function () {
   function searchLinks(q) {
-    var e = encodeURIComponent(q);
+    var g = encodeURIComponent('site:DOMAIN "' + q + '"');
     return {
-      amazon:       'https://www.amazon.fr/s?k=' + e + '&tag=comparemax21-21',
-      fnac:         'https://www.fnac.com/SearchResult/ResultSet.aspx?Search=' + e,
-      boulanger:    'https://www.boulanger.com/recherche/' + e,
-      darty:        'https://www.darty.com/nav/extra/search?text=' + e,
-      cdiscount:    'https://www.cdiscount.com/search/10/' + e + '.html',
-      leclerc:      'https://www.e.leclerc/recherche?q=' + e,
-      but:          'https://www.but.fr/recherche?q=' + e,
-      electrodepot: 'https://www.electrodepot.fr/recherche?s=' + e,
-      ubaldi:       'https://www.ubaldi.com/recherche/' + e + '.php',
+      amazon:       'https://www.amazon.fr/s?k=' + encodeURIComponent(q) + '&tag=comparemax21-21',
+      fnac:         'https://www.google.fr/search?q=' + encodeURIComponent('site:fnac.com "' + q + '"'),
+      boulanger:    'https://www.google.fr/search?q=' + encodeURIComponent('site:boulanger.com "' + q + '"'),
+      darty:        'https://www.google.fr/search?q=' + encodeURIComponent('site:darty.com "' + q + '"'),
+      cdiscount:    'https://www.google.fr/search?q=' + encodeURIComponent('site:cdiscount.com "' + q + '"'),
+      leclerc:      'https://www.google.fr/search?q=' + encodeURIComponent('site:e.leclerc "' + q + '"'),
+      but:          'https://www.google.fr/search?q=' + encodeURIComponent('site:but.fr "' + q + '"'),
+      electrodepot: 'https://www.google.fr/search?q=' + encodeURIComponent('site:electrodepot.fr "' + q + '"'),
+      ubaldi:       'https://www.google.fr/search?q=' + encodeURIComponent('site:ubaldi.com "' + q + '"'),
       veepee:       null
     };
+  };
   }
   DISHWASHER_DATABASE.forEach(function (d) {
     d.affiliateLinks = searchLinks(d.displayName);
