@@ -148,13 +148,45 @@ const RETAILERS = {
     shortName: "Veepee",
     bgColor: "#CB0032",
     textColor: "#ffffff",
-    // Note : Veepee fait des ventes flash (disponibilité limitée)
     program: "Awin (chercher 'Veepee')",
     commission: "3%",
     cookieDuration: "7 jours",
     joinUrl: "https://www.awin.com/fr",
     priority: 12,
     isFlashSale: true
+  },
+  backmarket: {
+    name: "Back Market",
+    shortName: "Back Market",
+    bgColor: "#1DB954",
+    textColor: "#ffffff",
+    program: "Awin (chercher 'Back Market')",
+    commission: "3 à 5%",
+    cookieDuration: "30 jours",
+    joinUrl: "https://www.awin.com/fr",
+    priority: 13
+  },
+  dyson: {
+    name: "Dyson",
+    shortName: "Dyson",
+    bgColor: "#CC2229",
+    textColor: "#ffffff",
+    program: "Awin (chercher 'Dyson')",
+    commission: "3%",
+    cookieDuration: "30 jours",
+    joinUrl: "https://www.awin.com/fr",
+    priority: 14
+  },
+  delonghi: {
+    name: "De'Longhi",
+    shortName: "DeLonghi",
+    bgColor: "#8B0000",
+    textColor: "#ffffff",
+    program: "Awin (chercher 'De Longhi')",
+    commission: "3%",
+    cookieDuration: "30 jours",
+    joinUrl: "https://www.awin.com/fr",
+    priority: 15
   }
 };
 

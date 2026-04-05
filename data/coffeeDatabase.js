@@ -615,7 +615,6 @@ const COFFEE_DATABASE = [
 // Remplace tous les affiliateLinks par des liens de recherche réels
 (function () {
   function searchLinks(q) {
-    var g = encodeURIComponent('site:DOMAIN "' + q + '"');
     return {
       amazon:       'https://www.amazon.fr/s?k=' + encodeURIComponent(q) + '&tag=comparemax21-21',
       fnac:         'https://www.google.fr/search?q=' + encodeURIComponent('site:fnac.com "' + q + '"'),
@@ -626,8 +625,12 @@ const COFFEE_DATABASE = [
       but:          'https://www.google.fr/search?q=' + encodeURIComponent('site:but.fr "' + q + '"'),
       electrodepot: 'https://www.google.fr/search?q=' + encodeURIComponent('site:electrodepot.fr "' + q + '"'),
       ubaldi:       'https://www.google.fr/search?q=' + encodeURIComponent('site:ubaldi.com "' + q + '"'),
+      backmarket:   'https://www.google.fr/search?q=' + encodeURIComponent('site:backmarket.fr "' + q + '"'),
+      dyson:        'https://www.google.fr/search?q=' + encodeURIComponent('site:dyson.fr "' + q + '"'),
+      delonghi:     'https://www.google.fr/search?q=' + encodeURIComponent('site:delonghi.com "' + q + '"'),
       veepee:       null
     };
+  };
   };
   }
   COFFEE_DATABASE.forEach(function (c) {
