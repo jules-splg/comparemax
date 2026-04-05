@@ -187,6 +187,39 @@ const RETAILERS = {
     cookieDuration: "30 jours",
     joinUrl: "https://www.awin.com/fr",
     priority: 15
+  },
+  rakuten: {
+    name: "Rakuten",
+    shortName: "Rakuten",
+    bgColor: "#BF0000",
+    textColor: "#ffffff",
+    program: "Rakuten Advertising",
+    commission: "3 à 5%",
+    cookieDuration: "30 jours",
+    joinUrl: "https://rakutenadvertising.com/fr",
+    priority: 16
+  },
+  rueducommerce: {
+    name: "Rue du Commerce",
+    shortName: "Rue du Commerce",
+    bgColor: "#E2001A",
+    textColor: "#ffffff",
+    program: "Awin (chercher 'Rue du Commerce')",
+    commission: "2 à 4%",
+    cookieDuration: "30 jours",
+    joinUrl: "https://www.awin.com/fr",
+    priority: 17
+  },
+  lidl: {
+    name: "Lidl",
+    shortName: "Lidl",
+    bgColor: "#FFD700",
+    textColor: "#003399",
+    program: "Awin (chercher 'Lidl')",
+    commission: "2%",
+    cookieDuration: "30 jours",
+    joinUrl: "https://www.awin.com/fr",
+    priority: 18
   }
 };
 
