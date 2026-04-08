@@ -695,10 +695,6 @@ const DISHWASHER_DATABASE = [
       lidl:           'https://www.google.fr/search?q=' + encodeURIComponent('site:lidl.fr "' + q + '"'),
       veepee:         null
     };
-  };
-  };
-  };
-  };
   }
   DISHWASHER_DATABASE.forEach(function (d) {
     d.affiliateLinks = searchLinks(d.displayName);

@@ -52,5 +52,6 @@ jobs:
           else
             TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M UTC')
             git commit -m "prix: mise à jour automatique — $TIMESTAMP"
+            git pull --rebase origin main
             git push
           fi

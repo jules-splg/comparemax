@@ -633,10 +633,6 @@ const COFFEE_DATABASE = [
       lidl:           'https://www.google.fr/search?q=' + encodeURIComponent('site:lidl.fr "' + q + '"'),
       veepee:         null
     };
-  };
-  };
-  };
-  };
   }
   COFFEE_DATABASE.forEach(function (c) {
     c.affiliateLinks = searchLinks(c.displayName);

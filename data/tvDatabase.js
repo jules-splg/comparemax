@@ -1625,10 +1625,6 @@ const TV_DATABASE = [
       lidl:           'https://www.google.fr/search?q=' + encodeURIComponent('site:lidl.fr "' + q + '"'),
       veepee:         null
     };
-  };
-  };
-  };
-  };
   }
   TV_DATABASE.forEach(function (tv) {
     tv.affiliateLinks = searchLinks(tv.displayName);

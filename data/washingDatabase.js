@@ -887,10 +887,6 @@ const WASHING_DATABASE = [
       lidl:           'https://www.google.fr/search?q=' + encodeURIComponent('site:lidl.fr "' + q + '"'),
       veepee:         null
     };
-  };
-  };
-  };
-  };
   }
   WASHING_DATABASE.forEach(function (m) {
     m.affiliateLinks = searchLinks(m.displayName);

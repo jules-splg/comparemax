@@ -423,10 +423,6 @@ const VACUUM_DATABASE = [
       lidl:           'https://www.google.fr/search?q=' + encodeURIComponent('site:lidl.fr "' + q + '"'),
       veepee:         null
     };
-  };
-  };
-  };
-  };
   }
   VACUUM_DATABASE.forEach(function (v) {
     v.affiliateLinks = searchLinks(v.displayName);
