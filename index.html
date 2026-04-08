@@ -473,6 +473,142 @@
         <button id="compareSpeakerBtn" class="compare-btn">🔊 &nbsp;Comparer les enceintes</button>
       </section>
 
+      <!-- ════════════════════════════════════════════════════
+           FILTRES — ASPIRATEUR ROBOT
+      ════════════════════════════════════════════════════ -->
+      <section id="filtersRobot" class="filters-panel" style="display:none;">
+
+        <!-- Budget -->
+        <div class="filter-group">
+          <label class="filter-label">Budget</label>
+          <div class="price-range-display">
+            <span id="robPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="robPriceMaxDisplay" class="price-range-value">1 500 €</span>
+          </div>
+          <div class="range-slider-wrapper">
+            <div class="range-track"><div id="robRangeTrackFill" class="range-track-fill"></div></div>
+            <input type="range" id="robPriceMin" class="range-input range-input--min" min="0" max="2000" step="50" value="0">
+            <input type="range" id="robPriceMax" class="range-input range-input--max" min="0" max="2000" step="50" value="1500">
+          </div>
+          <div class="quick-btns">
+            <button class="quick-btn rob-quick-btn" data-min="0" data-max="200">- 200 €</button>
+            <button class="quick-btn rob-quick-btn" data-min="0" data-max="400">- 400 €</button>
+            <button class="quick-btn rob-quick-btn active" data-min="0" data-max="700">- 700 €</button>
+            <button class="quick-btn rob-quick-btn" data-min="0" data-max="1000">- 1 000 €</button>
+            <button class="quick-btn rob-quick-btn" data-min="0" data-max="2000">Sans limite</button>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="filter-group">
+          <label class="filter-label">Navigation</label>
+          <div id="robNavGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="laser">Laser (LiDAR)</button>
+            <button class="toggle-btn" data-value="camera">Caméra</button>
+            <button class="toggle-btn" data-value="bump">Aléatoire</button>
+          </div>
+        </div>
+
+        <!-- Vadrouille -->
+        <div class="filter-group">
+          <label class="filter-label">Vadrouille (serpillère)</label>
+          <div id="robMopGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Avec vadrouille</button>
+          </div>
+        </div>
+
+        <!-- Station auto-vidage -->
+        <div class="filter-group">
+          <label class="filter-label">Station auto-vidage</label>
+          <div id="robAutoEmptyGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Avec station</button>
+          </div>
+        </div>
+
+        <!-- Cartographie -->
+        <div class="filter-group">
+          <label class="filter-label">Cartographie du logement</label>
+          <div id="robMappingGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Avec cartographie</button>
+          </div>
+        </div>
+
+        <button id="compareRobotBtn" class="compare-btn">🤖 &nbsp;Comparer les robots</button>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+           FILTRES — ÉCOUTEURS
+      ════════════════════════════════════════════════════ -->
+      <section id="filtersEarphones" class="filters-panel" style="display:none;">
+
+        <!-- Budget -->
+        <div class="filter-group">
+          <label class="filter-label">Budget</label>
+          <div class="price-range-display">
+            <span id="earPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="earPriceMaxDisplay" class="price-range-value">300 €</span>
+          </div>
+          <div class="range-slider-wrapper">
+            <div class="range-track"><div id="earRangeTrackFill" class="range-track-fill"></div></div>
+            <input type="range" id="earPriceMin" class="range-input range-input--min" min="0" max="800" step="10" value="0">
+            <input type="range" id="earPriceMax" class="range-input range-input--max" min="0" max="800" step="10" value="300">
+          </div>
+          <div class="quick-btns">
+            <button class="quick-btn ear-quick-btn" data-min="0" data-max="80">- 80 €</button>
+            <button class="quick-btn ear-quick-btn" data-min="0" data-max="150">- 150 €</button>
+            <button class="quick-btn ear-quick-btn active" data-min="0" data-max="300">- 300 €</button>
+            <button class="quick-btn ear-quick-btn" data-min="0" data-max="500">- 500 €</button>
+            <button class="quick-btn ear-quick-btn" data-min="0" data-max="800">Sans limite</button>
+          </div>
+        </div>
+
+        <!-- Type -->
+        <div class="filter-group">
+          <label class="filter-label">Type</label>
+          <div id="earTypeGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="inear">Intra-auriculaire</button>
+            <button class="toggle-btn" data-value="over-ear">Casque over-ear</button>
+            <button class="toggle-btn" data-value="open">Ouvert</button>
+          </div>
+        </div>
+
+        <!-- ANC -->
+        <div class="filter-group">
+          <label class="filter-label">Réduction de bruit active (ANC)</label>
+          <div id="earAncGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Avec ANC</button>
+          </div>
+        </div>
+
+        <!-- Multipoint -->
+        <div class="filter-group">
+          <label class="filter-label">Connexion multipoint</label>
+          <div id="earMultipointGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Multipoint requis</button>
+          </div>
+        </div>
+
+        <!-- Charge sans fil -->
+        <div class="filter-group">
+          <label class="filter-label">Chargement sans fil</label>
+          <div id="earWirelessChargingGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Requis</button>
+          </div>
+        </div>
+
+        <button id="compareEarphonesBtn" class="compare-btn">🎧 &nbsp;Comparer les écouteurs</button>
+      </section>
+
       <!-- CHARGEMENT -->
       <div id="loadingState" class="loading-state" style="display:none;">
         <div class="loading-spinner"></div>
@@ -1002,6 +1138,8 @@
   <script src="data/vacuumDatabase.js"></script>
   <script src="data/ironDatabase.js"></script>
   <script src="data/speakerDatabase.js"></script>
+  <script src="data/robotDatabase.js"></script>
+  <script src="data/earphonesDatabase.js"></script>
   <script src="js/comparator.js"></script>
   <script src="js/affiliate.js"></script>
   <script src="js/site.js"></script>

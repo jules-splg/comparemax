@@ -24,7 +24,7 @@ const CATEGORIES = {
     label: 'Maison', emoji: '🏡',
     products: [
       { key: 'vacuum', label: 'Aspirateur',          emoji: '🌪️', available: true  },
-      { key: 'robot',  label: 'Aspirateur robot',     emoji: '🤖', available: false },
+      { key: 'robot',  label: 'Aspirateur robot',     emoji: '🤖', available: true  },
       { key: 'iron',   label: 'Repassage',            emoji: '👔', available: true  },
     ]
   },
@@ -33,7 +33,7 @@ const CATEGORIES = {
     products: [
       { key: 'tv',        label: 'Télévision',      emoji: '📺', available: true  },
       { key: 'speaker',   label: 'Enceinte',         emoji: '🔊', available: true  },
-      { key: 'earphones', label: 'Écouteurs',        emoji: '🎧', available: false },
+      { key: 'earphones', label: 'Écouteurs',        emoji: '🎧', available: true  },
       { key: 'projector', label: 'Vidéoprojecteur',  emoji: '📽️', available: false },
     ]
   }
@@ -115,6 +115,24 @@ const AppState = {
     stereoMode: false,
     minBattery: 0,
     waterproof: false
+  },
+  robotFilters: {
+    priceMin: 0,
+    priceMax: 700,
+    noLimit: false,
+    navigation: 'all',
+    mopFunction: false,
+    autoEmpty: false,
+    mapping: false
+  },
+  earphonesFilters: {
+    priceMin: 0,
+    priceMax: 300,
+    noLimit: false,
+    earType: 'all',
+    anc: false,
+    multipoint: false,
+    wirelessCharging: false
   },
   currentCategory: 'tv',
   results: null
@@ -537,6 +555,112 @@ function bindEvents() {
   document.getElementById('compareSpeakerBtn').addEventListener('click', onCompareSpeaker);
   updateSpkRangeTrack(); updateSpkPriceDisplay();
   onSpkTypeChange('all');
+
+  // ---- Filtres aspirateur robot ----
+  document.getElementById('robPriceMin').addEventListener('input', function () { onRobRangeChange('min'); });
+  document.getElementById('robPriceMax').addEventListener('input', function () { onRobRangeChange('max'); });
+
+  document.querySelectorAll('.rob-quick-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var min = parseInt(this.dataset.min), max = parseInt(this.dataset.max);
+      document.getElementById('robPriceMin').value = min;
+      document.getElementById('robPriceMax').value = max;
+      AppState.robotFilters.priceMin = min;
+      AppState.robotFilters.priceMax = max;
+      AppState.robotFilters.noLimit  = max >= 2000;
+      updateRobPriceDisplay(); updateRobRangeTrack();
+      document.querySelectorAll('.rob-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('#robNavGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#robNavGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.robotFilters.navigation = this.dataset.value;
+    });
+  });
+
+  document.querySelectorAll('#robMopGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#robMopGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.robotFilters.mopFunction = this.dataset.value === 'yes';
+    });
+  });
+
+  document.querySelectorAll('#robAutoEmptyGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#robAutoEmptyGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.robotFilters.autoEmpty = this.dataset.value === 'yes';
+    });
+  });
+
+  document.querySelectorAll('#robMappingGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#robMappingGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.robotFilters.mapping = this.dataset.value === 'yes';
+    });
+  });
+
+  document.getElementById('compareRobotBtn').addEventListener('click', onCompareRobot);
+  updateRobRangeTrack(); updateRobPriceDisplay();
+
+  // ---- Filtres écouteurs ----
+  document.getElementById('earPriceMin').addEventListener('input', function () { onEarRangeChange('min'); });
+  document.getElementById('earPriceMax').addEventListener('input', function () { onEarRangeChange('max'); });
+
+  document.querySelectorAll('.ear-quick-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var min = parseInt(this.dataset.min), max = parseInt(this.dataset.max);
+      document.getElementById('earPriceMin').value = min;
+      document.getElementById('earPriceMax').value = max;
+      AppState.earphonesFilters.priceMin = min;
+      AppState.earphonesFilters.priceMax = max;
+      AppState.earphonesFilters.noLimit  = max >= 800;
+      updateEarPriceDisplay(); updateEarRangeTrack();
+      document.querySelectorAll('.ear-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('#earTypeGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#earTypeGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.earphonesFilters.earType = this.dataset.value;
+    });
+  });
+
+  document.querySelectorAll('#earAncGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#earAncGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.earphonesFilters.anc = this.dataset.value === 'yes';
+    });
+  });
+
+  document.querySelectorAll('#earMultipointGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#earMultipointGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.earphonesFilters.multipoint = this.dataset.value === 'yes';
+    });
+  });
+
+  document.querySelectorAll('#earWirelessChargingGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#earWirelessChargingGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.earphonesFilters.wirelessCharging = this.dataset.value === 'yes';
+    });
+  });
+
+  document.getElementById('compareEarphonesBtn').addEventListener('click', onCompareEarphones);
+  updateEarRangeTrack(); updateEarPriceDisplay();
 }
 
 // ------------------------------------------------------------
@@ -1987,6 +2111,8 @@ function onProductClick(btn) {
   var isVacuum      = product === 'vacuum';
   var isIron        = product === 'iron';
   var isSpeaker     = product === 'speaker';
+  var isRobot       = product === 'robot';
+  var isEarphones   = product === 'earphones';
   document.getElementById('filtersTv').style.display          = isTv         ? '' : 'none';
   document.getElementById('filtersWashing').style.display     = isWashing    ? '' : 'none';
   document.getElementById('filtersDishwasher').style.display  = isDishwasher ? '' : 'none';
@@ -1994,6 +2120,8 @@ function onProductClick(btn) {
   document.getElementById('filtersVacuum').style.display      = isVacuum     ? '' : 'none';
   document.getElementById('filtersIron').style.display        = isIron       ? '' : 'none';
   document.getElementById('filtersSpeaker').style.display     = isSpeaker    ? '' : 'none';
+  document.getElementById('filtersRobot').style.display       = isRobot      ? '' : 'none';
+  document.getElementById('filtersEarphones').style.display   = isEarphones  ? '' : 'none';
 
   hideResults();
   var noRes = document.getElementById('noResultsMsg');
@@ -2585,6 +2713,16 @@ function resetFilters() {
     AppState.speakerFilters.priceMax = 500;
     AppState.speakerFilters.noLimit  = false;
     onCompareSpeaker();
+  } else if (cat === 'robot') {
+    AppState.robotFilters.priceMin = 0;
+    AppState.robotFilters.priceMax = 700;
+    AppState.robotFilters.noLimit  = false;
+    onCompareRobot();
+  } else if (cat === 'earphones') {
+    AppState.earphonesFilters.priceMin = 0;
+    AppState.earphonesFilters.priceMax = 300;
+    AppState.earphonesFilters.noLimit  = false;
+    onCompareEarphones();
   }
 
   document.getElementById('noResultsMsg').style.display = 'none';
@@ -2756,6 +2894,313 @@ function buildSpeakerCard(s, rank, type, bestPremium, bestValue) {
         (s.stereoMode ? '<div class="spec-item"><span class="spec-label">Stéréo</span><span class="spec-value">' + (s.stereoTech || 'Oui') + '</span></div>' : '') +
         '<div class="spec-item"><span class="spec-label">Réparabilité</span><span class="spec-value">' + s.repairabilityScore + '/10</span></div>' +
         '<div class="spec-item"><span class="spec-label">Garantie</span><span class="spec-value">' + s.warrantyYears + ' an' + (s.warrantyYears > 1 ? 's' : '') + '</span></div>' +
+      '</div>' +
+      '<a href="' + ctaHref + '" target="_blank" rel="noopener" class="card-cta">' + ctaLabel + ' →</a>' +
+      (otherOffers.count > 0 ? '<details class="card-other-offers"><summary>Voir ' + otherOffers.count + ' autre' + (otherOffers.count > 1 ? 's' : '') + ' offre' + (otherOffers.count > 1 ? 's' : '') + '</summary><div class="other-offers-list">' + otherOffers.html + '</div></details>' : '') +
+    '</div>'
+  );
+}
+
+// ============================================================
+// ASPIRATEUR ROBOT — Range, affichage, comparaison, rendu
+// ============================================================
+
+function onRobRangeChange(which) {
+  var minVal = parseInt(document.getElementById('robPriceMin').value);
+  var maxVal = parseInt(document.getElementById('robPriceMax').value);
+  if (which === 'min' && minVal > maxVal) { minVal = maxVal; document.getElementById('robPriceMin').value = minVal; }
+  if (which === 'max' && maxVal < minVal) { maxVal = minVal; document.getElementById('robPriceMax').value = maxVal; }
+  AppState.robotFilters.priceMin = minVal;
+  AppState.robotFilters.priceMax = maxVal;
+  AppState.robotFilters.noLimit  = maxVal >= 2000;
+  updateRobPriceDisplay();
+  updateRobRangeTrack();
+  document.querySelectorAll('.rob-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+}
+
+function updateRobRangeTrack() {
+  var track = document.getElementById('robRangeTrackFill');
+  if (!track) return;
+  var leftPct  = (AppState.robotFilters.priceMin / 2000) * 100;
+  var rightPct = (Math.min(AppState.robotFilters.priceMax, 2000) / 2000) * 100;
+  track.style.left  = leftPct + '%';
+  track.style.width = (rightPct - leftPct) + '%';
+}
+
+function updateRobPriceDisplay() {
+  var min = AppState.robotFilters.priceMin;
+  var max = AppState.robotFilters.priceMax;
+  var minEl = document.getElementById('robPriceMinDisplay');
+  var maxEl = document.getElementById('robPriceMaxDisplay');
+  if (minEl) minEl.textContent = min.toLocaleString('fr-FR') + ' €';
+  if (maxEl) maxEl.textContent = max >= 2000 ? '2 000 € +' : max.toLocaleString('fr-FR') + ' €';
+}
+
+function onCompareRobot() {
+  AppState.robotFilters.priceMin = parseInt(document.getElementById('robPriceMin').value) || 0;
+  AppState.robotFilters.priceMax = parseInt(document.getElementById('robPriceMax').value) || 700;
+  AppState.robotFilters.noLimit  = AppState.robotFilters.priceMax >= 2000;
+  showLoading(true);
+  hideResults();
+  setTimeout(function () {
+    var results = runRobotComparison(ROBOT_DATABASE, AppState.robotFilters);
+    AppState.results = results;
+    showLoading(false);
+    renderRobotResults(results);
+  }, 100);
+}
+
+function renderRobotResults(results) {
+  if (results.totalFound === 0) {
+    var noRes = document.getElementById('noResultsMsg');
+    var txt   = document.getElementById('noResultsText');
+    if (txt) txt.textContent = 'Aucun aspirateur robot trouvé avec ces critères';
+    noRes.style.display = 'block';
+    return;
+  }
+  updateSectionTitles();
+  renderTopSectionRobot('listPremium', results.premium, 'sectionPremium', 'premium');
+  renderTopSectionRobot('listValue',   results.value,   'sectionValue',   'value');
+  if (!AppState.robotFilters.noLimit) {
+    var bestP = results.premium && results.premium[0] ? results.premium[0] : null;
+    var bestV = results.value   && results.value[0]   ? results.value[0]   : null;
+    renderTopSectionRobot('listAbove', results.aboveBudget, 'sectionAbove', 'above', bestP, bestV);
+  }
+  document.getElementById('resultsWrapper').scrollIntoView({ behavior: 'smooth' });
+  requestAnimationFrame(function () { setTimeout(equalizeCardHeights, 50); });
+}
+
+function renderTopSectionRobot(listId, items, sectionId, type, bestPremium, bestValue) {
+  var section = document.getElementById(sectionId);
+  var list    = document.getElementById(listId);
+  if (!items || items.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = items.map(function (r, i) { return buildRobotCard(r, i + 1, type, bestPremium, bestValue); }).join('');
+  requestAnimationFrame(function () {
+    list.querySelectorAll('.card-score-fill').forEach(function (el) { el.style.width = el.dataset.width; });
+  });
+}
+
+function buildRobotCard(r, rank, type, bestPremium, bestValue) {
+  var medals = { 1: '🥇', 2: '🥈', 3: '🥉' };
+  var medal  = medals[rank] || '#' + rank;
+  var isTop1 = rank === 1;
+  var scoreWidth = Math.round(r.score * 10);
+
+  var comparisonBlock = '';
+  if (type === 'above' && (bestPremium || bestValue)) {
+    var compRows = [];
+    if (bestPremium) {
+      var pDiff = r.price - bestPremium.price;
+      var sDiff = parseFloat((r.score - bestPremium.score).toFixed(1));
+      var sCls  = sDiff > 0 ? 'comp-better' : sDiff < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">🏆 <strong>' + bestPremium.displayName + '</strong><em> · n°1 premium</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff + ' €</span><span class="comp-extra-score ' + sCls + '">' + (sDiff > 0 ? '+' : '') + sDiff + ' pt</span></span></div>');
+    }
+    if (bestValue) {
+      var pDiff2 = r.price - bestValue.price;
+      var sDiff2 = parseFloat((r.score - bestValue.score).toFixed(1));
+      var sCls2  = sDiff2 > 0 ? 'comp-better' : sDiff2 < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">⭐ <strong>' + bestValue.displayName + '</strong><em> · n°1 rapport Q/P</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff2 + ' €</span><span class="comp-extra-score ' + sCls2 + '">' + (sDiff2 > 0 ? '+' : '') + sDiff2 + ' pt</span></span></div>');
+    }
+    comparisonBlock = '<div class="card-comparison"><div class="comp-header">Comparé aux meilleures options dans votre budget :</div>' + compRows.join('') + '</div>';
+  }
+
+  var promoTag   = r.hasPromotion ? '<span class="card-promo-tag">' + r.promotionLabel + '</span>' : '';
+  var navLabel   = r.navigation === 'laser' ? '📡 Laser' : r.navigation === 'camera' ? '📷 Caméra' : '🎲 Aléatoire';
+  var bestRetailer = findBestRetailer(r);
+  var displayPrice = bestRetailer ? bestRetailer.price : r.price;
+  var showStrike   = bestRetailer && bestRetailer.price < r.price;
+  var ctaLabel = bestRetailer ? 'Meilleur prix : ' + displayPrice + ' € sur ' + bestRetailer.name : 'Voir les offres — ' + r.price + ' €';
+  var ctaHref  = bestRetailer ? bestRetailer.url : '#';
+  var otherOffers = buildOtherOffers(r, bestRetailer);
+
+  return (
+    '<div class="tv-card' + (isTop1 ? ' tv-card--top1' : '') + '">' +
+      '<div class="card-header">' +
+        '<span class="card-rank">' + medal + '</span>' +
+        '<div class="card-title-block">' +
+          '<h3 class="card-title">' + r.displayName + '</h3>' +
+          '<div class="card-badges">' +
+            '<span class="card-badge">' + navLabel + '</span>' +
+            (r.mopFunction ? '<span class="card-badge">🫧 Vadrouille</span>' : '') +
+            (r.autoEmpty   ? '<span class="card-badge">🗑️ Auto-vidage</span>' : '') +
+            (r.mapping     ? '<span class="card-badge">🗺️ Cartographie</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="card-price-block">' +
+          promoTag +
+          (showStrike ? '<span class="card-original-price">' + r.price.toLocaleString('fr-FR') + ' €</span>' : '') +
+          '<span class="card-price">' + displayPrice.toLocaleString('fr-FR') + ' €</span>' +
+        '</div>' +
+      '</div>' +
+      comparisonBlock +
+      '<div class="card-score-block">' +
+        '<div class="card-score-label"><span>Score global</span><strong>' + r.score + '/10 · ' + scoreToLabel(r.score) + '</strong></div>' +
+        '<div class="card-score-track"><div class="card-score-fill" data-width="' + scoreWidth + '%" style="width:0%"></div></div>' +
+      '</div>' +
+      '<div class="card-specs">' +
+        '<div class="spec-item"><span class="spec-label">Aspiration</span><span class="spec-value">' + r.suction_pa.toLocaleString('fr-FR') + ' Pa</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Autonomie</span><span class="spec-value">' + r.autonomy_min + ' min</span></div>' +
+        (r.mopFunction ? '<div class="spec-item"><span class="spec-label">Vadrouille</span><span class="spec-value">' + r.mopTech + '</span></div>' : '') +
+        '<div class="spec-item"><span class="spec-label">Bac</span><span class="spec-value">' + r.binSize_ml + ' ml</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Réparabilité</span><span class="spec-value">' + r.repairabilityScore + '/10</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Garantie</span><span class="spec-value">' + r.warrantyYears + ' an' + (r.warrantyYears > 1 ? 's' : '') + '</span></div>' +
+      '</div>' +
+      '<a href="' + ctaHref + '" target="_blank" rel="noopener" class="card-cta">' + ctaLabel + ' →</a>' +
+      (otherOffers.count > 0 ? '<details class="card-other-offers"><summary>Voir ' + otherOffers.count + ' autre' + (otherOffers.count > 1 ? 's' : '') + ' offre' + (otherOffers.count > 1 ? 's' : '') + '</summary><div class="other-offers-list">' + otherOffers.html + '</div></details>' : '') +
+    '</div>'
+  );
+}
+
+// ============================================================
+// ÉCOUTEURS — Range, affichage, comparaison, rendu
+// ============================================================
+
+function onEarRangeChange(which) {
+  var minVal = parseInt(document.getElementById('earPriceMin').value);
+  var maxVal = parseInt(document.getElementById('earPriceMax').value);
+  if (which === 'min' && minVal > maxVal) { minVal = maxVal; document.getElementById('earPriceMin').value = minVal; }
+  if (which === 'max' && maxVal < minVal) { maxVal = minVal; document.getElementById('earPriceMax').value = maxVal; }
+  AppState.earphonesFilters.priceMin = minVal;
+  AppState.earphonesFilters.priceMax = maxVal;
+  AppState.earphonesFilters.noLimit  = maxVal >= 800;
+  updateEarPriceDisplay();
+  updateEarRangeTrack();
+  document.querySelectorAll('.ear-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+}
+
+function updateEarRangeTrack() {
+  var track = document.getElementById('earRangeTrackFill');
+  if (!track) return;
+  var leftPct  = (AppState.earphonesFilters.priceMin / 800) * 100;
+  var rightPct = (Math.min(AppState.earphonesFilters.priceMax, 800) / 800) * 100;
+  track.style.left  = leftPct + '%';
+  track.style.width = (rightPct - leftPct) + '%';
+}
+
+function updateEarPriceDisplay() {
+  var min = AppState.earphonesFilters.priceMin;
+  var max = AppState.earphonesFilters.priceMax;
+  var minEl = document.getElementById('earPriceMinDisplay');
+  var maxEl = document.getElementById('earPriceMaxDisplay');
+  if (minEl) minEl.textContent = min.toLocaleString('fr-FR') + ' €';
+  if (maxEl) maxEl.textContent = max >= 800 ? '800 € +' : max.toLocaleString('fr-FR') + ' €';
+}
+
+function onCompareEarphones() {
+  AppState.earphonesFilters.priceMin = parseInt(document.getElementById('earPriceMin').value) || 0;
+  AppState.earphonesFilters.priceMax = parseInt(document.getElementById('earPriceMax').value) || 300;
+  AppState.earphonesFilters.noLimit  = AppState.earphonesFilters.priceMax >= 800;
+  showLoading(true);
+  hideResults();
+  setTimeout(function () {
+    var results = runEarphonesComparison(EARPHONES_DATABASE, AppState.earphonesFilters);
+    AppState.results = results;
+    showLoading(false);
+    renderEarphonesResults(results);
+  }, 100);
+}
+
+function renderEarphonesResults(results) {
+  if (results.totalFound === 0) {
+    var noRes = document.getElementById('noResultsMsg');
+    var txt   = document.getElementById('noResultsText');
+    if (txt) txt.textContent = 'Aucun écouteur trouvé avec ces critères';
+    noRes.style.display = 'block';
+    return;
+  }
+  updateSectionTitles();
+  renderTopSectionEarphones('listPremium', results.premium, 'sectionPremium', 'premium');
+  renderTopSectionEarphones('listValue',   results.value,   'sectionValue',   'value');
+  if (!AppState.earphonesFilters.noLimit) {
+    var bestP = results.premium && results.premium[0] ? results.premium[0] : null;
+    var bestV = results.value   && results.value[0]   ? results.value[0]   : null;
+    renderTopSectionEarphones('listAbove', results.aboveBudget, 'sectionAbove', 'above', bestP, bestV);
+  }
+  document.getElementById('resultsWrapper').scrollIntoView({ behavior: 'smooth' });
+  requestAnimationFrame(function () { setTimeout(equalizeCardHeights, 50); });
+}
+
+function renderTopSectionEarphones(listId, items, sectionId, type, bestPremium, bestValue) {
+  var section = document.getElementById(sectionId);
+  var list    = document.getElementById(listId);
+  if (!items || items.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = items.map(function (e, i) { return buildEarphonesCard(e, i + 1, type, bestPremium, bestValue); }).join('');
+  requestAnimationFrame(function () {
+    list.querySelectorAll('.card-score-fill').forEach(function (el) { el.style.width = el.dataset.width; });
+  });
+}
+
+function buildEarphonesCard(e, rank, type, bestPremium, bestValue) {
+  var medals = { 1: '🥇', 2: '🥈', 3: '🥉' };
+  var medal  = medals[rank] || '#' + rank;
+  var isTop1 = rank === 1;
+  var scoreWidth = Math.round(e.score * 10);
+
+  var comparisonBlock = '';
+  if (type === 'above' && (bestPremium || bestValue)) {
+    var compRows = [];
+    if (bestPremium) {
+      var pDiff = e.price - bestPremium.price;
+      var sDiff = parseFloat((e.score - bestPremium.score).toFixed(1));
+      var sCls  = sDiff > 0 ? 'comp-better' : sDiff < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">🏆 <strong>' + bestPremium.displayName + '</strong><em> · n°1 premium</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff + ' €</span><span class="comp-extra-score ' + sCls + '">' + (sDiff > 0 ? '+' : '') + sDiff + ' pt</span></span></div>');
+    }
+    if (bestValue) {
+      var pDiff2 = e.price - bestValue.price;
+      var sDiff2 = parseFloat((e.score - bestValue.score).toFixed(1));
+      var sCls2  = sDiff2 > 0 ? 'comp-better' : sDiff2 < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">⭐ <strong>' + bestValue.displayName + '</strong><em> · n°1 rapport Q/P</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff2 + ' €</span><span class="comp-extra-score ' + sCls2 + '">' + (sDiff2 > 0 ? '+' : '') + sDiff2 + ' pt</span></span></div>');
+    }
+    comparisonBlock = '<div class="card-comparison"><div class="comp-header">Comparé aux meilleures options dans votre budget :</div>' + compRows.join('') + '</div>';
+  }
+
+  var promoTag = e.hasPromotion ? '<span class="card-promo-tag">' + e.promotionLabel + '</span>' : '';
+  var typeLabel = e.type === 'over-ear' ? '🎧 Casque' : e.type === 'open' ? '🔓 Ouvert' : '🎵 Intra';
+  var battLabel = e.type === 'over-ear'
+    ? e.batteryLife_h + 'h autonomie'
+    : e.totalBattery_h + 'h total (boîtier inclus)';
+
+  var bestRetailer = findBestRetailer(e);
+  var displayPrice = bestRetailer ? bestRetailer.price : e.price;
+  var showStrike   = bestRetailer && bestRetailer.price < e.price;
+  var ctaLabel = bestRetailer ? 'Meilleur prix : ' + displayPrice + ' € sur ' + bestRetailer.name : 'Voir les offres — ' + e.price + ' €';
+  var ctaHref  = bestRetailer ? bestRetailer.url : '#';
+  var otherOffers = buildOtherOffers(e, bestRetailer);
+
+  return (
+    '<div class="tv-card' + (isTop1 ? ' tv-card--top1' : '') + '">' +
+      '<div class="card-header">' +
+        '<span class="card-rank">' + medal + '</span>' +
+        '<div class="card-title-block">' +
+          '<h3 class="card-title">' + e.displayName + '</h3>' +
+          '<div class="card-badges">' +
+            '<span class="card-badge">' + typeLabel + '</span>' +
+            (e.anc ? '<span class="card-badge">🔇 ANC</span>' : '') +
+            (e.multipoint ? '<span class="card-badge">🔗 Multipoint</span>' : '') +
+            (e.wirelessCharging ? '<span class="card-badge">⚡ Charge sans fil</span>' : '') +
+            (e.waterproofing ? '<span class="card-badge">💧 ' + e.waterproofing + '</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="card-price-block">' +
+          promoTag +
+          (showStrike ? '<span class="card-original-price">' + e.price.toLocaleString('fr-FR') + ' €</span>' : '') +
+          '<span class="card-price">' + displayPrice.toLocaleString('fr-FR') + ' €</span>' +
+        '</div>' +
+      '</div>' +
+      comparisonBlock +
+      '<div class="card-score-block">' +
+        '<div class="card-score-label"><span>Score global</span><strong>' + e.score + '/10 · ' + scoreToLabel(e.score) + '</strong></div>' +
+        '<div class="card-score-track"><div class="card-score-fill" data-width="' + scoreWidth + '%" style="width:0%"></div></div>' +
+      '</div>' +
+      '<div class="card-specs">' +
+        '<div class="spec-item"><span class="spec-label">Autonomie</span><span class="spec-value">' + battLabel + '</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Codec</span><span class="spec-value">' + e.codec + '</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Bluetooth</span><span class="spec-value">' + e.bluetoothVersion + '</span></div>' +
+        (e.anc ? '<div class="spec-item"><span class="spec-label">ANC</span><span class="spec-value">Score ' + e.ancScore + '/10</span></div>' : '') +
+        (e.spatialAudio ? '<div class="spec-item"><span class="spec-label">Audio spatial</span><span class="spec-value">Oui</span></div>' : '') +
+        '<div class="spec-item"><span class="spec-label">Réparabilité</span><span class="spec-value">' + e.repairabilityScore + '/10</span></div>' +
       '</div>' +
       '<a href="' + ctaHref + '" target="_blank" rel="noopener" class="card-cta">' + ctaLabel + ' →</a>' +
       (otherOffers.count > 0 ? '<details class="card-other-offers"><summary>Voir ' + otherOffers.count + ' autre' + (otherOffers.count > 1 ? 's' : '') + ' offre' + (otherOffers.count > 1 ? 's' : '') + '</summary><div class="other-offers-list">' + otherOffers.html + '</div></details>' : '') +

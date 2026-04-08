@@ -1054,3 +1054,187 @@ function findAboveBudgetSpeaker(database, filters) {
     .sort((a, b) => b.score - a.score)
     .slice(0, 5);
 }
+
+// ============================================================
+// ASPIRATEUR ROBOT — Comparaison intelligente
+// ============================================================
+
+function runRobotComparison(database, filters) {
+  const filtered = filterRobots(database, filters);
+  const scored = filtered.map(r => ({
+    ...r,
+    score: calculateRobotScore(r, filters)
+  })).sort((a, b) => b.score - a.score);
+
+  const grouped = groupByBudgetTiers(scored, filters.priceMax, filters.noLimit);
+  const aboveBudget = filters.noLimit ? [] : findAboveBudgetRobot(database, filters);
+
+  return {
+    premium:     grouped.premium,
+    value:       grouped.value,
+    aboveBudget: aboveBudget.slice(0, 5),
+    totalFound:  filtered.length
+  };
+}
+
+function filterRobots(database, filters) {
+  return database.filter(r => {
+    if (!filters.noLimit && r.price > filters.priceMax) return false;
+    if (r.price < filters.priceMin) return false;
+    if (filters.navigation && filters.navigation !== 'all' && r.navigation !== filters.navigation) return false;
+    if (filters.mopFunction === true && !r.mopFunction) return false;
+    if (filters.autoEmpty === true && !r.autoEmpty) return false;
+    if (filters.mapping === true && !r.mapping) return false;
+    return true;
+  });
+}
+
+// Score robot (0–10)
+// Aspiration 30% | Navigation 20% | Q/P 20% | Vadrouille 10% | Autonomie 10% | Avis 5% | Répa 5%
+function calculateRobotScore(r, filters) {
+  // Aspiration
+  const suctionScore = r.suction_pa >= 8000 ? 10
+    : r.suction_pa >= 6000 ? 8.5
+    : r.suction_pa >= 4000 ? 7
+    : r.suction_pa >= 2500 ? 5.5 : 3.5;
+
+  // Navigation
+  const navScore = r.navigation === 'laser' ? 10
+    : r.navigation === 'camera' ? 7
+    : 4; // bump
+
+  // Rapport Q/P
+  const priceRef  = filters.noLimit ? 1500 : filters.priceMax;
+  const pricePos  = 1 - Math.min((r.price - filters.priceMin) / Math.max(priceRef - filters.priceMin, 1), 1);
+  const valueScore = Math.min(10, suctionScore * 0.4 + navScore * 0.2 + pricePos * 10 * 0.4);
+
+  // Vadrouille
+  const mopScore = r.mopFunction
+    ? (r.selfClean ? 10 : r.mopTech === 'Rotation' ? 8 : 6)
+    : 3;
+
+  // Autonomie
+  const autoScore = r.autonomy_min >= 200 ? 10
+    : r.autonomy_min >= 150 ? 8
+    : r.autonomy_min >= 100 ? 6 : 4;
+
+  // Avis
+  let reviewScore = r.reviewScore;
+  if (r.reviewCount < 200)  reviewScore *= 0.7;
+  else if (r.reviewCount < 1000) reviewScore *= 0.9;
+
+  const repairScore = r.repairabilityScore;
+
+  // Bonus station auto-vidage
+  const autoEmptyBonus = r.autoEmpty ? 0.5 : 0;
+  // Bonus évitement obstacles
+  const obstacleBonus = r.obstacleAvoidance ? 0.3 : 0;
+
+  const total = suctionScore * 0.30 +
+                navScore     * 0.20 +
+                valueScore   * 0.20 +
+                mopScore     * 0.10 +
+                autoScore    * 0.10 +
+                reviewScore  * 0.05 +
+                repairScore  * 0.05;
+
+  return Math.round(Math.min(10, total + autoEmptyBonus + obstacleBonus) * 10) / 10;
+}
+
+function findAboveBudgetRobot(database, filters) {
+  const aboveMax = filters.priceMax * 1.25;
+  return filterRobots(database, { ...filters, noLimit: false, priceMin: filters.priceMax, priceMax: aboveMax })
+    .map(r => ({ ...r, score: calculateRobotScore(r, { ...filters, noLimit: false, priceMax: aboveMax }) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5);
+}
+
+// ============================================================
+// ÉCOUTEURS — Comparaison intelligente
+// ============================================================
+
+function runEarphonesComparison(database, filters) {
+  const filtered = filterEarphones(database, filters);
+  const scored = filtered.map(e => ({
+    ...e,
+    score: calculateEarphonesScore(e, filters)
+  })).sort((a, b) => b.score - a.score);
+
+  const grouped = groupByBudgetTiers(scored, filters.priceMax, filters.noLimit);
+  const aboveBudget = filters.noLimit ? [] : findAboveBudgetEarphones(database, filters);
+
+  return {
+    premium:     grouped.premium,
+    value:       grouped.value,
+    aboveBudget: aboveBudget.slice(0, 5),
+    totalFound:  filtered.length
+  };
+}
+
+function filterEarphones(database, filters) {
+  return database.filter(e => {
+    if (!filters.noLimit && e.price > filters.priceMax) return false;
+    if (e.price < filters.priceMin) return false;
+    if (filters.earType && filters.earType !== 'all' && e.type !== filters.earType) return false;
+    if (filters.anc === true && !e.anc) return false;
+    if (filters.multipoint === true && !e.multipoint) return false;
+    if (filters.wirelessCharging === true && !e.wirelessCharging) return false;
+    return true;
+  });
+}
+
+// Score écouteurs (0–10)
+// Son 35% | Autonomie 20% | ANC 15% | Build 15% | Q/P 10% | Avis 5%
+function calculateEarphonesScore(e, filters) {
+  const soundScore = e.soundScore;
+
+  // Autonomie — over-ear a généralement 30h+ (évalué différemment)
+  let batteryScore;
+  if (e.type === 'over-ear') {
+    batteryScore = e.batteryLife_h >= 40 ? 10
+      : e.batteryLife_h >= 30 ? 8.5
+      : e.batteryLife_h >= 20 ? 7 : 5;
+  } else {
+    // inear / open : totalBattery_h (boîtier inclus)
+    batteryScore = e.totalBattery_h >= 30 ? 10
+      : e.totalBattery_h >= 20 ? 8
+      : e.totalBattery_h >= 12 ? 6 : 4;
+  }
+
+  // ANC
+  const ancScore = e.anc ? e.ancScore : 0;
+
+  const buildScore = e.buildScore;
+
+  // Q/P
+  const priceRef  = filters.noLimit ? 500 : filters.priceMax;
+  const pricePos  = 1 - Math.min((e.price - filters.priceMin) / Math.max(priceRef - filters.priceMin, 1), 1);
+  const valueScore = Math.min(10, soundScore * 0.5 + pricePos * 10 * 0.5);
+
+  // Avis
+  let reviewScore = e.reviewScore;
+  if (e.reviewCount < 200)  reviewScore *= 0.7;
+  else if (e.reviewCount < 1000) reviewScore *= 0.9;
+
+  // Bonus codec haute résolution
+  const codecBonus = (e.codec === 'LDAC' || e.codec === 'aptX Adaptive') ? 0.3 : 0;
+  // Bonus spatial audio
+  const spatialBonus = e.spatialAudio ? 0.2 : 0;
+
+  const total = soundScore  * 0.35 +
+                batteryScore * 0.20 +
+                ancScore     * 0.15 +
+                buildScore   * 0.15 +
+                valueScore   * 0.10 +
+                reviewScore  * 0.05;
+
+  return Math.round(Math.min(10, total + codecBonus + spatialBonus) * 10) / 10;
+}
+
+function findAboveBudgetEarphones(database, filters) {
+  const aboveMax = filters.priceMax * 1.25;
+  return filterEarphones(database, { ...filters, noLimit: false, priceMin: filters.priceMax, priceMax: aboveMax })
+    .map(e => ({ ...e, score: calculateEarphonesScore(e, { ...filters, noLimit: false, priceMax: aboveMax }) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5);
+}
