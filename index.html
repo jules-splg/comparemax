@@ -322,10 +322,10 @@
         <div class="filter-group">
           <label class="filter-label">💶 Budget</label>
           <div class="quick-budgets">
-            <button class="quick-btn vac-quick-btn" data-min="0" data-max="250">Entrée de gamme<br><small>0 – 250 €</small></button>
-            <button class="quick-btn vac-quick-btn" data-min="250" data-max="600">Milieu de gamme<br><small>250 – 600 €</small></button>
-            <button class="quick-btn vac-quick-btn" data-min="600" data-max="1000">Haut de gamme<br><small>600 – 1 000 €</small></button>
-            <button class="quick-btn vac-quick-btn" data-min="1000" data-max="4000">Premium<br><small>1 000 € et +</small></button>
+            <button class="quick-btn vac-quick-btn" data-min="0" data-max="250">- 250 €</button>
+            <button class="quick-btn vac-quick-btn active" data-min="0" data-max="600">- 600 €</button>
+            <button class="quick-btn vac-quick-btn" data-min="0" data-max="1000">- 1 000 €</button>
+            <button class="quick-btn vac-quick-btn" data-min="0" data-max="4000">Sans limite</button>
           </div>
           <div class="price-range-display">
             <span id="vacPriceMinDisplay" class="price-range-value">0 €</span>
@@ -412,10 +412,11 @@
         <div class="filter-group">
           <label class="filter-label">💶 Budget</label>
           <div class="quick-budgets">
-            <button class="quick-btn spk-quick-btn" data-min="0" data-max="100">Entrée de gamme<br><small>0 – 100 €</small></button>
-            <button class="quick-btn spk-quick-btn" data-min="100" data-max="300">Milieu de gamme<br><small>100 – 300 €</small></button>
-            <button class="quick-btn spk-quick-btn" data-min="300" data-max="600">Haut de gamme<br><small>300 – 600 €</small></button>
-            <button class="quick-btn spk-quick-btn" data-min="600" data-max="2000">Premium<br><small>600 € et +</small></button>
+            <button class="quick-btn spk-quick-btn" data-min="0" data-max="100">- 100 €</button>
+            <button class="quick-btn spk-quick-btn" data-min="0" data-max="200">- 200 €</button>
+            <button class="quick-btn spk-quick-btn active" data-min="0" data-max="500">- 500 €</button>
+            <button class="quick-btn spk-quick-btn" data-min="0" data-max="1000">- 1 000 €</button>
+            <button class="quick-btn spk-quick-btn" data-min="0" data-max="2000">Sans limite</button>
           </div>
           <div class="price-range-display">
             <span id="spkPriceMinDisplay" class="price-range-value">0 €</span>
@@ -480,23 +481,23 @@
 
         <!-- Budget -->
         <div class="filter-group">
-          <label class="filter-label">Budget</label>
-          <div class="price-range-display">
-            <span id="robPriceMinDisplay" class="price-range-value">0 €</span>
-            <span class="price-range-sep">—</span>
-            <span id="robPriceMaxDisplay" class="price-range-value">1 500 €</span>
-          </div>
-          <div class="range-slider-wrapper">
-            <div class="range-track"><div id="robRangeTrackFill" class="range-track-fill"></div></div>
-            <input type="range" id="robPriceMin" class="range-input range-input--min" min="0" max="2000" step="50" value="0">
-            <input type="range" id="robPriceMax" class="range-input range-input--max" min="0" max="2000" step="50" value="1500">
-          </div>
-          <div class="quick-btns">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
             <button class="quick-btn rob-quick-btn" data-min="0" data-max="200">- 200 €</button>
             <button class="quick-btn rob-quick-btn" data-min="0" data-max="400">- 400 €</button>
             <button class="quick-btn rob-quick-btn active" data-min="0" data-max="700">- 700 €</button>
             <button class="quick-btn rob-quick-btn" data-min="0" data-max="1000">- 1 000 €</button>
             <button class="quick-btn rob-quick-btn" data-min="0" data-max="2000">Sans limite</button>
+          </div>
+          <div class="price-range-display">
+            <span id="robPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="robPriceMaxDisplay" class="price-range-value">700 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="robRangeTrackFill"></div>
+            <input type="range" id="robPriceMin" class="range-input range-input--min" min="0" max="2000" step="50" value="0">
+            <input type="range" id="robPriceMax" class="range-input range-input--max" min="0" max="2000" step="50" value="700">
           </div>
         </div>
 
@@ -548,23 +549,23 @@
 
         <!-- Budget -->
         <div class="filter-group">
-          <label class="filter-label">Budget</label>
-          <div class="price-range-display">
-            <span id="earPriceMinDisplay" class="price-range-value">0 €</span>
-            <span class="price-range-sep">—</span>
-            <span id="earPriceMaxDisplay" class="price-range-value">300 €</span>
-          </div>
-          <div class="range-slider-wrapper">
-            <div class="range-track"><div id="earRangeTrackFill" class="range-track-fill"></div></div>
-            <input type="range" id="earPriceMin" class="range-input range-input--min" min="0" max="800" step="10" value="0">
-            <input type="range" id="earPriceMax" class="range-input range-input--max" min="0" max="800" step="10" value="300">
-          </div>
-          <div class="quick-btns">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
             <button class="quick-btn ear-quick-btn" data-min="0" data-max="80">- 80 €</button>
             <button class="quick-btn ear-quick-btn" data-min="0" data-max="150">- 150 €</button>
             <button class="quick-btn ear-quick-btn active" data-min="0" data-max="300">- 300 €</button>
             <button class="quick-btn ear-quick-btn" data-min="0" data-max="500">- 500 €</button>
             <button class="quick-btn ear-quick-btn" data-min="0" data-max="800">Sans limite</button>
+          </div>
+          <div class="price-range-display">
+            <span id="earPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="earPriceMaxDisplay" class="price-range-value">300 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="earRangeTrackFill"></div>
+            <input type="range" id="earPriceMin" class="range-input range-input--min" min="0" max="800" step="10" value="0">
+            <input type="range" id="earPriceMax" class="range-input range-input--max" min="0" max="800" step="10" value="300">
           </div>
         </div>
 
@@ -607,6 +608,81 @@
         </div>
 
         <button id="compareEarphonesBtn" class="compare-btn">🎧 &nbsp;Comparer les écouteurs</button>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+           FILTRES — AIRFRYER
+      ════════════════════════════════════════════════════ -->
+      <section id="filtersAirfryer" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">Vos critères de recherche</h2>
+
+        <!-- Budget -->
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
+            <button class="quick-btn afr-quick-btn" data-min="0" data-max="50">Entrée de gamme<br><small>0 – 50 €</small></button>
+            <button class="quick-btn afr-quick-btn active" data-min="0" data-max="130">Milieu de gamme<br><small>0 – 130 €</small></button>
+            <button class="quick-btn afr-quick-btn" data-min="0" data-max="250">Haut de gamme<br><small>0 – 250 €</small></button>
+            <button class="quick-btn afr-quick-btn" data-min="0" data-max="500">Premium<br><small>250 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="afrPriceMinDisplay" class="price-range-value">0 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="afrPriceMaxDisplay" class="price-range-value">130 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="afrRangeTrackFill"></div>
+            <input type="range" id="afrPriceMin" class="range-input range-input--min" min="0" max="500" step="10" value="0">
+            <input type="range" id="afrPriceMax" class="range-input range-input--max" min="0" max="500" step="10" value="130">
+          </div>
+        </div>
+
+        <!-- Type -->
+        <div class="filter-group">
+          <label class="filter-label">⚡ Type d'airfryer</label>
+          <div id="afrTypeGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="basket">Panier simple</button>
+            <button class="toggle-btn" data-value="dual">Double bac</button>
+            <button class="toggle-btn" data-value="oven">Four airfryer</button>
+            <button class="toggle-btn" data-value="paddle">Brassage auto</button>
+          </div>
+        </div>
+
+        <!-- Capacité minimale -->
+        <div class="filter-group">
+          <label class="filter-label">🫙 Capacité minimale : <span id="afrCapacityDisplay">0 L minimum</span></label>
+          <input type="range" id="afrMinCapacity" class="range-input" min="0" max="12" step="0.5" value="0" style="width:100%;">
+        </div>
+
+        <!-- Double bac -->
+        <div class="filter-group">
+          <label class="filter-label">🍗🥦 Cuisson simultanée (double bac)</label>
+          <div id="afrDualGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Double bac requis</button>
+          </div>
+        </div>
+
+        <!-- Déshydratation -->
+        <div class="filter-group">
+          <label class="filter-label">🌿 Fonction déshydratation</label>
+          <div id="afrDehydrateGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Requise</button>
+          </div>
+        </div>
+
+        <!-- Rotissoire -->
+        <div class="filter-group">
+          <label class="filter-label">🍗 Broche rotissoire</label>
+          <div id="afrRotisserieGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Requise</button>
+          </div>
+        </div>
+
+        <button id="compareAirfryerBtn" class="compare-btn">⚡ &nbsp;Comparer les airfryers</button>
       </section>
 
       <!-- CHARGEMENT -->
@@ -693,7 +769,7 @@
       <p class="section-sub">Cliquez sur une catégorie pour lancer la comparaison directement.</p>
       <div class="qa-grid">
         <a href="#app" class="qa-card qa-card--tv" onclick="openCategory('tv-son','tv')">
-          <div class="qa-card-img"><img src="https://images.unsplash.com/photo-1461151304267-38535e780c79?w=400&q=80&auto=format&fit=crop" alt="Télévision"></div>
+          <div class="qa-card-img"><img src="assets/television.jpg" alt="Télévision"></div>
           <div class="qa-card-body">
             <span class="qa-card-emoji">📺</span>
             <h3>Télévisions</h3>
@@ -702,7 +778,7 @@
           </div>
         </a>
         <a href="#app" class="qa-card qa-card--washing" onclick="openCategory('electromenager','washing')">
-          <div class="qa-card-img"><img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&q=80&auto=format" alt="Lave-linge"></div>
+          <div class="qa-card-img"><img src="assets/lave-linge.jpg" alt="Lave-linge"></div>
           <div class="qa-card-body">
             <span class="qa-card-emoji">🫧</span>
             <h3>Lave-linge</h3>
@@ -720,7 +796,7 @@
           </div>
         </a>
         <a href="#app" class="qa-card qa-card--coffee" onclick="openCategory('electromenager','coffee')">
-          <div class="qa-card-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80&auto=format" alt="Machine à café"></div>
+          <div class="qa-card-img"><img src="assets/machine-cafe.jpg" alt="Machine à café"></div>
           <div class="qa-card-body">
             <span class="qa-card-emoji">☕</span>
             <h3>Machines à café</h3>
@@ -738,7 +814,7 @@
           </div>
         </a>
         <a href="#app" class="qa-card qa-card--speaker" onclick="openCategory('tv-son','speaker')">
-          <div class="qa-card-img"><img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&q=80&auto=format" alt="Enceinte"></div>
+          <div class="qa-card-img"><img src="assets/enceinte.jpg" alt="Enceinte"></div>
           <div class="qa-card-body">
             <span class="qa-card-emoji">🔊</span>
             <h3>Enceintes</h3>
@@ -1140,6 +1216,7 @@
   <script src="data/speakerDatabase.js"></script>
   <script src="data/robotDatabase.js"></script>
   <script src="data/earphonesDatabase.js"></script>
+  <script src="data/airfryerDatabase.js"></script>
   <script src="js/comparator.js"></script>
   <script src="js/affiliate.js"></script>
   <script src="js/site.js"></script>

@@ -1218,23 +1218,122 @@ function calculateEarphonesScore(e, filters) {
 
   // Bonus codec haute résolution
   const codecBonus = (e.codec === 'LDAC' || e.codec === 'aptX Adaptive') ? 0.3 : 0;
-  // Bonus spatial audio
+  // Bonus audio spatial
   const spatialBonus = e.spatialAudio ? 0.2 : 0;
+  // Bonus multipoint (connexion simultanée 2 appareils — critère très pratique)
+  const multipointBonus = e.multipoint ? 0.25 : 0;
+  // Bonus charge sans fil
+  const wirelessChargingBonus = e.wirelessCharging ? 0.1 : 0;
 
-  const total = soundScore  * 0.35 +
+  const total = soundScore   * 0.35 +
                 batteryScore * 0.20 +
                 ancScore     * 0.15 +
                 buildScore   * 0.15 +
                 valueScore   * 0.10 +
                 reviewScore  * 0.05;
 
-  return Math.round(Math.min(10, total + codecBonus + spatialBonus) * 10) / 10;
+  return Math.round(Math.min(10, total + codecBonus + spatialBonus + multipointBonus + wirelessChargingBonus) * 10) / 10;
 }
 
 function findAboveBudgetEarphones(database, filters) {
   const aboveMax = filters.priceMax * 1.25;
   return filterEarphones(database, { ...filters, noLimit: false, priceMin: filters.priceMax, priceMax: aboveMax })
     .map(e => ({ ...e, score: calculateEarphonesScore(e, { ...filters, noLimit: false, priceMax: aboveMax }) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5);
+}
+
+// ============================================================
+// AIRFRYER — Comparaison intelligente
+// ============================================================
+
+function runAirfryerComparison(database, filters) {
+  const filtered = filterAirfryers(database, filters);
+  const scored = filtered.map(a => ({
+    ...a,
+    score: calculateAirfryerScore(a, filters)
+  })).sort((a, b) => b.score - a.score);
+
+  const grouped = groupByBudgetTiers(scored, filters.priceMax, filters.noLimit);
+  const aboveBudget = filters.noLimit ? [] : findAboveBudgetAirfryer(database, filters);
+
+  return {
+    premium:     grouped.premium,
+    value:       grouped.value,
+    aboveBudget: aboveBudget.slice(0, 5),
+    totalFound:  filtered.length
+  };
+}
+
+function filterAirfryers(database, filters) {
+  return database.filter(a => {
+    if (!filters.noLimit && a.price > filters.priceMax) return false;
+    if (a.price < filters.priceMin) return false;
+    if (filters.airType && filters.airType !== 'all' && a.type !== filters.airType) return false;
+    if (filters.minCapacity > 0 && a.capacity_l < filters.minCapacity) return false;
+    if (filters.dual === true && a.basketCount < 2) return false;
+    if (filters.dehydrate === true && !a.dehydrate) return false;
+    if (filters.rotisserie === true && !a.rotisserie) return false;
+    return true;
+  });
+}
+
+// Score airfryer (0–10)
+// Cuisson 35% | Capacité/puissance 20% | Polyvalence 15% | Q/P 15% | Avis 10% | Répa 5%
+function calculateAirfryerScore(a, filters) {
+  const cookScore = a.cookingScore;
+
+  // Capacité pondérée (adapte selon le contexte budget)
+  const capScore = a.capacity_l >= 10 ? 10
+    : a.capacity_l >= 7  ? 8.5
+    : a.capacity_l >= 5  ? 7
+    : a.capacity_l >= 3  ? 5.5 : 4;
+
+  // Puissance (rapidité de montée en température)
+  const powScore = a.power_w >= 2000 ? 10
+    : a.power_w >= 1600 ? 8
+    : a.power_w >= 1200 ? 6 : 4;
+
+  const capPowScore = capScore * 0.6 + powScore * 0.4;
+
+  // Polyvalence (fonctions, rotissoire, déshydratation, double bac)
+  const funcScore = Math.min(10, a.functions * 0.8);
+  const polyScore = funcScore * 0.7
+    + (a.rotisserie ? 1.5 : 0)
+    + (a.dehydrate  ? 1.0 : 0)
+    + (a.basketCount > 1 ? 1.5 : 0)
+    + (a.wifiApp ? 0.5 : 0);
+  const polyFinal = Math.min(10, polyScore);
+
+  // Rapport Q/P
+  const priceRef  = filters.noLimit ? 250 : filters.priceMax;
+  const pricePos  = 1 - Math.min((a.price - filters.priceMin) / Math.max(priceRef - filters.priceMin, 1), 1);
+  const valueScore = Math.min(10, cookScore * 0.5 + pricePos * 10 * 0.5);
+
+  // Avis
+  let reviewScore = a.reviewScore;
+  if (a.reviewCount < 500)  reviewScore *= 0.7;
+  else if (a.reviewCount < 2000) reviewScore *= 0.9;
+
+  const repairScore = a.repairabilityScore;
+
+  // Bonus température élevée (240°C = cuissons grillées parfaites)
+  const tempBonus = a.maxTemp_c >= 230 ? 0.4 : a.maxTemp_c >= 200 ? 0 : -0.3;
+
+  const total = cookScore   * 0.35 +
+                capPowScore * 0.20 +
+                polyFinal   * 0.15 +
+                valueScore  * 0.15 +
+                reviewScore * 0.10 +
+                repairScore * 0.05;
+
+  return Math.round(Math.min(10, total + tempBonus) * 10) / 10;
+}
+
+function findAboveBudgetAirfryer(database, filters) {
+  const aboveMax = filters.priceMax * 1.30;
+  return filterAirfryers(database, { ...filters, noLimit: false, priceMin: filters.priceMax, priceMax: aboveMax })
+    .map(a => ({ ...a, score: calculateAirfryerScore(a, { ...filters, noLimit: false, priceMax: aboveMax }) }))
     .sort((a, b) => b.score - a.score)
     .slice(0, 5);
 }

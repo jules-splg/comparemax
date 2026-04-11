@@ -15,7 +15,7 @@ const CATEGORIES = {
       { key: 'oven',       label: 'Four',               emoji: '🔥', available: false },
       { key: 'hood',       label: 'Hotte',              emoji: '💨', available: false },
       { key: 'coffee',     label: 'Machine à café',     emoji: '☕', available: true  },
-      { key: 'airfryer',   label: 'Airfryer',           emoji: '⚡', available: false },
+      { key: 'airfryer',   label: 'Airfryer',           emoji: '⚡', available: true  },
       { key: 'microwave',  label: 'Micro-ondes',        emoji: '♨️', available: false },
       { key: 'hob',        label: 'Plaques de cuisson', emoji: '🍳', available: false },
     ]
@@ -133,6 +133,16 @@ const AppState = {
     anc: false,
     multipoint: false,
     wirelessCharging: false
+  },
+  airfryerFilters: {
+    priceMin: 0,
+    priceMax: 130,
+    noLimit: false,
+    airType: 'all',
+    minCapacity: 0,
+    dual: false,
+    dehydrate: false,
+    rotisserie: false
   },
   currentCategory: 'tv',
   results: null
@@ -277,7 +287,8 @@ function bindEvents() {
   });
 
   document.getElementById('compareWashingBtn').addEventListener('click', onCompareWashing);
-
+  document.getElementById('wPriceMin').value = AppState.washingFilters.priceMin;
+  document.getElementById('wPriceMax').value = AppState.washingFilters.priceMax;
   updateWashingRangeTrack();
   updateWashingPriceDisplay();
 
@@ -323,7 +334,8 @@ function bindEvents() {
   });
 
   document.getElementById('compareDishwasherBtn').addEventListener('click', onCompareDishwasher);
-
+  document.getElementById('dwPriceMin').value = AppState.dishwasherFilters.priceMin;
+  document.getElementById('dwPriceMax').value = AppState.dishwasherFilters.priceMax;
   updateDwRangeTrack();
   updateDwPriceDisplay();
 
@@ -373,7 +385,8 @@ function bindEvents() {
   });
 
   document.getElementById('compareCoffeeBtn').addEventListener('click', onCompareCoffee);
-
+  document.getElementById('cfPriceMin').value = AppState.coffeeFilters.priceMin;
+  document.getElementById('cfPriceMax').value = AppState.coffeeFilters.priceMax;
   updateCfRangeTrack();
   updateCfPriceDisplay();
 
@@ -420,14 +433,18 @@ function bindEvents() {
     });
   });
 
-  document.getElementById('vacMaxWeight').addEventListener('input', function () {
+  var vacMaxWeightEl = document.getElementById('vacMaxWeight');
+  if (vacMaxWeightEl) vacMaxWeightEl.addEventListener('input', function () {
     AppState.vacuumFilters.maxWeight = parseFloat(this.value);
-    document.getElementById('vacWeightDisplay').textContent = this.value + ' kg maximum';
+    var d = document.getElementById('vacWeightDisplay');
+    if (d) d.textContent = this.value + ' kg maximum';
   });
 
-  document.getElementById('vacMinAutonomy').addEventListener('input', function () {
+  var vacMinAutonomyEl = document.getElementById('vacMinAutonomy');
+  if (vacMinAutonomyEl) vacMinAutonomyEl.addEventListener('input', function () {
     AppState.vacuumFilters.minAutonomy = parseInt(this.value);
-    document.getElementById('vacAutonomyDisplay').textContent = this.value + ' min minimum';
+    var d = document.getElementById('vacAutonomyDisplay');
+    if (d) d.textContent = this.value + ' min minimum';
   });
 
   document.querySelectorAll('#vacAutoEmptyToggle .toggle-btn').forEach(function (btn) {
@@ -455,6 +472,9 @@ function bindEvents() {
   });
 
   document.getElementById('compareVacuumBtn').addEventListener('click', onCompareVacuum);
+  // Force slider to AppState on init (prevents browser form restore overriding defaults)
+  document.getElementById('vacPriceMin').value = AppState.vacuumFilters.priceMin;
+  document.getElementById('vacPriceMax').value = AppState.vacuumFilters.priceMax;
   updateVacRangeTrack(); updateVacPriceDisplay();
   onVacTypeChange('all');
 
@@ -493,6 +513,8 @@ function bindEvents() {
   });
 
   document.getElementById('compareIronBtn').addEventListener('click', onCompareIron);
+  document.getElementById('ironPriceMin').value = AppState.ironFilters.priceMin;
+  document.getElementById('ironPriceMax').value = AppState.ironFilters.priceMax;
   updateIronRangeTrack(); updateIronPriceDisplay();
 
   // ---- Filtres enceinte ----
@@ -553,6 +575,9 @@ function bindEvents() {
   });
 
   document.getElementById('compareSpeakerBtn').addEventListener('click', onCompareSpeaker);
+  // Force slider to AppState on init
+  document.getElementById('spkPriceMin').value = AppState.speakerFilters.priceMin;
+  document.getElementById('spkPriceMax').value = AppState.speakerFilters.priceMax;
   updateSpkRangeTrack(); updateSpkPriceDisplay();
   onSpkTypeChange('all');
 
@@ -607,6 +632,9 @@ function bindEvents() {
   });
 
   document.getElementById('compareRobotBtn').addEventListener('click', onCompareRobot);
+  // Force slider inputs to AppState values on init (prevents browser form restore overriding defaults)
+  document.getElementById('robPriceMin').value = AppState.robotFilters.priceMin;
+  document.getElementById('robPriceMax').value = AppState.robotFilters.priceMax;
   updateRobRangeTrack(); updateRobPriceDisplay();
 
   // ---- Filtres écouteurs ----
@@ -660,7 +688,68 @@ function bindEvents() {
   });
 
   document.getElementById('compareEarphonesBtn').addEventListener('click', onCompareEarphones);
+  // Force slider inputs to AppState values on init (prevents browser form restore overriding defaults)
+  document.getElementById('earPriceMin').value = AppState.earphonesFilters.priceMin;
+  document.getElementById('earPriceMax').value = AppState.earphonesFilters.priceMax;
   updateEarRangeTrack(); updateEarPriceDisplay();
+
+  // ---- Filtres airfryer ----
+  document.getElementById('afrPriceMin').addEventListener('input', function () { onAfrRangeChange('min'); });
+  document.getElementById('afrPriceMax').addEventListener('input', function () { onAfrRangeChange('max'); });
+
+  document.querySelectorAll('.afr-quick-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var min = parseInt(this.dataset.min), max = parseInt(this.dataset.max);
+      document.getElementById('afrPriceMin').value = min;
+      document.getElementById('afrPriceMax').value = max;
+      AppState.airfryerFilters.priceMin = min;
+      AppState.airfryerFilters.priceMax = max;
+      AppState.airfryerFilters.noLimit  = max >= 500;
+      updateAfrPriceDisplay(); updateAfrRangeTrack();
+      document.querySelectorAll('.afr-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('#afrTypeGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#afrTypeGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.airfryerFilters.airType = this.dataset.value;
+    });
+  });
+
+  document.getElementById('afrMinCapacity').addEventListener('input', function () {
+    AppState.airfryerFilters.minCapacity = parseFloat(this.value);
+    document.getElementById('afrCapacityDisplay').textContent = this.value + ' L minimum';
+  });
+
+  document.querySelectorAll('#afrDualGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#afrDualGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.airfryerFilters.dual = this.dataset.value === 'yes';
+    });
+  });
+
+  document.querySelectorAll('#afrDehydrateGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#afrDehydrateGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.airfryerFilters.dehydrate = this.dataset.value === 'yes';
+    });
+  });
+
+  document.querySelectorAll('#afrRotisserieGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#afrRotisserieGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.airfryerFilters.rotisserie = this.dataset.value === 'yes';
+    });
+  });
+
+  document.getElementById('compareAirfryerBtn').addEventListener('click', onCompareAirfryer);
+  updateAfrRangeTrack(); updateAfrPriceDisplay();
 }
 
 // ------------------------------------------------------------
@@ -1257,9 +1346,6 @@ function updateWashingPriceDisplay() {
 // Lance la comparaison lave-linge
 // ------------------------------------------------------------
 function onCompareWashing() {
-  AppState.washingFilters.priceMin = parseInt(document.getElementById('wPriceMin').value) || 0;
-  AppState.washingFilters.priceMax = parseInt(document.getElementById('wPriceMax').value) || 800;
-  AppState.washingFilters.noLimit  = AppState.washingFilters.priceMax >= 4000;
 
   showLoading(true);
   hideResults();
@@ -1479,9 +1565,6 @@ function onVacTypeChange(vacType) {
 }
 
 function onCompareVacuum() {
-  AppState.vacuumFilters.priceMin = parseInt(document.getElementById('vacPriceMin').value) || 0;
-  AppState.vacuumFilters.priceMax = parseInt(document.getElementById('vacPriceMax').value) || 600;
-  AppState.vacuumFilters.noLimit  = AppState.vacuumFilters.priceMax >= 4000;
   showLoading(true); hideResults();
   setTimeout(function () {
     var results = runVacuumComparison(VACUUM_DATABASE, AppState.vacuumFilters);
@@ -1638,9 +1721,6 @@ function updateIronPriceDisplay() {
 }
 
 function onCompareIron() {
-  AppState.ironFilters.priceMin = parseInt(document.getElementById('ironPriceMin').value) || 0;
-  AppState.ironFilters.priceMax = parseInt(document.getElementById('ironPriceMax').value) || 200;
-  AppState.ironFilters.noLimit  = AppState.ironFilters.priceMax >= 4000;
   showLoading(true); hideResults();
   setTimeout(function () {
     var results = runIronComparison(IRON_DATABASE, AppState.ironFilters);
@@ -1778,9 +1858,6 @@ function updateDwPriceDisplay() {
 }
 
 function onCompareDishwasher() {
-  AppState.dishwasherFilters.priceMin = parseInt(document.getElementById('dwPriceMin').value) || 0;
-  AppState.dishwasherFilters.priceMax = parseInt(document.getElementById('dwPriceMax').value) || 800;
-  AppState.dishwasherFilters.noLimit  = AppState.dishwasherFilters.priceMax >= 4000;
 
   showLoading(true);
   hideResults();
@@ -1934,9 +2011,6 @@ function updateCfPriceDisplay() {
 }
 
 function onCompareCoffee() {
-  AppState.coffeeFilters.priceMin = parseInt(document.getElementById('cfPriceMin').value) || 0;
-  AppState.coffeeFilters.priceMax = parseInt(document.getElementById('cfPriceMax').value) || 800;
-  AppState.coffeeFilters.noLimit  = AppState.coffeeFilters.priceMax >= 4000;
 
   showLoading(true);
   hideResults();
@@ -2113,6 +2187,7 @@ function onProductClick(btn) {
   var isSpeaker     = product === 'speaker';
   var isRobot       = product === 'robot';
   var isEarphones   = product === 'earphones';
+  var isAirfryer    = product === 'airfryer';
   document.getElementById('filtersTv').style.display          = isTv         ? '' : 'none';
   document.getElementById('filtersWashing').style.display     = isWashing    ? '' : 'none';
   document.getElementById('filtersDishwasher').style.display  = isDishwasher ? '' : 'none';
@@ -2122,6 +2197,7 @@ function onProductClick(btn) {
   document.getElementById('filtersSpeaker').style.display     = isSpeaker    ? '' : 'none';
   document.getElementById('filtersRobot').style.display       = isRobot      ? '' : 'none';
   document.getElementById('filtersEarphones').style.display   = isEarphones  ? '' : 'none';
+  document.getElementById('filtersAirfryer').style.display    = isAirfryer   ? '' : 'none';
 
   hideResults();
   var noRes = document.getElementById('noResultsMsg');
@@ -2701,6 +2777,10 @@ function resetFilters() {
     AppState.vacuumFilters.priceMin = 0;
     AppState.vacuumFilters.priceMax = 600;
     AppState.vacuumFilters.noLimit  = false;
+    document.getElementById('vacPriceMin').value = 0;
+    document.getElementById('vacPriceMax').value = 600;
+    updateVacPriceDisplay(); updateVacRangeTrack();
+    document.querySelectorAll('.vac-quick-btn').forEach(function (b) { b.classList.remove('active'); });
     onCompareVacuum();
 
   } else if (cat === 'iron') {
@@ -2712,17 +2792,40 @@ function resetFilters() {
     AppState.speakerFilters.priceMin = 0;
     AppState.speakerFilters.priceMax = 500;
     AppState.speakerFilters.noLimit  = false;
+    document.getElementById('spkPriceMin').value = 0;
+    document.getElementById('spkPriceMax').value = 500;
+    updateSpkPriceDisplay(); updateSpkRangeTrack();
+    document.querySelectorAll('.spk-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+    var spkDef = document.querySelector('.spk-quick-btn[data-max="500"]');
+    if (spkDef) spkDef.classList.add('active');
     onCompareSpeaker();
   } else if (cat === 'robot') {
     AppState.robotFilters.priceMin = 0;
     AppState.robotFilters.priceMax = 700;
     AppState.robotFilters.noLimit  = false;
+    document.getElementById('robPriceMin').value = 0;
+    document.getElementById('robPriceMax').value = 700;
+    updateRobPriceDisplay(); updateRobRangeTrack();
+    document.querySelectorAll('.rob-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+    var robDef = document.querySelector('.rob-quick-btn[data-max="700"]');
+    if (robDef) robDef.classList.add('active');
     onCompareRobot();
   } else if (cat === 'earphones') {
     AppState.earphonesFilters.priceMin = 0;
     AppState.earphonesFilters.priceMax = 300;
     AppState.earphonesFilters.noLimit  = false;
+    document.getElementById('earPriceMin').value = 0;
+    document.getElementById('earPriceMax').value = 300;
+    updateEarPriceDisplay(); updateEarRangeTrack();
+    document.querySelectorAll('.ear-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+    var earDef = document.querySelector('.ear-quick-btn[data-max="300"]');
+    if (earDef) earDef.classList.add('active');
     onCompareEarphones();
+  } else if (cat === 'airfryer') {
+    AppState.airfryerFilters.priceMin = 0;
+    AppState.airfryerFilters.priceMax = 130;
+    AppState.airfryerFilters.noLimit  = false;
+    onCompareAirfryer();
   }
 
   document.getElementById('noResultsMsg').style.display = 'none';
@@ -2775,9 +2878,6 @@ function onSpkPowerSourceChange(src) {
 }
 
 function onCompareSpeaker() {
-  AppState.speakerFilters.priceMin = parseInt(document.getElementById('spkPriceMin').value) || 0;
-  AppState.speakerFilters.priceMax = parseInt(document.getElementById('spkPriceMax').value) || 500;
-  AppState.speakerFilters.noLimit  = AppState.speakerFilters.priceMax >= 2000;
   showLoading(true);
   hideResults();
   setTimeout(function () {
@@ -2937,9 +3037,6 @@ function updateRobPriceDisplay() {
 }
 
 function onCompareRobot() {
-  AppState.robotFilters.priceMin = parseInt(document.getElementById('robPriceMin').value) || 0;
-  AppState.robotFilters.priceMax = parseInt(document.getElementById('robPriceMax').value) || 700;
-  AppState.robotFilters.noLimit  = AppState.robotFilters.priceMax >= 2000;
   showLoading(true);
   hideResults();
   setTimeout(function () {
@@ -3088,9 +3185,6 @@ function updateEarPriceDisplay() {
 }
 
 function onCompareEarphones() {
-  AppState.earphonesFilters.priceMin = parseInt(document.getElementById('earPriceMin').value) || 0;
-  AppState.earphonesFilters.priceMax = parseInt(document.getElementById('earPriceMax').value) || 300;
-  AppState.earphonesFilters.noLimit  = AppState.earphonesFilters.priceMax >= 800;
   showLoading(true);
   hideResults();
   setTimeout(function () {
@@ -3201,6 +3295,159 @@ function buildEarphonesCard(e, rank, type, bestPremium, bestValue) {
         (e.anc ? '<div class="spec-item"><span class="spec-label">ANC</span><span class="spec-value">Score ' + e.ancScore + '/10</span></div>' : '') +
         (e.spatialAudio ? '<div class="spec-item"><span class="spec-label">Audio spatial</span><span class="spec-value">Oui</span></div>' : '') +
         '<div class="spec-item"><span class="spec-label">Réparabilité</span><span class="spec-value">' + e.repairabilityScore + '/10</span></div>' +
+      '</div>' +
+      '<a href="' + ctaHref + '" target="_blank" rel="noopener" class="card-cta">' + ctaLabel + ' →</a>' +
+      (otherOffers.count > 0 ? '<details class="card-other-offers"><summary>Voir ' + otherOffers.count + ' autre' + (otherOffers.count > 1 ? 's' : '') + ' offre' + (otherOffers.count > 1 ? 's' : '') + '</summary><div class="other-offers-list">' + otherOffers.html + '</div></details>' : '') +
+    '</div>'
+  );
+}
+
+// ============================================================
+// AIRFRYER — Range, affichage, comparaison, rendu
+// ============================================================
+
+function onAfrRangeChange(which) {
+  var minVal = parseInt(document.getElementById('afrPriceMin').value);
+  var maxVal = parseInt(document.getElementById('afrPriceMax').value);
+  if (which === 'min' && minVal > maxVal) { minVal = maxVal; document.getElementById('afrPriceMin').value = minVal; }
+  if (which === 'max' && maxVal < minVal) { maxVal = minVal; document.getElementById('afrPriceMax').value = maxVal; }
+  AppState.airfryerFilters.priceMin = minVal;
+  AppState.airfryerFilters.priceMax = maxVal;
+  AppState.airfryerFilters.noLimit  = maxVal >= 500;
+  updateAfrPriceDisplay();
+  updateAfrRangeTrack();
+  document.querySelectorAll('.afr-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+}
+
+function updateAfrRangeTrack() {
+  var track = document.getElementById('afrRangeTrackFill');
+  if (!track) return;
+  var leftPct  = (AppState.airfryerFilters.priceMin / 500) * 100;
+  var rightPct = (Math.min(AppState.airfryerFilters.priceMax, 500) / 500) * 100;
+  track.style.left  = leftPct + '%';
+  track.style.width = (rightPct - leftPct) + '%';
+}
+
+function updateAfrPriceDisplay() {
+  var min = AppState.airfryerFilters.priceMin;
+  var max = AppState.airfryerFilters.priceMax;
+  var minEl = document.getElementById('afrPriceMinDisplay');
+  var maxEl = document.getElementById('afrPriceMaxDisplay');
+  if (minEl) minEl.textContent = min.toLocaleString('fr-FR') + ' €';
+  if (maxEl) maxEl.textContent = max >= 500 ? '500 € +' : max.toLocaleString('fr-FR') + ' €';
+}
+
+function onCompareAirfryer() {
+  AppState.airfryerFilters.priceMin = parseInt(document.getElementById('afrPriceMin').value) || 0;
+  AppState.airfryerFilters.priceMax = parseInt(document.getElementById('afrPriceMax').value) || 130;
+  AppState.airfryerFilters.noLimit  = AppState.airfryerFilters.priceMax >= 500;
+  showLoading(true);
+  hideResults();
+  setTimeout(function () {
+    var results = runAirfryerComparison(AIRFRYER_DATABASE, AppState.airfryerFilters);
+    AppState.results = results;
+    showLoading(false);
+    renderAirfryerResults(results);
+  }, 100);
+}
+
+function renderAirfryerResults(results) {
+  if (results.totalFound === 0) {
+    var noRes = document.getElementById('noResultsMsg');
+    var txt   = document.getElementById('noResultsText');
+    if (txt) txt.textContent = 'Aucun airfryer trouvé avec ces critères';
+    noRes.style.display = 'block';
+    return;
+  }
+  updateSectionTitles();
+  renderTopSectionAirfryer('listPremium', results.premium, 'sectionPremium', 'premium');
+  renderTopSectionAirfryer('listValue',   results.value,   'sectionValue',   'value');
+  if (!AppState.airfryerFilters.noLimit) {
+    var bestP = results.premium && results.premium[0] ? results.premium[0] : null;
+    var bestV = results.value   && results.value[0]   ? results.value[0]   : null;
+    renderTopSectionAirfryer('listAbove', results.aboveBudget, 'sectionAbove', 'above', bestP, bestV);
+  }
+  document.getElementById('resultsWrapper').scrollIntoView({ behavior: 'smooth' });
+  requestAnimationFrame(function () { setTimeout(equalizeCardHeights, 50); });
+}
+
+function renderTopSectionAirfryer(listId, items, sectionId, type, bestPremium, bestValue) {
+  var section = document.getElementById(sectionId);
+  var list    = document.getElementById(listId);
+  if (!items || items.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = items.map(function (a, i) { return buildAirfryerCard(a, i + 1, type, bestPremium, bestValue); }).join('');
+  requestAnimationFrame(function () {
+    list.querySelectorAll('.card-score-fill').forEach(function (el) { el.style.width = el.dataset.width; });
+  });
+}
+
+function buildAirfryerCard(a, rank, type, bestPremium, bestValue) {
+  var medals = { 1: '🥇', 2: '🥈', 3: '🥉' };
+  var medal  = medals[rank] || '#' + rank;
+  var isTop1 = rank === 1;
+  var scoreWidth = Math.round(a.score * 10);
+
+  var comparisonBlock = '';
+  if (type === 'above' && (bestPremium || bestValue)) {
+    var compRows = [];
+    if (bestPremium) {
+      var pDiff = a.price - bestPremium.price;
+      var sDiff = parseFloat((a.score - bestPremium.score).toFixed(1));
+      var sCls  = sDiff > 0 ? 'comp-better' : sDiff < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">🏆 <strong>' + bestPremium.displayName + '</strong><em> · n°1 premium</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff + ' €</span><span class="comp-extra-score ' + sCls + '">' + (sDiff > 0 ? '+' : '') + sDiff + ' pt</span></span></div>');
+    }
+    if (bestValue) {
+      var pDiff2 = a.price - bestValue.price;
+      var sDiff2 = parseFloat((a.score - bestValue.score).toFixed(1));
+      var sCls2  = sDiff2 > 0 ? 'comp-better' : sDiff2 < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">⭐ <strong>' + bestValue.displayName + '</strong><em> · n°1 rapport Q/P</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff2 + ' €</span><span class="comp-extra-score ' + sCls2 + '">' + (sDiff2 > 0 ? '+' : '') + sDiff2 + ' pt</span></span></div>');
+    }
+    comparisonBlock = '<div class="card-comparison"><div class="comp-header">Comparé aux meilleures options dans votre budget :</div>' + compRows.join('') + '</div>';
+  }
+
+  var typeLabels = { basket: '🧺 Panier simple', dual: '🍗🥦 Double bac', oven: '🔲 Four airfryer', paddle: '🔄 Brassage auto' };
+  var typeLabel  = typeLabels[a.type] || a.type;
+  var promoTag   = a.hasPromotion ? '<span class="card-promo-tag">' + a.promotionLabel + '</span>' : '';
+
+  var bestRetailer = findBestRetailer(a);
+  var displayPrice = bestRetailer ? bestRetailer.price : a.price;
+  var showStrike   = bestRetailer && bestRetailer.price < a.price;
+  var ctaLabel = bestRetailer ? 'Meilleur prix : ' + displayPrice + ' € sur ' + bestRetailer.name : 'Voir les offres — ' + a.price + ' €';
+  var ctaHref  = bestRetailer ? bestRetailer.url : '#';
+  var otherOffers = buildOtherOffers(a, bestRetailer);
+
+  return (
+    '<div class="tv-card' + (isTop1 ? ' tv-card--top1' : '') + '">' +
+      '<div class="card-header">' +
+        '<span class="card-rank">' + medal + '</span>' +
+        '<div class="card-title-block">' +
+          '<h3 class="card-title">' + a.displayName + '</h3>' +
+          '<div class="card-badges">' +
+            '<span class="card-badge">' + typeLabel + '</span>' +
+            (a.dehydrate   ? '<span class="card-badge">🌿 Déshydratation</span>' : '') +
+            (a.rotisserie  ? '<span class="card-badge">🍗 Rotissoire</span>' : '') +
+            (a.wifiApp     ? '<span class="card-badge">📱 App connectée</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="card-price-block">' +
+          promoTag +
+          (showStrike ? '<span class="card-original-price">' + a.price.toLocaleString('fr-FR') + ' €</span>' : '') +
+          '<span class="card-price">' + displayPrice.toLocaleString('fr-FR') + ' €</span>' +
+        '</div>' +
+      '</div>' +
+      comparisonBlock +
+      '<div class="card-score-block">' +
+        '<div class="card-score-label"><span>Score global</span><strong>' + a.score + '/10 · ' + scoreToLabel(a.score) + '</strong></div>' +
+        '<div class="card-score-track"><div class="card-score-fill" data-width="' + scoreWidth + '%" style="width:0%"></div></div>' +
+      '</div>' +
+      '<div class="card-specs">' +
+        '<div class="spec-item"><span class="spec-label">Capacité</span><span class="spec-value">' + a.capacity_l + ' L · ' + a.basketCount + ' bac' + (a.basketCount > 1 ? 's' : '') + '</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Puissance</span><span class="spec-value">' + a.power_w.toLocaleString('fr-FR') + ' W</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Temp. max</span><span class="spec-value">' + a.maxTemp_c + ' °C</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Programmes</span><span class="spec-value">' + a.functions + ' fonctions</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Lave-vaisselle</span><span class="spec-value">' + (a.dishwasherSafe ? 'Oui' : 'Non') + '</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Garantie</span><span class="spec-value">' + a.warrantyYears + ' an' + (a.warrantyYears > 1 ? 's' : '') + '</span></div>' +
       '</div>' +
       '<a href="' + ctaHref + '" target="_blank" rel="noopener" class="card-cta">' + ctaLabel + ' →</a>' +
       (otherOffers.count > 0 ? '<details class="card-other-offers"><summary>Voir ' + otherOffers.count + ' autre' + (otherOffers.count > 1 ? 's' : '') + ' offre' + (otherOffers.count > 1 ? 's' : '') + '</summary><div class="other-offers-list">' + otherOffers.html + '</div></details>' : '') +

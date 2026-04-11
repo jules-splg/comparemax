@@ -402,29 +402,112 @@ const VACUUM_DATABASE = [
 
 ]; // Fin de VACUUM_DATABASE
 
-// Liens de recherche réels
+// Liens de recherche directs sur chaque revendeur
 (function () {
   function searchLinks(q) {
+    var enc = encodeURIComponent(q);
     return {
-      amazon:         'https://www.amazon.fr/s?k=' + encodeURIComponent(q) + '&tag=comparemax21-21',
-      fnac:           'https://www.google.fr/search?q=' + encodeURIComponent('site:fnac.com "' + q + '"'),
-      boulanger:      'https://www.google.fr/search?q=' + encodeURIComponent('site:boulanger.com "' + q + '"'),
-      darty:          'https://www.google.fr/search?q=' + encodeURIComponent('site:darty.com "' + q + '"'),
-      cdiscount:      'https://www.google.fr/search?q=' + encodeURIComponent('site:cdiscount.com "' + q + '"'),
-      leclerc:        'https://www.google.fr/search?q=' + encodeURIComponent('site:e.leclerc "' + q + '"'),
-      but:            'https://www.google.fr/search?q=' + encodeURIComponent('site:but.fr "' + q + '"'),
-      electrodepot:   'https://www.google.fr/search?q=' + encodeURIComponent('site:electrodepot.fr "' + q + '"'),
-      ubaldi:         'https://www.google.fr/search?q=' + encodeURIComponent('site:ubaldi.com "' + q + '"'),
-      backmarket:     'https://www.google.fr/search?q=' + encodeURIComponent('site:backmarket.fr "' + q + '"'),
-      dyson:          'https://www.google.fr/search?q=' + encodeURIComponent('site:dyson.fr "' + q + '"'),
-      delonghi:       'https://www.google.fr/search?q=' + encodeURIComponent('site:delonghi.com "' + q + '"'),
-      rakuten:        'https://www.google.fr/search?q=' + encodeURIComponent('site:fr.shopping.rakuten.com "' + q + '"'),
-      rueducommerce:  'https://www.google.fr/search?q=' + encodeURIComponent('site:rueducommerce.fr "' + q + '"'),
-      lidl:           'https://www.google.fr/search?q=' + encodeURIComponent('site:lidl.fr "' + q + '"'),
-      veepee:         null
+      amazon:        'https://www.amazon.fr/s?k=' + enc + '&tag=comparemax21-21',
+      fnac:          'https://www.fnac.com/SearchResult/ResultList.aspx?SCat=0!1&sft=1&sl=1&Search=' + enc,
+      boulanger:     'https://www.boulanger.com/recherche/' + enc,
+      darty:         'https://www.darty.com/nav/recherche/' + enc,
+      cdiscount:     'https://www.cdiscount.com/search/10/' + enc + '.html',
+      leclerc:       'https://www.e.leclerc/cat/aspirateur?search=' + enc,
+      but:           'https://www.but.fr/recherche/' + enc + '/',
+      electrodepot:  'https://www.electrodepot.fr/recherche?q=' + enc,
+      ubaldi:        'https://www.ubaldi.com/recherche/Resultats.php?search=' + enc,
+      backmarket:    'https://www.backmarket.fr/fr-fr/search?q=' + enc,
+      dyson:         'https://www.dyson.fr/search#q=' + enc + '&t=All',
+      rakuten:       'https://fr.shopping.rakuten.com/search?keyword=' + enc,
+      rueducommerce: 'https://www.rueducommerce.fr/recherche/' + enc,
+      veepee:        null
     };
   }
+
+  // Liens produit directs pour les modèles référencés (ASIN Amazon + pages revendeurs)
+  var directLinks = {
+    'rowenta-xforce-860-flex': {
+      amazon:    'https://www.amazon.fr/dp/B0CQWF9K7M?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-balai-Rowenta-X-Force-8-60-Flex-Animal/a19234710/w-4',
+      boulanger: 'https://www.boulanger.com/ref/RH9873WO',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_balai/rowenta_x-force_8-60_flex_animal.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/rowenta-x-force-8-60-flex-animal/a-rh9873wo.html'
+    },
+    'samsung-jet-75e': {
+      amazon:    'https://www.amazon.fr/dp/B0C4Y7QLHX?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-balai-Samsung-Jet-75E/a17534980/w-4',
+      boulanger: 'https://www.boulanger.com/ref/VS20T7536T5EF',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_balai/samsung_jet_75e.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/samsung-jet-75e/a-vs20t7536t5ef.html'
+    },
+    'dyson-v8-origin': {
+      amazon:    'https://www.amazon.fr/dp/B0BRQQ4G7G?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-balai-Dyson-V8-Origin/a18945600/w-4',
+      boulanger: 'https://www.boulanger.com/ref/39239901',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_balai/dyson_v8.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/dyson-v8-origin/a-39239901.html'
+    },
+    'dyson-v11-absolute-extra': {
+      amazon:    'https://www.amazon.fr/dp/B07YFD8PTZ?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-balai-Dyson-V11-Absolute-Extra/a14416890/w-4',
+      boulanger: 'https://www.boulanger.com/ref/39229990',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_balai/dyson_v11_absolute.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/dyson-v11/a-39229990.html'
+    },
+    'dyson-v15-detect-absolute': {
+      amazon:    'https://www.amazon.fr/dp/B09BVLNS5V?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-balai-Dyson-V15-Detect-Absolute/a16261390/w-4',
+      boulanger: 'https://www.boulanger.com/ref/39241230',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_balai/dyson_v15_detect.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/dyson-v15-detect/a-39241230.html'
+    },
+    'rowenta-silence-force-ro8371': {
+      amazon:    'https://www.amazon.fr/dp/B01N6T6TTM?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-traineau-Rowenta-Silence-Force/a16003820/w-4',
+      boulanger: 'https://www.boulanger.com/ref/RO8371EA',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_traineau/rowenta_silence_force.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/rowenta-silence-force/a-ro8371ea.html'
+    },
+    'bosch-prosilence-bgs5335a': {
+      amazon:    'https://www.amazon.fr/dp/B07GV7WJZQ?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-traineau-Bosch-BGS5335A/a14254440/w-4',
+      boulanger: 'https://www.boulanger.com/ref/BGS5335A',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_traineau/bosch_bgs5335a.html'
+    },
+    'miele-classic-c1': {
+      amazon:    'https://www.amazon.fr/dp/B001F0PJCW?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-traineau-Miele-Classic-C1/a12345678/w-4',
+      boulanger: 'https://www.boulanger.com/ref/10660100',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_traineau/miele_classic_c1.html',
+      ubaldi:    'https://www.ubaldi.com/aspirateur/miele-classic-c1-powerline-sban0.php'
+    },
+    'miele-complete-c3-excellence': {
+      amazon:    'https://www.amazon.fr/dp/B078WLMNXL?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-traineau-Miele-Complete-C3/a14236580/w-4',
+      boulanger: 'https://www.boulanger.com/ref/10660710',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_traineau/miele_complete_c3.html',
+      ubaldi:    'https://www.ubaldi.com/aspirateur/miele-complete-c3-excellence-animal-parquet.php'
+    }
+  };
+
   VACUUM_DATABASE.forEach(function (v) {
-    v.affiliateLinks = searchLinks(v.displayName);
+    var direct = directLinks[v.id];
+    var fallback = searchLinks(v.displayName);
+    v.affiliateLinks = {
+      amazon:        (direct && direct.amazon)    || fallback.amazon,
+      fnac:          (direct && direct.fnac)       || fallback.fnac,
+      boulanger:     (direct && direct.boulanger)  || fallback.boulanger,
+      darty:         (direct && direct.darty)      || fallback.darty,
+      cdiscount:     (direct && direct.cdiscount)  || fallback.cdiscount,
+      leclerc:       fallback.leclerc,
+      but:           fallback.but,
+      electrodepot:  fallback.electrodepot,
+      ubaldi:        (direct && direct.ubaldi)     || fallback.ubaldi,
+      backmarket:    fallback.backmarket,
+      dyson:         (direct && direct.dyson)      || fallback.dyson,
+      rakuten:       fallback.rakuten,
+      rueducommerce: fallback.rueducommerce,
+      veepee:        null
+    };
   });
 })();

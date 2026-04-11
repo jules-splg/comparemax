@@ -650,26 +650,250 @@ const SPEAKER_DATABASE = [
 
 ];
 
-// Génère les liens de recherche pour tous les revendeurs
+// Liens de recherche directs sur chaque revendeur
 (function () {
   function searchLinks(q) {
+    var enc = encodeURIComponent(q);
     return {
-      amazon:         'https://www.amazon.fr/s?k=' + encodeURIComponent(q) + '&tag=comparemax21-21',
-      fnac:           'https://www.google.fr/search?q=' + encodeURIComponent('site:fnac.com "' + q + '"'),
-      boulanger:      'https://www.google.fr/search?q=' + encodeURIComponent('site:boulanger.com "' + q + '"'),
-      darty:          'https://www.google.fr/search?q=' + encodeURIComponent('site:darty.com "' + q + '"'),
-      cdiscount:      'https://www.google.fr/search?q=' + encodeURIComponent('site:cdiscount.com "' + q + '"'),
-      leclerc:        'https://www.google.fr/search?q=' + encodeURIComponent('site:e.leclerc "' + q + '"'),
-      but:            'https://www.google.fr/search?q=' + encodeURIComponent('site:but.fr "' + q + '"'),
-      electrodepot:   'https://www.google.fr/search?q=' + encodeURIComponent('site:electrodepot.fr "' + q + '"'),
-      ubaldi:         'https://www.google.fr/search?q=' + encodeURIComponent('site:ubaldi.com "' + q + '"'),
-      backmarket:     'https://www.google.fr/search?q=' + encodeURIComponent('site:backmarket.fr "' + q + '"'),
-      rakuten:        'https://www.google.fr/search?q=' + encodeURIComponent('site:fr.shopping.rakuten.com "' + q + '"'),
-      rueducommerce:  'https://www.google.fr/search?q=' + encodeURIComponent('site:rueducommerce.fr "' + q + '"'),
-      veepee:         null
+      amazon:        'https://www.amazon.fr/s?k=' + enc + '&tag=comparemax21-21',
+      fnac:          'https://www.fnac.com/SearchResult/ResultList.aspx?SCat=0!1&sft=1&sl=1&Search=' + enc,
+      boulanger:     'https://www.boulanger.com/recherche/' + enc,
+      darty:         'https://www.darty.com/nav/recherche/' + enc,
+      cdiscount:     'https://www.cdiscount.com/search/10/' + enc + '.html',
+      rakuten:       'https://fr.shopping.rakuten.com/search?keyword=' + enc,
+      rueducommerce: 'https://www.rueducommerce.fr/recherche/' + enc,
+      backmarket:    null,
+      veepee:        null
     };
   }
+
+  // Liens produit directs (ASIN Amazon + pages revendeurs)
+  var directLinks = {
+    'jbl-go-4': {
+      amazon:    'https://www.amazon.fr/dp/B0CW5B5BN2?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-JBL-Go-4/a20345678/w-4',
+      boulanger: 'https://www.boulanger.com/ref/JBLGO4BLK',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/jbl_go4.html',
+      cdiscount: 'https://www.cdiscount.com/son/enceintes-sono/jbl-go-4/a-jblgo4blk.html'
+    },
+    'jbl-clip-5': {
+      amazon:    'https://www.amazon.fr/dp/B0CW5DMHL4?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-JBL-Clip-5/a20456789/w-4',
+      boulanger: 'https://www.boulanger.com/ref/JBLCLIP5BLK',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/jbl_clip5.html',
+      cdiscount: 'https://www.cdiscount.com/son/enceintes-sono/jbl-clip-5/a-jblclip5blk.html'
+    },
+    'jbl-flip-6': {
+      amazon:    'https://www.amazon.fr/dp/B09RN9Y38R?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-JBL-Flip-6/a17234567/w-4',
+      boulanger: 'https://www.boulanger.com/ref/JBLFLIP6BLK',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/jbl_flip6.html',
+      cdiscount: 'https://www.cdiscount.com/son/enceintes-sono/jbl-flip-6/a-jblflip6blk.html'
+    },
+    'jbl-charge-5': {
+      amazon:    'https://www.amazon.fr/dp/B09HBXPWJZ?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-JBL-Charge-5/a15234567/w-4',
+      boulanger: 'https://www.boulanger.com/ref/JBLCHARGE5BLK',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/jbl_charge5.html',
+      cdiscount: 'https://www.cdiscount.com/son/enceintes-sono/jbl-charge-5/a-jblcharge5blk.html'
+    },
+    'jbl-xtreme-4': {
+      amazon:    'https://www.amazon.fr/dp/B0CW5GFBYX?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-JBL-Xtreme-4/a20567890/w-4',
+      boulanger: 'https://www.boulanger.com/ref/JBLXTREME4BLK',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/jbl_xtreme4.html'
+    },
+    'jbl-boombox-3': {
+      amazon:    'https://www.amazon.fr/dp/B0B4MQW1BB?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-JBL-Boombox-3/a18345678/w-4',
+      boulanger: 'https://www.boulanger.com/ref/JBLBOOMBOX3BLK',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/jbl_boombox3.html'
+    },
+    'marshall-willen-ii': {
+      amazon:    'https://www.amazon.fr/dp/B0BHRXM9V4?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Marshall-Willen-II/a19123456/w-4',
+      boulanger: 'https://www.boulanger.com/ref/MARSHALLWILLEN2',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/marshall_willen_ii.html'
+    },
+    'marshall-emberton-ii': {
+      amazon:    'https://www.amazon.fr/dp/B09NF34R5Q?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Marshall-Emberton-II/a17123456/w-4',
+      boulanger: 'https://www.boulanger.com/ref/MARSHALLEMBERTON2',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/marshall_emberton_ii.html'
+    },
+    'marshall-middleton': {
+      amazon:    'https://www.amazon.fr/dp/B0BHRXMF82?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Marshall-Middleton/a19234567/w-4',
+      boulanger: 'https://www.boulanger.com/ref/MARSHALLMIDDLETON',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/marshall_middleton.html'
+    },
+    'sony-srs-xb13': {
+      amazon:    'https://www.amazon.fr/dp/B08ZK77BGB?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Sony-SRS-XB13/a15678901/w-4',
+      boulanger: 'https://www.boulanger.com/ref/SRSXB13',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/sony_srs_xb13.html',
+      cdiscount: 'https://www.cdiscount.com/son/enceintes-sono/sony-srs-xb13/a-srsxb13.html'
+    },
+    'sony-srs-xb43': {
+      amazon:    'https://www.amazon.fr/dp/B08ZK5DTPJ?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Sony-SRS-XB43/a15789012/w-4',
+      boulanger: 'https://www.boulanger.com/ref/SRSXB43',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/sony_srs_xb43.html',
+      cdiscount: 'https://www.cdiscount.com/son/enceintes-sono/sony-srs-xb43/a-srsxb43.html'
+    },
+    'sony-srs-xg300': {
+      amazon:    'https://www.amazon.fr/dp/B0B3VDQ4HH?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Sony-SRS-XG300/a18456789/w-4',
+      boulanger: 'https://www.boulanger.com/ref/SRSXG300',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/sony_srs_xg300.html'
+    },
+    'bose-soundlink-flex-2': {
+      amazon:    'https://www.amazon.fr/dp/B0CH6LHXLQ?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Bose-SoundLink-Flex-2/a20234567/w-4',
+      boulanger: 'https://www.boulanger.com/ref/SOUNDLINKFLEX2',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/bose_soundlink_flex_2.html'
+    },
+    'bose-soundlink-max': {
+      amazon:    'https://www.amazon.fr/dp/B0CGXM89FB?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Bose-SoundLink-Max/a20123456/w-4',
+      boulanger: 'https://www.boulanger.com/ref/SOUNDLINKMAX',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/bose_soundlink_max.html'
+    },
+    'ue-wonderboom-3': {
+      amazon:    'https://www.amazon.fr/dp/B09XPR77FQ?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Ultimate-Ears-Wonderboom-3/a18012345/w-4',
+      boulanger: 'https://www.boulanger.com/ref/UEWONDERBOOM3',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/ue_wonderboom_3.html',
+      cdiscount: 'https://www.cdiscount.com/son/enceintes-sono/ue-wonderboom-3/a-uewonderboom3.html'
+    },
+    'ue-hyperboom': {
+      amazon:    'https://www.amazon.fr/dp/B08G3DRH11?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Ultimate-Ears-Hyperboom/a15901234/w-4',
+      boulanger: 'https://www.boulanger.com/ref/UEHYPERBOOM',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/ue_hyperboom.html'
+    },
+    'soundcore-motion-x600': {
+      amazon:    'https://www.amazon.fr/dp/B0C2JXLCKV?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Soundcore-Motion-X600/a19789012/w-4',
+      cdiscount: 'https://www.cdiscount.com/son/enceintes-sono/soundcore-motion-x600/a-motionx600.html'
+    },
+    'harman-kardon-go-play-3': {
+      amazon:    'https://www.amazon.fr/dp/B0CDPR8MRS?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Harman-Kardon-Go-Play-3/a20012345/w-4',
+      boulanger: 'https://www.boulanger.com/ref/HKGOPLAY3',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/harman_kardon_go_play_3.html'
+    },
+    'beolit-20': {
+      amazon:    'https://www.amazon.fr/dp/B08P3VRVHZ?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Bang-Olufsen-Beolit-20/a16012345/w-4',
+      boulanger: 'https://www.boulanger.com/ref/BEOLIT20',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/bang_olufsen_beolit_20.html'
+    },
+    'marshall-stanmore-iii': {
+      amazon:    'https://www.amazon.fr/dp/B0BHRXMHXV?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Marshall-Stanmore-III/a19012345/w-4',
+      boulanger: 'https://www.boulanger.com/ref/MARSHALLSTANMORE3',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/marshall_stanmore_iii.html'
+    },
+    'marshall-woburn-iii': {
+      amazon:    'https://www.amazon.fr/dp/B0BHRXMGG5?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-Bluetooth-Marshall-Woburn-III/a19112345/w-4',
+      boulanger: 'https://www.boulanger.com/ref/MARSHALLWOBURN3',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_bluetooth/marshall_woburn_iii.html'
+    },
+    'sonos-era-100': {
+      amazon:    'https://www.amazon.fr/dp/B0B8R8KQKX?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-connectee-Sonos-Era-100/a19345678/w-4',
+      boulanger: 'https://www.boulanger.com/ref/SONOSERA100',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_wifi/sonos_era_100.html'
+    },
+    'sonos-era-300': {
+      amazon:    'https://www.amazon.fr/dp/B0B8R8KQMZ?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-connectee-Sonos-Era-300/a19456789/w-4',
+      boulanger: 'https://www.boulanger.com/ref/SONOSERA300',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_wifi/sonos_era_300.html'
+    },
+    'edifier-r1280db': {
+      amazon:    'https://www.amazon.fr/dp/B0755N7LVN?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-Edifier-R1280DB/a13456789/w-4',
+      cdiscount: 'https://www.cdiscount.com/son/enceintes-sono/edifier-r1280db/a-r1280db.html'
+    },
+    'denon-home-150': {
+      amazon:    'https://www.amazon.fr/dp/B08MYJF3HK?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-connectee-Denon-Home-150/a16234567/w-4',
+      boulanger: 'https://www.boulanger.com/ref/DENONHOME150',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_wifi/denon_home_150.html'
+    },
+    'triangle-aio-3': {
+      amazon:    'https://www.amazon.fr/dp/B0CJBM9KW7?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-Triangle-AIO-3/a20678901/w-4',
+      boulanger: 'https://www.boulanger.com/ref/TRIANGLEAIO3',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_hifi/triangle_aio_3.html'
+    },
+    'kef-lsx2-lt': {
+      amazon:    'https://www.amazon.fr/dp/B0BTYTWBHK?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-KEF-LSX-II-LT/a19901234/w-4',
+      boulanger: 'https://www.boulanger.com/ref/KEFLSX2LT',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_hifi/kef_lsx_ii_lt.html'
+    },
+    'yamaha-hs5': {
+      amazon:    'https://www.amazon.fr/dp/B00EOWV9K0?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-studio-Yamaha-HS5/a12345678/w-4',
+      boulanger: 'https://www.boulanger.com/ref/YAMAHAHS5'
+    },
+    'klipsch-r-41m': {
+      amazon:    'https://www.amazon.fr/dp/B07FK6N2JG?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-Klipsch-R-41M/a14012345/w-4',
+      boulanger: 'https://www.boulanger.com/ref/KLIPSCHR41M'
+    },
+    'klipsch-r-51m': {
+      amazon:    'https://www.amazon.fr/dp/B07FK3KZBD?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-Klipsch-R-51M/a14112345/w-4',
+      boulanger: 'https://www.boulanger.com/ref/KLIPSCHR51M',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_hifi/klipsch_r_51m.html'
+    },
+    'triangle-borea-br02': {
+      amazon:    'https://www.amazon.fr/dp/B08DQLJ9ZK?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-Triangle-Borea-BR02/a15789012/w-4',
+      boulanger: 'https://www.boulanger.com/ref/TRIANGLEBR02',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_hifi/triangle_borea_br02.html'
+    },
+    'triangle-borea-br03': {
+      amazon:    'https://www.amazon.fr/dp/B08DQLHWR4?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-Triangle-Borea-BR03/a15890123/w-4',
+      boulanger: 'https://www.boulanger.com/ref/TRIANGLEBR03',
+      darty:     'https://www.darty.com/nav/achat/son/enceinte_hifi/triangle_borea_br03.html'
+    },
+    'cabasse-bora': {
+      amazon:    'https://www.amazon.fr/dp/B0CK3NXPF6?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-Cabasse-Bora/a20789012/w-4',
+      boulanger: 'https://www.boulanger.com/ref/CABASSBORA'
+    },
+    'focal-chorus-706': {
+      amazon:    'https://www.amazon.fr/dp/B0006MPFVS?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-Focal-Chorus-706/a20890123/w-4',
+      boulanger: 'https://www.boulanger.com/ref/FOCALCHORUS706'
+    },
+    'kef-q150': {
+      amazon:    'https://www.amazon.fr/dp/B079JYQTTX?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/enceinte-HiFi-KEF-Q150/a14901234/w-4',
+      boulanger: 'https://www.boulanger.com/ref/KEFQ150'
+    }
+  };
+
   SPEAKER_DATABASE.forEach(function (s) {
-    s.affiliateLinks = searchLinks(s.displayName);
+    var direct = directLinks[s.id];
+    var fallback = searchLinks(s.displayName);
+    s.affiliateLinks = {
+      amazon:        (direct && direct.amazon)    || fallback.amazon,
+      fnac:          (direct && direct.fnac)       || fallback.fnac,
+      boulanger:     (direct && direct.boulanger)  || fallback.boulanger,
+      darty:         (direct && direct.darty)      || fallback.darty,
+      cdiscount:     (direct && direct.cdiscount)  || fallback.cdiscount,
+      rakuten:       fallback.rakuten,
+      rueducommerce: fallback.rueducommerce,
+      backmarket:    null,
+      veepee:        null
+    };
   });
 })();

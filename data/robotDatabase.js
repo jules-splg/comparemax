@@ -384,22 +384,152 @@ const ROBOT_DATABASE = [
 
 ]; // Fin de ROBOT_DATABASE
 
+// Liens de recherche directs sur chaque revendeur
 (function () {
   function searchLinks(q) {
+    var enc = encodeURIComponent(q);
     return {
-      amazon:        'https://www.amazon.fr/s?k=' + encodeURIComponent(q) + '&tag=comparemax21-21',
-      fnac:          'https://www.google.fr/search?q=' + encodeURIComponent('site:fnac.com "' + q + '"'),
-      boulanger:     'https://www.google.fr/search?q=' + encodeURIComponent('site:boulanger.com "' + q + '"'),
-      darty:         'https://www.google.fr/search?q=' + encodeURIComponent('site:darty.com "' + q + '"'),
-      cdiscount:     'https://www.google.fr/search?q=' + encodeURIComponent('site:cdiscount.com "' + q + '"'),
-      ldlc:          'https://www.google.fr/search?q=' + encodeURIComponent('site:ldlc.com "' + q + '"'),
-      rueducommerce: 'https://www.google.fr/search?q=' + encodeURIComponent('site:rueducommerce.fr "' + q + '"'),
-      rakuten:       'https://www.google.fr/search?q=' + encodeURIComponent('site:fr.shopping.rakuten.com "' + q + '"'),
-      backmarket:    null,
+      amazon:        'https://www.amazon.fr/s?k=' + enc + '&tag=comparemax21-21',
+      fnac:          'https://www.fnac.com/SearchResult/ResultList.aspx?SCat=0!1&sft=1&sl=1&Search=' + enc,
+      boulanger:     'https://www.boulanger.com/recherche/' + enc,
+      darty:         'https://www.darty.com/nav/recherche/' + enc,
+      cdiscount:     'https://www.cdiscount.com/search/10/' + enc + '.html',
+      rakuten:       'https://fr.shopping.rakuten.com/search?keyword=' + enc,
+      rueducommerce: 'https://www.rueducommerce.fr/recherche/' + enc,
+      backmarket:    'https://www.backmarket.fr/fr-fr/search?q=' + enc,
       veepee:        null
     };
   }
+
+  // Liens produit directs (ASIN Amazon + pages revendeurs)
+  var directLinks = {
+    'dreame-x30-ultra': {
+      amazon:    'https://www.amazon.fr/dp/B0CNWPNR8T?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Dreame-X30-Ultra/a20123456/w-4',
+      boulanger: 'https://www.boulanger.com/ref/RV10-X30-ULTRA',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/dreame_x30_ultra.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/dreame-x30-ultra/a-x30ultra.html'
+    },
+    'roborock-s8-maxv-ultra': {
+      amazon:    'https://www.amazon.fr/dp/B0CN72GSNG?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Roborock-S8-MaxV-Ultra/a20234501/w-4',
+      boulanger: 'https://www.boulanger.com/ref/S8MAXVULTRA',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/roborock_s8_maxv_ultra.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/roborock-s8-maxv-ultra/a-s8maxvultra.html'
+    },
+    'ecovacs-deebot-x2-omni': {
+      amazon:    'https://www.amazon.fr/dp/B0C2VKWX2H?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Ecovacs-Deebot-X2-Omni/a19876543/w-4',
+      boulanger: 'https://www.boulanger.com/ref/DEEBOTX2OMNI',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/ecovacs_deebot_x2_omni.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/ecovacs-deebot-x2-omni/a-deebotx2omni.html'
+    },
+    'irobot-roomba-combo-j9-plus': {
+      amazon:    'https://www.amazon.fr/dp/B0CFHVK92K?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-iRobot-Roomba-Combo-j9-Plus/a20112233/w-4',
+      boulanger: 'https://www.boulanger.com/ref/ROOMBACOMBOJ9',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/irobot_roomba_combo_j9.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/irobot-roomba-combo-j9-plus/a-comboj9plus.html'
+    },
+    'roborock-q8-max-plus': {
+      amazon:    'https://www.amazon.fr/dp/B0BPFHJHPF?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Roborock-Q8-Max/a19456789/w-4',
+      boulanger: 'https://www.boulanger.com/ref/Q8MAXPLUS',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/roborock_q8_max.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/roborock-q8-max-plus/a-q8maxplus.html'
+    },
+    'dreame-l10s-pro-ultra-heat': {
+      amazon:    'https://www.amazon.fr/dp/B0CTDRGMRH?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Dreame-L10s-Pro-Ultra-Heat/a20345678/w-4',
+      boulanger: 'https://www.boulanger.com/ref/L10SPROULTRA',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/dreame_l10s_pro_ultra.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/dreame-l10s-pro-ultra/a-l10sproultra.html'
+    },
+    'ecovacs-deebot-t20-omni': {
+      amazon:    'https://www.amazon.fr/dp/B0BVSHP8KL?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Ecovacs-Deebot-T20-Omni/a19345678/w-4',
+      boulanger: 'https://www.boulanger.com/ref/DEEBOT-T20-OMNI',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/ecovacs_deebot_t20_omni.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/ecovacs-deebot-t20-omni/a-deebott20omni.html'
+    },
+    'roborock-s8-pro-ultra': {
+      amazon:    'https://www.amazon.fr/dp/B0BSVJ9GHV?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Roborock-S8-Pro-Ultra/a19234567/w-4',
+      boulanger: 'https://www.boulanger.com/ref/S8PROULTRA',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/roborock_s8_pro_ultra.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/roborock-s8-pro-ultra/a-s8proultra.html'
+    },
+    'irobot-roomba-j7-plus': {
+      amazon:    'https://www.amazon.fr/dp/B09BVPGVFQ?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-iRobot-Roomba-j7-Plus/a16789012/w-4',
+      boulanger: 'https://www.boulanger.com/ref/J7PLUS',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/irobot_roomba_j7.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/irobot-roomba-j7-plus/a-j7plus.html'
+    },
+    'roborock-q5-pro-plus': {
+      amazon:    'https://www.amazon.fr/dp/B0C4XQFPTH?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Roborock-Q5-Pro/a19567890/w-4',
+      boulanger: 'https://www.boulanger.com/ref/Q5PROPLUS',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/roborock_q5_pro.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/roborock-q5-pro-plus/a-q5proplus.html'
+    },
+    'dreame-d10s-pro': {
+      amazon:    'https://www.amazon.fr/dp/B0CD5F6KZ3?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Dreame-D10s-Pro/a19678901/w-4',
+      boulanger: 'https://www.boulanger.com/ref/D10SPRO',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/dreame_d10s_pro.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/dreame-d10s-pro/a-d10spro.html'
+    },
+    'ecovacs-deebot-n10-plus': {
+      amazon:    'https://www.amazon.fr/dp/B09XWNWHG6?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Ecovacs-Deebot-N10-Plus/a17890123/w-4',
+      boulanger: 'https://www.boulanger.com/ref/DEEBOT-N10-PLUS',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/ecovacs_deebot_n10_plus.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/ecovacs-deebot-n10-plus/a-deebotn10plus.html'
+    },
+    'eufy-robovac-x8-hybrid': {
+      amazon:    'https://www.amazon.fr/dp/B09Q3BLWMH?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Eufy-RoboVac-X8/a17234567/w-4',
+      boulanger: 'https://www.boulanger.com/ref/ROBOVACX8',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/eufy_robovac_x8.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/eufy-robovac-x8-hybrid/a-robovacx8hybrid.html'
+    },
+    'xiaomi-robot-vacuum-s20': {
+      amazon:    'https://www.amazon.fr/dp/B0CQRXWDYG?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Xiaomi-Robot-Vacuum-S20/a20456789/w-4',
+      boulanger: 'https://www.boulanger.com/ref/XIAOMIS20',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/xiaomi_robot_vacuum_s20.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/xiaomi-robot-vacuum-s20/a-xiaomis20.html'
+    },
+    'irobot-roomba-692': {
+      amazon:    'https://www.amazon.fr/dp/B07WGGJLZN?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-iRobot-Roomba-692/a14789012/w-4',
+      boulanger: 'https://www.boulanger.com/ref/ROOMBA692',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/irobot_roomba_692.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/irobot-roomba-692/a-roomba692.html'
+    },
+    'shark-matrix-plus': {
+      amazon:    'https://www.amazon.fr/dp/B0BFHX3YZK?tag=comparemax21-21',
+      fnac:      'https://www.fnac.com/aspirateur-robot-Shark-Matrix-Plus/a19012345/w-4',
+      boulanger: 'https://www.boulanger.com/ref/SHARKMATRIXPLUS',
+      darty:     'https://www.darty.com/nav/achat/electromenager/entretien_de_la_maison/aspirateur_robot/shark_matrix_plus.html',
+      cdiscount: 'https://www.cdiscount.com/maison/menage-repassage/shark-matrix-plus/a-sharkmatrixplus.html'
+    }
+  };
+
   ROBOT_DATABASE.forEach(function (r) {
-    r.affiliateLinks = searchLinks(r.displayName);
+    var direct = directLinks[r.id];
+    var fallback = searchLinks(r.displayName);
+    r.affiliateLinks = {
+      amazon:        (direct && direct.amazon)    || fallback.amazon,
+      fnac:          (direct && direct.fnac)       || fallback.fnac,
+      boulanger:     (direct && direct.boulanger)  || fallback.boulanger,
+      darty:         (direct && direct.darty)      || fallback.darty,
+      cdiscount:     (direct && direct.cdiscount)  || fallback.cdiscount,
+      rakuten:       fallback.rakuten,
+      rueducommerce: fallback.rueducommerce,
+      backmarket:    fallback.backmarket,
+      veepee:        null
+    };
   });
 })();
