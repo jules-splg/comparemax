@@ -1337,3 +1337,99 @@ function findAboveBudgetAirfryer(database, filters) {
     .sort((a, b) => b.score - a.score)
     .slice(0, 5);
 }
+
+// ============================================================
+// PLAQUES DE CUISSON — Comparaison intelligente
+// ============================================================
+
+function runHobComparison(database, filters) {
+  const filtered = filterHobs(database, filters);
+  const scored = filtered.map(h => ({
+    ...h,
+    score: calculateHobScore(h, filters)
+  })).sort((a, b) => b.score - a.score);
+
+  const grouped = groupByBudgetTiers(scored, filters.priceMax, filters.noLimit);
+  const aboveBudget = filters.noLimit ? [] : findAboveBudgetHob(database, filters);
+
+  return {
+    premium:     grouped.premium,
+    value:       grouped.value,
+    aboveBudget: aboveBudget.slice(0, 5),
+    totalFound:  filtered.length
+  };
+}
+
+function filterHobs(database, filters) {
+  return database.filter(h => {
+    if (!filters.noLimit && h.price > filters.priceMax) return false;
+    if (h.price < filters.priceMin) return false;
+    if (filters.hobType && filters.hobType !== 'all' && h.type !== filters.hobType) return false;
+    if (filters.minBurners > 0 && h.burners < filters.minBurners) return false;
+    if (filters.hasTimer === true && !h.hasTimer) return false;
+    if (filters.hasIntegratedHood === true && !h.hasIntegratedHood) return false;
+    return true;
+  });
+}
+
+// Score plaques de cuisson (0–10)
+// Puissance 30% | Programmes 20% | Fonctions avancées 15% | Q/P 15% | Avis 10% | Répa 5% | Bonus hotte 5%
+function calculateHobScore(h, filters) {
+
+  // Puissance : induction jusqu'à 11 100 W, vitroc./élec. jusqu'à 7 000 W
+  const maxPower = h.type === 'induction' ? 11100 : 7000;
+  const powerScore = Math.min(10, (h.power_w / maxPower) * 10);
+
+  // Programmes / niveaux de chauffe (17 niveaux = max)
+  const programScore = Math.min(10, (h.programs / 17) * 10);
+
+  // Fonctions avancées
+  let funcScore = 5;
+  if (h.boostZone)    funcScore += 1.5;
+  if (h.bridgeFunction) funcScore += 1.5;
+  if (h.flexiZone)    funcScore += 1.5;
+  if (h.childLock)    funcScore += 0.5;
+  if (h.connected)    funcScore += 1.0;
+  funcScore = Math.min(10, funcScore);
+
+  // Rapport Q/P
+  const priceRef   = filters.noLimit ? 1000 : filters.priceMax;
+  const pricePos   = 1 - Math.min((h.price - filters.priceMin) / Math.max(priceRef - filters.priceMin, 1), 1);
+  const valueScore = Math.min(10, powerScore * 0.5 + pricePos * 10 * 0.5);
+
+  // Avis
+  let reviewScore = h.reviewScore;
+  if (h.reviewCount < 200)  reviewScore *= 0.7;
+  else if (h.reviewCount < 1000) reviewScore *= 0.9;
+
+  // Réparabilité
+  const repairScore = h.repairabilityScore;
+
+  // Bonus type : induction > vitrocéramique > électrique (technologie)
+  const techBonus = h.type === 'induction' ? 0.5 : h.type === 'vitroceramique' ? 0.2 : 0;
+
+  // Bonus hotte intégrée
+  const hoodBonus = h.hasIntegratedHood ? 0.6 : 0;
+
+  // Bonus minuteur
+  const timerBonus = h.hasTimer ? 0.2 : 0;
+
+  const total =
+    powerScore   * 0.30 +
+    programScore * 0.20 +
+    funcScore    * 0.15 +
+    valueScore   * 0.15 +
+    reviewScore  * 0.10 +
+    repairScore  * 0.05 +
+    reviewScore  * 0.05;
+
+  return Math.round(Math.min(10, total + techBonus + hoodBonus + timerBonus) * 10) / 10;
+}
+
+function findAboveBudgetHob(database, filters) {
+  const aboveMax = filters.priceMax * 1.30;
+  return filterHobs(database, { ...filters, noLimit: false, priceMin: filters.priceMax, priceMax: aboveMax })
+    .map(h => ({ ...h, score: calculateHobScore(h, { ...filters, noLimit: false, priceMax: aboveMax }) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5);
+}

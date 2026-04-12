@@ -682,6 +682,74 @@
         <button id="compareAirfryerBtn" class="compare-btn">⚡ &nbsp;Comparer les airfryers</button>
       </section>
 
+      <!-- FILTRES PLAQUES DE CUISSON -->
+      <section id="filtersHob" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">Vos critères de recherche</h2>
+
+        <!-- Budget -->
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget</label>
+          <div class="quick-budgets">
+            <button class="quick-btn hob-quick-btn" data-min="0" data-max="150">Entrée de gamme<br><small>0 – 150 €</small></button>
+            <button class="quick-btn hob-quick-btn active" data-min="150" data-max="350">Milieu de gamme<br><small>150 – 350 €</small></button>
+            <button class="quick-btn hob-quick-btn" data-min="350" data-max="700">Haut de gamme<br><small>350 – 700 €</small></button>
+            <button class="quick-btn hob-quick-btn" data-min="700" data-max="2000">Premium<br><small>700 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="hobPriceMinDisplay" class="price-range-value">150 €</span>
+            <span class="price-range-sep">—</span>
+            <span id="hobPriceMaxDisplay" class="price-range-value">350 €</span>
+          </div>
+          <div class="dual-range-wrapper">
+            <div id="hobRangeTrackFill"></div>
+            <input type="range" id="hobPriceMin" class="range-input range-input--min" min="0" max="2000" step="10" value="150">
+            <input type="range" id="hobPriceMax" class="range-input range-input--max" min="0" max="2000" step="10" value="350">
+          </div>
+        </div>
+
+        <!-- Type de plaques -->
+        <div class="filter-group">
+          <label class="filter-label">🔥 Type de plaques</label>
+          <div id="hobTypeGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Tous</button>
+            <button class="toggle-btn" data-value="induction">Induction</button>
+            <button class="toggle-btn" data-value="vitroceramique">Vitrocéramique</button>
+            <button class="toggle-btn" data-value="electrique">Électrique</button>
+          </div>
+        </div>
+
+        <!-- Nombre de foyers -->
+        <div class="filter-group">
+          <label class="filter-label">🔆 Nombre de foyers minimum</label>
+          <div id="hobBurnersGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="0">Peu importe</button>
+            <button class="toggle-btn" data-value="2">2 foyers</button>
+            <button class="toggle-btn" data-value="4">4 foyers</button>
+            <button class="toggle-btn" data-value="5">5 foyers et +</button>
+          </div>
+        </div>
+
+        <!-- Minuteur -->
+        <div class="filter-group">
+          <label class="filter-label">⏱️ Minuteur intégré</label>
+          <div id="hobTimerGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Avec minuteur</button>
+          </div>
+        </div>
+
+        <!-- Hotte intégrée -->
+        <div class="filter-group">
+          <label class="filter-label">💨 Hotte aspirante intégrée</label>
+          <div id="hobHoodGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="all">Peu importe</button>
+            <button class="toggle-btn" data-value="yes">Avec hotte intégrée</button>
+          </div>
+        </div>
+
+        <button id="compareHobBtn" class="compare-btn">🍳 &nbsp;Comparer les plaques</button>
+      </section>
+
       <!-- CHARGEMENT -->
       <div id="loadingState" class="loading-state" style="display:none;">
         <div class="loading-spinner"></div>
@@ -1214,6 +1282,7 @@
   <script src="data/robotDatabase.js"></script>
   <script src="data/earphonesDatabase.js"></script>
   <script src="data/airfryerDatabase.js"></script>
+  <script src="data/hobDatabase.js"></script>
   <script src="js/comparator.js"></script>
   <script src="js/affiliate.js"></script>
   <script src="js/site.js"></script>

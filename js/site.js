@@ -17,7 +17,7 @@ const CATEGORIES = {
       { key: 'coffee',     label: 'Machine à café',     emoji: '☕', available: true  },
       { key: 'airfryer',   label: 'Airfryer',           emoji: '⚡', available: true  },
       { key: 'microwave',  label: 'Micro-ondes',        emoji: '♨️', available: false },
-      { key: 'hob',        label: 'Plaques de cuisson', emoji: '🍳', available: false },
+      { key: 'hob',        label: 'Plaques de cuisson', emoji: '🍳', available: true  },
     ]
   },
   maison: {
@@ -143,6 +143,15 @@ const AppState = {
     dual: false,
     dehydrate: false,
     rotisserie: false
+  },
+  hobFilters: {
+    priceMin: 150,
+    priceMax: 350,
+    noLimit: false,
+    hobType: 'all',
+    minBurners: 0,
+    hasTimer: false,
+    hasIntegratedHood: false
   },
   currentCategory: 'tv',
   results: null
@@ -750,6 +759,61 @@ function bindEvents() {
 
   document.getElementById('compareAirfryerBtn').addEventListener('click', onCompareAirfryer);
   updateAfrRangeTrack(); updateAfrPriceDisplay();
+
+  // ---- Filtres plaques de cuisson ----
+  document.getElementById('hobPriceMin').addEventListener('input', function () { onHobRangeChange('min'); });
+  document.getElementById('hobPriceMax').addEventListener('input', function () { onHobRangeChange('max'); });
+
+  document.querySelectorAll('.hob-quick-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var min = parseInt(this.dataset.min), max = parseInt(this.dataset.max);
+      document.getElementById('hobPriceMin').value = min;
+      document.getElementById('hobPriceMax').value = max;
+      AppState.hobFilters.priceMin = min;
+      AppState.hobFilters.priceMax = max;
+      AppState.hobFilters.noLimit  = max >= 2000;
+      updateHobPriceDisplay(); updateHobRangeTrack();
+      document.querySelectorAll('.hob-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('#hobTypeGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#hobTypeGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.hobFilters.hobType = this.dataset.value;
+    });
+  });
+
+  document.querySelectorAll('#hobBurnersGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#hobBurnersGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.hobFilters.minBurners = parseInt(this.dataset.value) || 0;
+    });
+  });
+
+  document.querySelectorAll('#hobTimerGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#hobTimerGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.hobFilters.hasTimer = this.dataset.value === 'yes';
+    });
+  });
+
+  document.querySelectorAll('#hobHoodGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#hobHoodGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.hobFilters.hasIntegratedHood = this.dataset.value === 'yes';
+    });
+  });
+
+  document.getElementById('compareHobBtn').addEventListener('click', onCompareHob);
+  document.getElementById('hobPriceMin').value = AppState.hobFilters.priceMin;
+  document.getElementById('hobPriceMax').value = AppState.hobFilters.priceMax;
+  updateHobRangeTrack(); updateHobPriceDisplay();
 }
 
 // ------------------------------------------------------------
@@ -2188,6 +2252,7 @@ function onProductClick(btn) {
   var isRobot       = product === 'robot';
   var isEarphones   = product === 'earphones';
   var isAirfryer    = product === 'airfryer';
+  var isHob         = product === 'hob';
   document.getElementById('filtersTv').style.display          = isTv         ? '' : 'none';
   document.getElementById('filtersWashing').style.display     = isWashing    ? '' : 'none';
   document.getElementById('filtersDishwasher').style.display  = isDishwasher ? '' : 'none';
@@ -2198,6 +2263,7 @@ function onProductClick(btn) {
   document.getElementById('filtersRobot').style.display       = isRobot      ? '' : 'none';
   document.getElementById('filtersEarphones').style.display   = isEarphones  ? '' : 'none';
   document.getElementById('filtersAirfryer').style.display    = isAirfryer   ? '' : 'none';
+  document.getElementById('filtersHob').style.display         = isHob        ? '' : 'none';
 
   hideResults();
   var noRes = document.getElementById('noResultsMsg');
@@ -2828,6 +2894,17 @@ function resetFilters() {
     AppState.airfryerFilters.priceMax = 130;
     AppState.airfryerFilters.noLimit  = false;
     onCompareAirfryer();
+  } else if (cat === 'hob') {
+    AppState.hobFilters.priceMin = 150;
+    AppState.hobFilters.priceMax = 350;
+    AppState.hobFilters.noLimit  = false;
+    document.getElementById('hobPriceMin').value = 150;
+    document.getElementById('hobPriceMax').value = 350;
+    updateHobPriceDisplay(); updateHobRangeTrack();
+    document.querySelectorAll('.hob-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+    var hobDef = document.querySelector('.hob-quick-btn[data-min="150"][data-max="350"]');
+    if (hobDef) hobDef.classList.add('active');
+    onCompareHob();
   }
 
   document.getElementById('noResultsMsg').style.display = 'none';
@@ -3453,6 +3530,142 @@ function buildAirfryerCard(a, rank, type, bestPremium, bestValue) {
       '</div>' +
       '<a href="' + ctaHref + '" target="_blank" rel="noopener" class="card-cta">' + ctaLabel + ' →</a>' +
       (otherOffers.count > 0 ? '<details class="card-other-offers"><summary>Voir ' + otherOffers.count + ' autre' + (otherOffers.count > 1 ? 's' : '') + ' offre' + (otherOffers.count > 1 ? 's' : '') + '</summary><div class="other-offers-list">' + otherOffers.html + '</div></details>' : '') +
+    '</div>'
+  );
+}
+
+// ============================================================
+// PLAQUES DE CUISSON — Range, compare, render, card
+// ============================================================
+
+function onHobRangeChange(which) {
+  var minVal = parseInt(document.getElementById('hobPriceMin').value);
+  var maxVal = parseInt(document.getElementById('hobPriceMax').value);
+  if (which === 'min' && minVal > maxVal) { minVal = maxVal; document.getElementById('hobPriceMin').value = minVal; }
+  if (which === 'max' && maxVal < minVal) { maxVal = minVal; document.getElementById('hobPriceMax').value = maxVal; }
+  AppState.hobFilters.priceMin = minVal;
+  AppState.hobFilters.priceMax = maxVal;
+  AppState.hobFilters.noLimit  = maxVal >= 2000;
+  updateHobPriceDisplay(); updateHobRangeTrack();
+  document.querySelectorAll('.hob-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+}
+
+function updateHobRangeTrack() {
+  var track = document.getElementById('hobRangeTrackFill');
+  if (!track) return;
+  var leftPct  = (parseInt(document.getElementById('hobPriceMin').value) / 2000) * 100;
+  var rightPct = (parseInt(document.getElementById('hobPriceMax').value) / 2000) * 100;
+  track.style.left = leftPct + '%'; track.style.width = (rightPct - leftPct) + '%';
+}
+
+function updateHobPriceDisplay() {
+  var min = AppState.hobFilters.priceMin, max = AppState.hobFilters.priceMax;
+  var minEl = document.getElementById('hobPriceMinDisplay'), maxEl = document.getElementById('hobPriceMaxDisplay');
+  if (minEl) minEl.textContent = min.toLocaleString('fr-FR') + ' \u20ac';
+  if (maxEl) maxEl.textContent = max >= 2000 ? '2\u00a0000 \u20ac +' : max.toLocaleString('fr-FR') + ' \u20ac';
+}
+
+function onCompareHob() {
+  showLoading(true); hideResults();
+  setTimeout(function () {
+    var results = runHobComparison(HOB_DATABASE, AppState.hobFilters);
+    AppState.results = results; showLoading(false);
+    renderHobResults(results);
+  }, 100);
+}
+
+function renderHobResults(results) {
+  if (results.totalFound === 0) {
+    var noRes = document.getElementById('noResultsMsg'), txt = document.getElementById('noResultsText');
+    if (txt) txt.textContent = 'Aucune plaque de cuisson trouv\u00e9e';
+    noRes.style.display = 'block'; return;
+  }
+  updateSectionTitles();
+  renderTopSectionHob('listPremium', results.premium, 'sectionPremium', 'premium');
+  renderTopSectionHob('listValue',   results.value,   'sectionValue',   'value');
+  if (!AppState.hobFilters.noLimit) {
+    var bestP = results.premium && results.premium[0] ? results.premium[0] : null;
+    var bestV = results.value   && results.value[0]   ? results.value[0]   : null;
+    renderTopSectionHob('listAbove', results.aboveBudget, 'sectionAbove', 'above', bestP, bestV);
+  }
+  document.getElementById('resultsWrapper').scrollIntoView({ behavior: 'smooth' });
+  requestAnimationFrame(function () { setTimeout(equalizeCardHeights, 50); });
+}
+
+function renderTopSectionHob(listId, items, sectionId, type, bestPremium, bestValue) {
+  var section = document.getElementById(sectionId), list = document.getElementById(listId);
+  if (!items || items.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = items.map(function (h, i) { return buildHobCard(h, i + 1, type, bestPremium, bestValue); }).join('');
+  requestAnimationFrame(function () { list.querySelectorAll('.card-score-fill').forEach(function (el) { el.style.width = el.dataset.width; }); });
+}
+
+function buildHobCard(h, rank, type, bestPremium, bestValue) {
+  var medals = { 1: '\ud83e\udd47', 2: '\ud83e\udd48', 3: '\ud83e\udd49' };
+  var medal = medals[rank] || '#' + rank;
+  var isTop1 = rank === 1;
+  var scoreWidth = Math.round(h.score * 10);
+
+  var comparisonBlock = '';
+  if (type === 'above' && (bestPremium || bestValue)) {
+    var compRows = [];
+    if (bestPremium) {
+      var pDiff = h.price - bestPremium.price, sDiff = parseFloat((h.score - bestPremium.score).toFixed(1));
+      var sCls = sDiff > 0 ? 'comp-better' : sDiff < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">\ud83c\udfc6 <strong>' + bestPremium.displayName + '</strong><em> \u00b7 n\u00b01 premium</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff + ' \u20ac</span><span class="comp-extra-score ' + sCls + '">' + (sDiff > 0 ? '+' : '') + sDiff + ' pt</span></span></div>');
+    }
+    if (bestValue) {
+      var pDiff2 = h.price - bestValue.price, sDiff2 = parseFloat((h.score - bestValue.score).toFixed(1));
+      var sCls2 = sDiff2 > 0 ? 'comp-better' : sDiff2 < 0 ? 'comp-worse' : 'comp-equal';
+      compRows.push('<div class="comp-row"><span class="comp-label">\u2b50 <strong>' + bestValue.displayName + '</strong><em> \u00b7 n\u00b01 rapport Q/P</em></span><span class="comp-values"><span class="comp-extra-price">+' + pDiff2 + ' \u20ac</span><span class="comp-extra-score ' + sCls2 + '">' + (sDiff2 > 0 ? '+' : '') + sDiff2 + ' pt</span></span></div>');
+    }
+    comparisonBlock = '<div class="card-comparison"><div class="comp-header">Compar\u00e9 aux meilleures options dans votre budget :</div>' + compRows.join('') + '</div>';
+  }
+
+  var typeLabel = h.type === 'induction' ? '\u26a1 Induction' : h.type === 'vitroceramique' ? '\ud83d\udd34 Vitroc\u00e9ramique' : '\ud83d\udd0c \u00c9lectrique';
+  var promoTag  = h.hasPromotion ? '<span class="card-promo-tag">' + h.promotionLabel + '</span>' : '';
+  var ctaHref   = '#';
+  var ctaLabel  = 'Voir le meilleur prix';
+
+  return (
+    '<div class="tv-card-wrapper">' +
+    (rank <= 3 ? '<div class="card-top-badge">' + (rank === 1 ? 'RECOMMAND\u00c9' : rank === 2 ? 'EXCELLENT' : 'TR\u00c8S BON') + '</div>' : '') +
+    '<div class="tv-card' + (isTop1 ? ' tv-card--rank-1' : '') + '">' +
+      '<div class="card-header">' +
+        '<span class="card-rank">' + medal + '</span>' +
+        '<div class="card-title-block">' +
+          '<h3 class="card-title">' + h.displayName + '</h3>' +
+          '<div class="card-badges">' +
+            '<span class="card-badge">' + typeLabel + '</span>' +
+            '<span class="card-badge">\ud83d\udd06 ' + h.burners + ' foyers</span>' +
+            (h.hasTimer ? '<span class="card-badge">\u23f1\ufe0f Minuteur</span>' : '') +
+            (h.boostZone ? '<span class="card-badge">\ud83d\ude80 Boost</span>' : '') +
+            (h.flexiZone ? '<span class="card-badge">\ud83d\udd04 FlexiZone</span>' : '') +
+            (h.bridgeFunction ? '<span class="card-badge">\ud83d\udd17 Bridge</span>' : '') +
+            (h.connected ? '<span class="card-badge">\ud83d\udcf1 Connect\u00e9</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="card-price-block">' +
+          promoTag +
+          (h.originalPrice ? '<span class="card-original-price">' + h.originalPrice.toLocaleString('fr-FR') + ' \u20ac</span>' : '') +
+          '<span class="card-price">' + h.price.toLocaleString('fr-FR') + ' \u20ac</span>' +
+        '</div>' +
+      '</div>' +
+      comparisonBlock +
+      '<div class="card-score-block">' +
+        '<div class="card-score-label"><span>Score global</span><strong>' + h.score + '/10 \u00b7 ' + scoreToLabel(h.score) + '</strong></div>' +
+        '<div class="card-score-track"><div class="card-score-fill" data-width="' + scoreWidth + '%" style="width:0%"></div></div>' +
+      '</div>' +
+      '<div class="card-specs">' +
+        '<div class="spec-item"><span class="spec-label">Puissance</span><span class="spec-value">' + h.power_w.toLocaleString('fr-FR') + ' W</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Niveaux</span><span class="spec-value">' + h.programs + ' niveaux</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Largeur</span><span class="spec-value">' + h.width_cm + ' cm</span></div>' +
+        '<div class="spec-item"><span class="spec-label">S\u00e9curit\u00e9 enfant</span><span class="spec-value">' + (h.childLock ? 'Oui' : 'Non') + '</span></div>' +
+        '<div class="spec-item"><span class="spec-label">R\u00e9parabilit\u00e9</span><span class="spec-value">' + h.repairabilityScore + '/10</span></div>' +
+        '<div class="spec-item"><span class="spec-label">Garantie</span><span class="spec-value">' + h.warrantyYears + ' ans</span></div>' +
+      '</div>' +
+      '<a href="' + ctaHref + '" target="_blank" rel="noopener" class="card-cta">' + ctaLabel + ' \u2192</a>' +
+    '</div>' +
     '</div>'
   );
 }
