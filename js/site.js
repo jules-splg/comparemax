@@ -87,8 +87,8 @@ const AppState = {
     milkSystem: null
   },
   vacuumFilters: {
-    priceMin: 0,
-    priceMax: 600,
+    priceMin: 150,
+    priceMax: 350,
     noLimit: false,
     type: 'all',
     withBag: 'all',
@@ -2774,13 +2774,15 @@ function resetFilters() {
     onCompareCoffee();
 
   } else if (cat === 'vacuum') {
-    AppState.vacuumFilters.priceMin = 0;
-    AppState.vacuumFilters.priceMax = 600;
+    AppState.vacuumFilters.priceMin = 150;
+    AppState.vacuumFilters.priceMax = 350;
     AppState.vacuumFilters.noLimit  = false;
-    document.getElementById('vacPriceMin').value = 0;
-    document.getElementById('vacPriceMax').value = 600;
+    document.getElementById('vacPriceMin').value = 150;
+    document.getElementById('vacPriceMax').value = 350;
     updateVacPriceDisplay(); updateVacRangeTrack();
     document.querySelectorAll('.vac-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+    var vacDef = document.querySelector('.vac-quick-btn[data-min="150"][data-max="350"]');
+    if (vacDef) vacDef.classList.add('active');
     onCompareVacuum();
 
   } else if (cat === 'iron') {
@@ -2792,33 +2794,33 @@ function resetFilters() {
     AppState.speakerFilters.priceMin = 0;
     AppState.speakerFilters.priceMax = 500;
     AppState.speakerFilters.noLimit  = false;
-    document.getElementById('spkPriceMin').value = 0;
-    document.getElementById('spkPriceMax').value = 500;
+    document.getElementById('spkPriceMin').value = 100;
+    document.getElementById('spkPriceMax').value = 300;
     updateSpkPriceDisplay(); updateSpkRangeTrack();
     document.querySelectorAll('.spk-quick-btn').forEach(function (b) { b.classList.remove('active'); });
-    var spkDef = document.querySelector('.spk-quick-btn[data-max="500"]');
+    var spkDef = document.querySelector('.spk-quick-btn[data-min="100"][data-max="300"]');
     if (spkDef) spkDef.classList.add('active');
     onCompareSpeaker();
   } else if (cat === 'robot') {
-    AppState.robotFilters.priceMin = 0;
-    AppState.robotFilters.priceMax = 700;
+    AppState.robotFilters.priceMin = 200;
+    AppState.robotFilters.priceMax = 500;
     AppState.robotFilters.noLimit  = false;
-    document.getElementById('robPriceMin').value = 0;
-    document.getElementById('robPriceMax').value = 700;
+    document.getElementById('robPriceMin').value = 200;
+    document.getElementById('robPriceMax').value = 500;
     updateRobPriceDisplay(); updateRobRangeTrack();
     document.querySelectorAll('.rob-quick-btn').forEach(function (b) { b.classList.remove('active'); });
-    var robDef = document.querySelector('.rob-quick-btn[data-max="700"]');
+    var robDef = document.querySelector('.rob-quick-btn[data-min="200"][data-max="500"]');
     if (robDef) robDef.classList.add('active');
     onCompareRobot();
   } else if (cat === 'earphones') {
-    AppState.earphonesFilters.priceMin = 0;
-    AppState.earphonesFilters.priceMax = 300;
+    AppState.earphonesFilters.priceMin = 80;
+    AppState.earphonesFilters.priceMax = 200;
     AppState.earphonesFilters.noLimit  = false;
-    document.getElementById('earPriceMin').value = 0;
-    document.getElementById('earPriceMax').value = 300;
+    document.getElementById('earPriceMin').value = 80;
+    document.getElementById('earPriceMax').value = 200;
     updateEarPriceDisplay(); updateEarRangeTrack();
     document.querySelectorAll('.ear-quick-btn').forEach(function (b) { b.classList.remove('active'); });
-    var earDef = document.querySelector('.ear-quick-btn[data-max="300"]');
+    var earDef = document.querySelector('.ear-quick-btn[data-min="80"][data-max="200"]');
     if (earDef) earDef.classList.add('active');
     onCompareEarphones();
   } else if (cat === 'airfryer') {
