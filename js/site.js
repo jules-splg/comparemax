@@ -2217,6 +2217,21 @@ function onFamilyClick(btn) {
   var family    = CATEGORIES[familyKey];
   if (!family) return;
 
+  // Mode spécial : Achat groupé — pas de niveau 2, ouvrir directement le panel bundle
+  if (family.isBundleMode) {
+    document.getElementById('catLevel2').style.display = 'none';
+    hideResults();
+    document.getElementById('bundleResults').style.display = 'none';
+    // Cacher tous les autres panels
+    ['filtersTv','filtersWashing','filtersDishwasher','filtersCoffee','filtersVacuum',
+     'filtersIron','filtersSpeaker','filtersRobot','filtersEarphones','filtersAirfryer','filtersHob'
+    ].forEach(function(id) { var el = document.getElementById(id); if (el) el.style.display = 'none'; });
+    document.getElementById('filtersBundle').style.display = '';
+    AppState.currentCategory = 'bundle';
+    document.getElementById('app').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+
   // Construire le niveau 2
   var level2 = document.getElementById('catLevel2');
   level2.innerHTML = family.products.map(function (p) {
@@ -2235,6 +2250,8 @@ function onFamilyClick(btn) {
 
   // Réinitialiser les panels et résultats
   hideResults();
+  document.getElementById('filtersBundle').style.display = 'none';
+  document.getElementById('bundleResults').style.display = 'none';
   var noRes = document.getElementById('noResultsMsg');
   if (noRes) noRes.style.display = 'none';
   ['filtersTv','filtersWashing','filtersDishwasher','filtersCoffee','filtersVacuum','filtersIron'].forEach(function(id) {
