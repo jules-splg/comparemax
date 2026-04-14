@@ -11,7 +11,7 @@ const CATEGORIES = {
       { key: 'washing',    label: 'Lave-linge',        emoji: '🫧', available: true  },
       { key: 'dryer',      label: 'Sèche-linge',       emoji: '🌀', available: false },
       { key: 'dishwasher', label: 'Lave-vaisselle',    emoji: '🍽️', available: true  },
-      { key: 'fridge',     label: 'Réfrigérateur',     emoji: '🧊', available: false },
+      { key: 'fridge',     label: 'Réfrigérateur',     emoji: '🧊', available: true  },
       { key: 'oven',       label: 'Four',               emoji: '🔥', available: false },
       { key: 'hood',       label: 'Hotte',              emoji: '💨', available: false },
       { key: 'coffee',     label: 'Machine à café',     emoji: '☕', available: true  },
@@ -35,6 +35,13 @@ const CATEGORIES = {
       { key: 'speaker',   label: 'Enceinte',         emoji: '🔊', available: true  },
       { key: 'earphones', label: 'Écouteurs',        emoji: '🎧', available: true  },
       { key: 'projector', label: 'Vidéoprojecteur',  emoji: '📽️', available: false },
+    ]
+  },
+  'achat-groupe': {
+    label: 'Achat groupé', emoji: '📦',
+    isBundleMode: true,
+    products: [
+      { key: 'bundle', label: 'Pack complet', emoji: '🏠', available: true }
     ]
   }
 };
@@ -152,6 +159,12 @@ const AppState = {
     minBurners: 0,
     hasTimer: false,
     hasIntegratedHood: false
+  },
+  bundleFilters: {
+    budget: 3000,
+    peopleCount: 2,
+    squareMeters: 35,
+    selectedCategories: ['fridge', 'washing', 'dishwasher', 'tv', 'hob']
   },
   currentCategory: 'tv',
   results: null
@@ -814,6 +827,9 @@ function bindEvents() {
   document.getElementById('hobPriceMin').value = AppState.hobFilters.priceMin;
   document.getElementById('hobPriceMax').value = AppState.hobFilters.priceMax;
   updateHobRangeTrack(); updateHobPriceDisplay();
+
+  // ---- Achat groupé ----
+  initBundleFilters();
 }
 
 // ------------------------------------------------------------
@@ -2253,6 +2269,7 @@ function onProductClick(btn) {
   var isEarphones   = product === 'earphones';
   var isAirfryer    = product === 'airfryer';
   var isHob         = product === 'hob';
+  var isBundle      = product === 'bundle';
   document.getElementById('filtersTv').style.display          = isTv         ? '' : 'none';
   document.getElementById('filtersWashing').style.display     = isWashing    ? '' : 'none';
   document.getElementById('filtersDishwasher').style.display  = isDishwasher ? '' : 'none';
@@ -2264,6 +2281,8 @@ function onProductClick(btn) {
   document.getElementById('filtersEarphones').style.display   = isEarphones  ? '' : 'none';
   document.getElementById('filtersAirfryer').style.display    = isAirfryer   ? '' : 'none';
   document.getElementById('filtersHob').style.display         = isHob        ? '' : 'none';
+  document.getElementById('filtersBundle').style.display      = isBundle     ? '' : 'none';
+  if (!isBundle) { var br = document.getElementById('bundleResults'); if (br) br.style.display = 'none'; }
 
   hideResults();
   var noRes = document.getElementById('noResultsMsg');
@@ -3668,4 +3687,184 @@ function buildHobCard(h, rank, type, bestPremium, bestValue) {
     '</div>' +
     '</div>'
   );
+}
+
+// ============================================================
+// ACHAT GROUPÉ — Bindings, compare, render
+// ============================================================
+
+function initBundleFilters() {
+  // Sélection produits (toggle)
+  document.querySelectorAll('.bundle-product-item').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      this.classList.toggle('selected');
+      var cat = this.dataset.cat;
+      var idx = AppState.bundleFilters.selectedCategories.indexOf(cat);
+      if (this.classList.contains('selected')) {
+        if (idx === -1) AppState.bundleFilters.selectedCategories.push(cat);
+      } else {
+        if (idx !== -1) AppState.bundleFilters.selectedCategories.splice(idx, 1);
+      }
+    });
+  });
+
+  // Budget slider
+  document.getElementById('bdlBudget').addEventListener('input', function () {
+    AppState.bundleFilters.budget = parseInt(this.value);
+    updateBdlBudgetDisplay();
+    document.querySelectorAll('.bdl-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+  });
+
+  // Quick budget buttons
+  document.querySelectorAll('.bdl-quick-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var mid = Math.round((parseInt(this.dataset.min) + parseInt(this.dataset.max)) / 2);
+      document.getElementById('bdlBudget').value = mid;
+      AppState.bundleFilters.budget = mid;
+      updateBdlBudgetDisplay();
+      document.querySelectorAll('.bdl-quick-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  // Personnes
+  document.querySelectorAll('#bdlPeopleGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#bdlPeopleGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.bundleFilters.peopleCount = parseInt(this.dataset.value);
+    });
+  });
+
+  // Surface
+  document.querySelectorAll('#bdlSurfaceGroup .toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('#bdlSurfaceGroup .toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      AppState.bundleFilters.squareMeters = parseInt(this.dataset.value);
+    });
+  });
+
+  document.getElementById('compareBundleBtn').addEventListener('click', onCompareBundle);
+  updateBdlBudgetDisplay();
+  updateBdlRangeTrack();
+}
+
+function updateBdlBudgetDisplay() {
+  var el = document.getElementById('bdlBudgetDisplay');
+  if (el) el.textContent = AppState.bundleFilters.budget.toLocaleString('fr-FR') + ' \u20ac';
+  updateBdlRangeTrack();
+}
+
+function updateBdlRangeTrack() {
+  var track = document.getElementById('bdlRangeTrackFill');
+  if (!track) return;
+  var input = document.getElementById('bdlBudget');
+  var pct = ((parseInt(input.value) - 500) / (15000 - 500)) * 100;
+  track.style.left = '0%'; track.style.width = pct + '%';
+}
+
+function onCompareBundle() {
+  var cats = AppState.bundleFilters.selectedCategories;
+  if (cats.length === 0) { alert('Veuillez s\u00e9lectionner au moins un appareil.'); return; }
+  showLoading(true);
+  setTimeout(function () {
+    var results = runBundleOptimizer(
+      cats,
+      AppState.bundleFilters.budget,
+      AppState.bundleFilters.peopleCount,
+      AppState.bundleFilters.squareMeters
+    );
+    showLoading(false);
+    renderBundleResults(results, cats);
+  }, 150);
+}
+
+function renderBundleResults(packs, selectedCategories) {
+  var container = document.getElementById('bundleGrid');
+  var wrapper   = document.getElementById('bundleResults');
+  var subtitle  = document.getElementById('bundleResultsSubtitle');
+  if (!container || !wrapper) return;
+
+  if (subtitle) {
+    var people = AppState.bundleFilters.peopleCount;
+    var sqm    = AppState.bundleFilters.squareMeters;
+    var budg   = AppState.bundleFilters.budget;
+    subtitle.textContent = selectedCategories.length + ' appareils \u00b7 ' +
+      (people <= 2 ? '1\u20132 personnes' : people <= 4 ? '3\u20134 personnes' : '5 personnes et +') +
+      ' \u00b7 ' + sqm + ' m\u00b2 \u00b7 Budget max ' + budg.toLocaleString('fr-FR') + ' \u20ac';
+  }
+
+  container.innerHTML = packs.map(function (pack) {
+    return buildBundleCard(pack, selectedCategories);
+  }).join('');
+
+  wrapper.style.display = 'block';
+  wrapper.scrollIntoView({ behavior: 'smooth' });
+}
+
+function buildBundleCard(pack, selectedCategories) {
+  var strategy   = pack.strategy;
+  var isBalanced = strategy.id === 'balanced';
+  var budgetUsed = pack.budgetUsed;
+  var fillClass  = budgetUsed <= 95 ? 'ok' : budgetUsed <= 110 ? 'warn' : 'over';
+  var fillWidth  = Math.min(budgetUsed, 100);
+
+  var itemsHtml = selectedCategories.map(function (cat) {
+    var product = pack.products[cat];
+    var meta = BUNDLE_CATEGORY_META[cat] || { label: cat, emoji: '📦' };
+    if (!product) {
+      return '<div class="bundle-item">' +
+        '<div class="bundle-item-left">' +
+          '<span class="bundle-item-emoji">' + meta.emoji + '</span>' +
+          '<div class="bundle-item-info">' +
+            '<div class="bundle-item-cat">' + meta.label + '</div>' +
+            '<div class="bundle-item-name" style="color:var(--text-muted)">Non disponible dans ce budget</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }
+    var spec = getBundleItemSpec(cat, product);
+    return '<div class="bundle-item">' +
+      '<div class="bundle-item-left">' +
+        '<span class="bundle-item-emoji">' + meta.emoji + '</span>' +
+        '<div class="bundle-item-info">' +
+          '<div class="bundle-item-cat">' + meta.label + '</div>' +
+          '<div class="bundle-item-name">' + product.displayName + '</div>' +
+          (spec ? '<div class="bundle-item-spec">' + spec + '</div>' : '') +
+        '</div>' +
+      '</div>' +
+      '<div class="bundle-item-price">' + product.price.toLocaleString('fr-FR') + ' \u20ac</div>' +
+    '</div>';
+  }).join('');
+
+  return '<div class="bundle-card' + (isBalanced ? ' bundle-card--balanced' : '') + '">' +
+    '<div class="bundle-card-header">' +
+      '<div class="bundle-card-strategy">' + strategy.emoji + ' ' + strategy.label + '</div>' +
+      '<div class="bundle-card-tagline">' + strategy.tagline + '</div>' +
+      '<div class="bundle-card-total">' + pack.total.toLocaleString('fr-FR') + ' \u20ac</div>' +
+      '<div class="bundle-card-total-label">pour ' + selectedCategories.length + ' appareils</div>' +
+      '<div class="bundle-budget-bar"><div class="bundle-budget-fill bundle-budget-fill--' + fillClass + '" style="width:' + fillWidth + '%"></div></div>' +
+      '<div class="bundle-budget-label">' + (pack.withinBudget ? budgetUsed + '% du budget utilis\u00e9' : 'D\u00e9passe le budget de ' + (pack.total - AppState.bundleFilters.budget).toLocaleString('fr-FR') + ' \u20ac') + '</div>' +
+    '</div>' +
+    '<div class="bundle-items-list">' + itemsHtml + '</div>' +
+    '<div class="bundle-card-footer">' +
+      '<button class="bundle-cta" onclick="alert(\'D\u00e9tail des offres bient\u00f4t disponible !\')">Voir le d\u00e9tail des offres \u2192</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function getBundleItemSpec(cat, product) {
+  switch (cat) {
+    case 'fridge':     return product.volume_l ? product.volume_l + ' L' + (product.noFrost ? ' \u00b7 NoFrost' : '') : '';
+    case 'washing':    return product.capacity_kg ? product.capacity_kg + ' kg' + (product.spinSpeed_rpm ? ' \u00b7 ' + product.spinSpeed_rpm + ' tr/min' : '') : '';
+    case 'dishwasher': return product.placeSettings ? product.placeSettings + ' couverts' + (product.noiseLevel_db ? ' \u00b7 ' + product.noiseLevel_db + ' dB' : '') : '';
+    case 'tv':         return product.size_inches ? product.size_inches + '" \u00b7 ' + (product.technology || '') + ' \u00b7 ' + (product.resolution || '') : '';
+    case 'hob':        return product.burners ? product.burners + ' foyers \u00b7 ' + (product.type === 'induction' ? 'Induction' : product.type === 'vitroceramique' ? 'Vitroc\u00e9ramique' : '\u00c9lectrique') : '';
+    case 'vacuum':     return product.type ? (product.type === 'balai' ? 'Balai sans fil' : product.type === 'robot' ? 'Robot' : 'Tra\u00eeneau') + (product.suctionPower ? ' \u00b7 ' + product.suctionPower + (product.type === 'robot' ? ' Pa' : ' W') : '') : '';
+    case 'coffee':     return product.type ? product.type : '';
+    case 'airfryer':   return product.capacity_l ? product.capacity_l + ' L \u00b7 ' + (product.power_w || '') + ' W' : '';
+    case 'iron':       return product.steamFlow_g_min ? product.steamFlow_g_min + ' g/min vapeur' : '';
+    default: return '';
+  }
 }

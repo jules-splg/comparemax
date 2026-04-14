@@ -750,6 +750,70 @@
         <button id="compareHobBtn" class="compare-btn">🍳 &nbsp;Comparer les plaques</button>
       </section>
 
+      <!-- ════════════════════════════════════════════════════
+           EMMÉNAGEMENT — Pack complet
+      ════════════════════════════════════════════════════ -->
+      <section id="filtersBundle" class="filters-panel" style="display:none;">
+        <h2 class="filters-title">📦 Construisez votre pack achat groupé</h2>
+        <p class="bundle-intro">Sélectionnez les appareils dont vous avez besoin, définissez votre budget et votre profil. On génère 3 alternatives adaptées à votre foyer.</p>
+
+        <!-- Sélection produits -->
+        <div class="filter-group">
+          <label class="filter-label">📦 Quels appareils vous faut-il ?</label>
+          <div class="bundle-product-grid">
+            <button class="bundle-product-item selected" data-cat="fridge"><span class="bp-emoji">🧊</span>Réfrigérateur</button>
+            <button class="bundle-product-item selected" data-cat="washing"><span class="bp-emoji">🫧</span>Lave-linge</button>
+            <button class="bundle-product-item selected" data-cat="dishwasher"><span class="bp-emoji">🍽️</span>Lave-vaisselle</button>
+            <button class="bundle-product-item selected" data-cat="tv"><span class="bp-emoji">📺</span>Télévision</button>
+            <button class="bundle-product-item selected" data-cat="hob"><span class="bp-emoji">🍳</span>Plaques de cuisson</button>
+            <button class="bundle-product-item" data-cat="vacuum"><span class="bp-emoji">🌪️</span>Aspirateur</button>
+            <button class="bundle-product-item" data-cat="coffee"><span class="bp-emoji">☕</span>Machine à café</button>
+            <button class="bundle-product-item" data-cat="airfryer"><span class="bp-emoji">⚡</span>Airfryer</button>
+            <button class="bundle-product-item" data-cat="iron"><span class="bp-emoji">👔</span>Fer à repasser</button>
+          </div>
+        </div>
+
+        <!-- Budget total -->
+        <div class="filter-group">
+          <label class="filter-label">💶 Budget total</label>
+          <div class="quick-budgets">
+            <button class="quick-btn bdl-quick-btn" data-min="1000" data-max="2000">Serré<br><small>1 000 – 2 000 €</small></button>
+            <button class="quick-btn bdl-quick-btn active" data-min="2000" data-max="4000">Raisonnable<br><small>2 000 – 4 000 €</small></button>
+            <button class="quick-btn bdl-quick-btn" data-min="4000" data-max="7000">Confortable<br><small>4 000 – 7 000 €</small></button>
+            <button class="quick-btn bdl-quick-btn" data-min="7000" data-max="15000">Sans limite<br><small>7 000 € et +</small></button>
+          </div>
+          <div class="price-range-display">
+            <span id="bdlBudgetDisplay" class="price-range-value">3 000 €</span>
+          </div>
+          <div class="dual-range-wrapper" style="margin-top:8px;">
+            <div id="bdlRangeTrackFill"></div>
+            <input type="range" id="bdlBudget" class="range-input" min="500" max="15000" step="100" value="3000" style="width:100%;">
+          </div>
+        </div>
+
+        <!-- Nombre de personnes -->
+        <div class="filter-group">
+          <label class="filter-label">👥 Personnes dans le foyer</label>
+          <div id="bdlPeopleGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="2">1 – 2 pers.</button>
+            <button class="toggle-btn" data-value="4">3 – 4 pers.</button>
+            <button class="toggle-btn" data-value="5">5 pers. et +</button>
+          </div>
+        </div>
+
+        <!-- Surface -->
+        <div class="filter-group">
+          <label class="filter-label">📐 Surface du logement</label>
+          <div id="bdlSurfaceGroup" class="toggle-group">
+            <button class="toggle-btn active" data-value="35">Moins de 50 m²</button>
+            <button class="toggle-btn" data-value="70">50 – 100 m²</button>
+            <button class="toggle-btn" data-value="120">Plus de 100 m²</button>
+          </div>
+        </div>
+
+        <button id="compareBundleBtn" class="compare-btn">🏠 &nbsp;Générer mes 3 packs</button>
+      </section>
+
       <!-- CHARGEMENT -->
       <div id="loadingState" class="loading-state" style="display:none;">
         <div class="loading-spinner"></div>
@@ -785,6 +849,15 @@
           </li>
         </ul>
         <button class="no-results-reset-btn" onclick="resetFilters()">Réinitialiser les filtres</button>
+      </div>
+
+      <!-- RÉSULTATS BUNDLE EMMÉNAGEMENT -->
+      <div id="bundleResults" style="display:none;">
+        <div class="bundle-results-header">
+          <h2>📦 Vos 3 packs achat groupé</h2>
+          <p id="bundleResultsSubtitle">Adaptés à votre foyer et votre budget</p>
+        </div>
+        <div class="bundle-grid" id="bundleGrid"></div>
       </div>
 
       <!-- RÉSULTATS -->
@@ -1283,7 +1356,9 @@
   <script src="data/earphonesDatabase.js"></script>
   <script src="data/airfryerDatabase.js"></script>
   <script src="data/hobDatabase.js"></script>
+  <script src="data/fridgeDatabase.js"></script>
   <script src="js/comparator.js"></script>
+  <script src="js/bundle.js"></script>
   <script src="js/affiliate.js"></script>
   <script src="js/site.js"></script>
 </body>
