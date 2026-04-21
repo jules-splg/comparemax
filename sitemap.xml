@@ -6,28 +6,28 @@
     <loc>https://comparateur-prix.fr/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/a-propos.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <!-- Guides — TV & Son -->
@@ -35,21 +35,21 @@
     <loc>https://comparateur-prix.fr/guides/meilleure-tv-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleur-casque-audio-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleure-enceinte-bluetooth-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <!-- Guides — Gros électroménager -->
@@ -57,21 +57,21 @@
     <loc>https://comparateur-prix.fr/guides/meilleur-lave-linge-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleur-lave-vaisselle-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleur-frigo-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <!-- Guides — Petit électroménager cuisine -->
@@ -79,28 +79,28 @@
     <loc>https://comparateur-prix.fr/guides/meilleure-cafetiere-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleur-micro-ondes-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleur-four-encastrable-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleure-hotte-aspirante-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <!-- Guides — Entretien maison -->
@@ -108,21 +108,43 @@
     <loc>https://comparateur-prix.fr/guides/meilleur-aspirateur-balai-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleur-aspirateur-robot-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/guides/meilleur-fer-a-repasser-2026.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-21</lastmod>
+  </url>
+
+  <!-- Guides — Nouveaux (avril 2026) -->
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleures-plaques-induction-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-21</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleur-airfryer-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-21</lastmod>
+  </url>
+
+  <url>
+    <loc>https://comparateur-prix.fr/guides/meilleur-refrigerateur-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <!-- Pages légales -->
@@ -130,21 +152,21 @@
     <loc>https://comparateur-prix.fr/mentions-legales.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/politique-confidentialite.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
   <url>
     <loc>https://comparateur-prix.fr/cgu.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2026-04-02</lastmod>
+    <lastmod>2026-04-21</lastmod>
   </url>
 
 </urlset>
