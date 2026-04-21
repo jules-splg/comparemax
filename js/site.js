@@ -931,12 +931,24 @@ function onCompare() {
 
   // Lancer la comparaison (fonctions venant de comparator.js)
   // Utilise setTimeout pour laisser le DOM se mettre à jour (afficher le loading)
-  setTimeout(function () {
+  setTimeout(async function () {
     const results = runComparison(TV_DATABASE, AppState.filters);
     AppState.results = results;
     showLoading(false);
     renderResults(results);
     saveFilters();
+    // Enrichissement des prix live (si EANs disponibles dans la base)
+    if (typeof enrichWithLivePrices === 'function') {
+      const allProducts = [
+        ...(results.premium || []),
+        ...(results.value || []),
+        ...(results.above || [])
+      ].filter(p => p && p.ean);
+      if (allProducts.length > 0) {
+        const enriched = await enrichWithLivePrices(allProducts);
+        enriched.forEach(p => updateLivePriceInDOM(p));
+      }
+    }
   }, 100);
 }
 
@@ -1344,6 +1356,26 @@ function saveFilters() {
   try {
     localStorage.setItem('tvComparatorFilters', JSON.stringify(AppState.filters));
   } catch (e) {}
+}
+
+// ------------------------------------------------------------
+// Met à jour le prix affiché dans une carte produit avec le prix live
+// ------------------------------------------------------------
+function updateLivePriceInDOM(product) {
+  if (!product || !product.id || !product.livePrices) return;
+  const card = document.querySelector(`[data-product-id="${product.id}"]`);
+  if (!card) return;
+  const priceEl = card.querySelector('.tv-card-price-main, .price-main');
+  if (priceEl && product.price) {
+    priceEl.textContent = product.price + ' €';
+    // Ajouter badge "Prix en direct"
+    if (!card.querySelector('.live-price-badge')) {
+      const badge = document.createElement('span');
+      badge.className = 'live-price-badge';
+      badge.textContent = '⚡ En direct';
+      priceEl.parentNode.appendChild(badge);
+    }
+  }
 }
 
 // ------------------------------------------------------------
